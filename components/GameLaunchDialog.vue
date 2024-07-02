@@ -1,6 +1,6 @@
 <script setup>
 
-const gameServer = ref('https://moryracing.netlify.app')
+const gameServer = import.meta.env.VITE_moryracing_src
 </script>
 <template>
     <div>
@@ -9,7 +9,8 @@ const gameServer = ref('https://moryracing.netlify.app')
             class="bg-zinc-950 bg-opacity-80 backdrop-blur-sm">
             <template v-slot:activator="{ props: activatorProps }">
 
-               <div class="flex justify-center p-5"> <v-btn v-bind="activatorProps" color="red" variant="outlined" class="text-h6 m-2">Try the game</v-btn></div>
+                <div class="flex justify-center p-5"> <v-btn v-bind="activatorProps" color="red" variant="outlined"
+                        class="text-h6 m-2">Try the game</v-btn></div>
             </template>
 
             <template v-slot:default="{ isActive }">
