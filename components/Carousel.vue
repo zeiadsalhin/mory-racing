@@ -6,6 +6,11 @@
                 <h1 class="text-h4 w-fit font-weight-bold mb-4">
                     Mory Racing is Live!
                 </h1>
+                <p class="text-subtitle md:w-1/3 brightness-90 font-weight-light px-3  mb-4">Enjoy the online ultimate
+                    racing
+                    experience
+                    now with Mory racing enhanced version
+                </p>
                 <v-btn color="red" variant="outlined" class="text-h6 m-2">Play Now</v-btn>
 
             </div>

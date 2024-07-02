@@ -28,11 +28,11 @@ const date = new Date().getFullYear()
             </div>
             <div class="3 p-5">
                 <p class="text-md font-weight-bold mt-5 mb-2">Game by</p>
-                    <a href="https://github.com/zeiadsalhin"
-                        class="my-auto brightness-50 hover:brightness-100 transform transition ease-in-out duration-400 mt-3 flex justify-center">
-                        <v-icon icon="mdi-github" size="30" class="my-auto"></v-icon>
-                        <p class="text-md my-auto">Mory</p>
-                    </a>
+                <a href="https://github.com/zeiadsalhin"
+                    class="my-auto brightness-50 hover:brightness-100 transform transition ease-in-out duration-400 mt-3 flex justify-center">
+                    <v-icon icon="mdi-github" size="30" class="my-auto"></v-icon>
+                    <p class="text-md my-auto">Mory</p>
+                </a>
             </div>
             <!-- <div class="4 p-5 shadow-2xla">
                 <p class="text-md mt-5 mb-2">Stay connected</p>
@@ -47,7 +47,10 @@ const date = new Date().getFullYear()
         <br />
         <!-- <br /> -->
         <!-- <div class="h-0.5 w-1/3 mx-auto bg-zinc-800 rounded-full mt-5 mb-5"></div> -->
-        <p class="opacity-80 mt-5">©{{ date }} - Mory Racing</p>
+        <div class=" flex w-fit mt-5">
+            <p class="opacity-80">©{{ date }} - Mory Racing</p>
+            <v-img src="/public/racing_flag.webp" class="mx-2" width="40"></v-img>
+        </div>
     </v-card>
 
 </template>
@@ -64,6 +67,7 @@ export default {
             ],
             navigation: [
                 { icon: "", name: "Home", link: "/" },
+                { icon: "", name: "About", link: "#about" },
                 { icon: "", name: "Offers", link: "#offers" },
                 { icon: "", name: "Terms of service", link: "#" },
                 { icon: "", name: "Contact Us", link: "/Contact-us" },
