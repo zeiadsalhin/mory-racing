@@ -1,6 +1,6 @@
 <template>
     <h1 id="offers" class="text-2xl font-semibold p-8 mx-auto text-center">Discover Next Gen Racing games</h1>
-    <v-parallax src="/public/b.jpg " class="md:h-[500px] h-full">
+    <v-parallax src="/public/b.webp " class="md:h-[500px] h-full">
         <div class="d-flex flex-column fill-height justify-center alaign-center text-white">
             <div class="rounded-md backdrop-brightness-75   md:m-10 md:p-10 p-5 ">
                 <h1 class="text-h4 w-fit font-weight-bold mb-4">
@@ -65,17 +65,6 @@
         </v-carousel-item>
     </v-carousel> -->
 </template>
-<style scoped>
-.custom-parallax {
-    position: relative;
-    /* Ensure the position is relative for absolute positioning */
-}
-
-.custom-parallax img {
-    opacity: 0.7;
-    /* Adjust the opacity as per your requirement */
-}
-</style>
 <script>
 // import Swal from 'sweetalert2'
 

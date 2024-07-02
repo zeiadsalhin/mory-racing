@@ -1,10 +1,10 @@
 <script setup>
 useSeoMeta({
-    title: 'Alfa Store - Sign Up',
-    ogTitle: 'Alfa Store -  Sign Up',
-    description: 'Welcome to most progressive E-commerce platform with Safest and Secured Payment in programming services',
-    ogDescription: 'Welcome to most progressive E-commerce platform with Safest and Secured Payment in programming services',
-    ogImage: 'https://alfastorecommerce.netlify.app/mainicon.ico',
+    title: 'Mory Racing - Register new user',
+    ogTitle: 'Mory Racing - Register new user',
+    description: 'Welcome to Mory racing game',
+    ogDescription: 'Welcome to Mory racing game',
+    ogImage: 'https://mory-racing.netlify.app/mainicon.ico',
     twitterCard: 'summary_large_image',
 })
 

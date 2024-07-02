@@ -30,11 +30,11 @@ onMounted(async () => {
 });
 //seo 
 useSeoMeta({
-    title: `Alfa Store - User Account`,
-    ogTitle: `Alfa Store - User Account`,
-    description: 'Welcome to most progressive E-commerce platform with Safest and Secured Payment in programming services',
-    ogDescription: 'Welcome to most progressive E-commerce platform with Safest and Secured Payment in programming services',
-    ogImage: 'https://alfastorecommerce.netlify.app/mainicon.ico',
+    title: 'Mory Racing - User Account',
+    ogTitle: 'Mory Racing - User Account',
+    description: 'Welcome to Mory racing game',
+    ogDescription: 'Welcome to Mory racing game',
+    ogImage: 'https://mory-racing.netlify.app/mainicon.ico',
     twitterCard: 'summary_large_image',
 })
 

@@ -200,11 +200,11 @@ async function proccess() {
 
 //seo
 useSeoMeta({
-    title: 'Alfa Store - SecureCheckout',
-    ogTitle: 'Alfa Store -  SecureCheckout',
-    description: 'Welcome to most progressive E-commerce platform with Safest and Secured Payment in programming services',
-    ogDescription: 'Welcome to most progressive E-commerce platform with Safest and Secured Payment in programming services',
-    ogImage: 'https://alfastorecommerce.netlify.app/mainicon.ico',
+    title: 'Mory Racing - SecureCheckout',
+    ogTitle: 'Mory Racing - SecureCheckout',
+    description: 'Welcome to Mory racing game',
+    ogDescription: 'Welcome to Mory racing game',
+    ogImage: 'https://mory-racing.netlify.app/mainicon.ico',
     twitterCard: 'summary_large_image',
 })
 </script>

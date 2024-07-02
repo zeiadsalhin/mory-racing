@@ -18,7 +18,7 @@ export default defineNuxtConfig({
   },
   modules: [
     '@nuxtjs/tailwindcss',
-    // '@nuxtjs/google-fonts',
+    '@nuxt/image',
     '@nuxt/content',
     // 'nuxt-paypal',
     '@pinia/nuxt',
