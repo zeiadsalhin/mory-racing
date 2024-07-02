@@ -112,7 +112,7 @@ async function getavatar() {
 </script>
 <template>
     <div>
-        <v-app-bar color="surface" :elevation="10" app>
+        <v-app-bar color="surface" :elevation="1" app>
             <nuxt-link to="/">
                 <v-toolbar-title class="md:p-4">
                     <!-- <h1 class="font-bold text-xl">Alfa Store</h1> -->
@@ -120,9 +120,12 @@ async function getavatar() {
                         class="md:p-" width="150" alt="logo">
                 </v-toolbar-title>
             </nuxt-link>
-            <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer />
-            <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer />
-            <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer />
+            <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer />
+            <v-spacer />
+            <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer />
+            <v-spacer />
+            <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer />
+            <v-spacer />
             <v-spacer /><v-spacer /><v-spacer /><v-spacer /><v-spacer /><v-spacer /><v-spacer /><v-spacer /><v-spacer /><v-spacer />
             <!-- <nuxt-link to="/">
                 <v-btn class="mr-md-2" icon>
@@ -130,10 +133,11 @@ async function getavatar() {
                 </v-btn>
             </nuxt-link> -->
             <nuxt-link :to="isUser ? '/user/account' : '/admin'">
-                <v-btn class="mr-md-2" icon>
-                    <v-avatar v-if="avatar" size="20"><v-img :src="avatar"></v-img></v-avatar>
-                    <v-icon v-else size="20">mdi-account-outline</v-icon>
+                <v-btn v-if="avatar" class="mr-md-2" icon>
+                    <v-avatar size="20"><v-img :src="avatar"></v-img></v-avatar>
+                    <!-- <v-icon v-else size="20">mdi-account-outline</v-icon> -->
                 </v-btn>
+                <v-btn v-else variant="tonal">Login</v-btn>
             </nuxt-link>
             <!-- <nuxt-link to="/products"><v-btn class="mr-md-2" icon>
                     <v-icon size="20">mdi-store-outline</v-icon>

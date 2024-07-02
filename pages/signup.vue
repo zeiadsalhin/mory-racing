@@ -11,8 +11,8 @@ useSeoMeta({
 import { useTheme } from 'vuetify'
 const theme = useTheme();
 // import Swal from 'sweetalert2'
-// const supabase = useSupabaseClient()
-// const user = useSupabaseUser()
+const supabase = useSupabaseClient()
+const user = useSupabaseUser()
 const router = useRouter()
 const isFocused1 = ref(false)
 const isFocused2 = ref(false)

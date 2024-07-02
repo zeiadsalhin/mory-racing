@@ -22,7 +22,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     // 'nuxt-paypal',
     '@pinia/nuxt',
-    // '@nuxtjs/supabase',
+    '@nuxtjs/supabase',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
         // @ts-expect-error
@@ -38,14 +38,14 @@ export default defineNuxtConfig({
       },
     },
   },
-  // supabase: {
-  //   // Options
-  //   redirectOptions: {
-  //     login: '/login',
-  //     callback: '/confirm',
-  //     include: ['/admin(/*)?'],
-  //     exclude: ['/'],
-  //     cookieRedirect: false,
-  //   }
-  // },
+  supabase: {
+    // Options
+    redirectOptions: {
+      login: '/login',
+      callback: '/confirm',
+      include: ['/admin(/*)?'],
+      exclude: ['/'],
+      cookieRedirect: false,
+    }
+  },
 })

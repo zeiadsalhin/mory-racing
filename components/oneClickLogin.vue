@@ -51,8 +51,8 @@ async function oneClickLogin() { // login by email link included token
     <div>
         <!--form body-->
         <!--renders on all states-->
-        <div :class="theme.global.current.value.dark ? 'bg-zinc-900 text-white' : 'bg-zinc-100'"
-            class="about mt-20 p-1 md:ap-10 am-10 flex-co   l justify-center mx-auto w-11/12 h-fit shadow-inner rounded-md">
+        <div :class="theme.global.current.value.dark ? 'bg-zinc-90a0 text-white' : 'bg-zinc-1a00'"
+            class="about mta-20 p-1 md:ap-10 am-10 flex-co   l justify-center mx-auto w-11/12 h-fit shadow-inner rounded-md">
             <div class="title flex flex-col p-5">
                 <v-icon class="mx-auto" size="55">mdi-fingerprint</v-icon>
                 <h1 class="text-2xl md:text-4xl  text-center font-bold mt-2">oneClick Login</h1>
@@ -66,7 +66,7 @@ async function oneClickLogin() { // login by email link included token
                     <label class="p-3 text-md md:text-xl block ">Enter your Email:</label>
                     <input placeholder="Enter your registered Email" id="email" v-model="email"
                         :class="theme.global.current.value.dark ? 'bg-zinc-900 text-white' : 'bg-zinc-100 text-zinc-900'"
-                        class=" placeholder:text-sm p-3 md:p-3 rounded-md outline outline-1 outline-zinc-500 focus:outline-2 w-2/3 md:w-1/4 "
+                        class=" placeholder:text-sm p-3 md:p-3 rounded-md outline outline-1 outline-zinc-500 focus:outline-2 w-2/3 "
                         type="email" required />
                 </div>
                 <!--Display error message if any-->
@@ -76,7 +76,7 @@ async function oneClickLogin() { // login by email link included token
                     <p class="text-green-600 mb-2" v-if="succMsg">{{ succMsg }}</p>
                     <button @click="" type="submit"
                         :class="theme.global.current.value.dark ? 'bg-zinc-950 text-white' : 'bg-zinc-700 text-white'"
-                        class="px-5 py-2 md:w-1/4 mx-auto rounded-md hover:cursor-pointer hover:bg-zinc-600 hover:text-gray-800 bg-gray-800 ">
+                        class="px-5 py-2 mx-auto rounded-md hover:cursor-pointer hover:bg-zinc-600 hover:text-gray-800 bg-gray-800 ">
                         {{ succMsg ? 'Wait ' + countdown : 'Send login link' }}
                     </button>
                 </div>

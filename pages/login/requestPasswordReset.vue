@@ -33,7 +33,7 @@ async function resetpassword() { // reset password by email link included token
         <!--form body-->
         <!--renders on all states-->
         <div :class="theme.global.current.value.dark ? 'bg-zinc-900 text-white' : 'bg-zinc-100'"
-            class="about mt-20 p-1 md:Ap-10 am-10 flex-col justify-center mx-auto w-11/12 h-fit shadow-inner rounded-md">
+            class="about mt-2 p-1 md:Ap-10 am-10 flex-col justify-center mx-auto w-11/12 h-fit shadow-inner rounded-md">
             <div class="title flex flex-col p-5">
                 <v-icon class="mx-auto" size="55">mdi-lock-reset</v-icon>
                 <h1 class="text-2xl md:text-4xl  text-center font-bold mt-2">Reset Password</h1>
