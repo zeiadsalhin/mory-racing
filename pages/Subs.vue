@@ -9,7 +9,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-const supabase = useSupabaseClient()
+// const supabase = useSupabaseClient()
 
 // Initialize refs for subscription dates
 const subscriptionStart = ref(''); // Predefined start date

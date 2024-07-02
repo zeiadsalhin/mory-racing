@@ -1,46 +1,46 @@
 <script setup lang="ts">
-import emailjs from '@emailjs/browser';
+// import emailjs from '@emailjs/browser';
 const phoneNumber = ref('NO DATA')
 const email = ref('NO DATA')
 const address = ref('NO DATA')
 onMounted(() => {
-    getcontacts()
+    // getcontacts()
 })
-const getcontacts = async () => {
-    const supabase = useSupabaseClient()
-    const user = useSupabaseUser()
-    try {
-        const { data, error } = await supabase.from('Contact-Details').select()
-        phoneNumber.value = data[0].phone
-        email.value = data[0].email
-        address.value = data[0].address
-        if (error) {
-            console.log(error);
-            throw error
-        }
+// const getcontacts = async () => {
+//     const supabase = useSupabaseClient()
+//     const user = useSupabaseUser()
+//     try {
+//         const { data, error } = await supabase.from('Contact-Details').select()
+//         phoneNumber.value = data[0].phone
+//         email.value = data[0].email
+//         address.value = data[0].address
+//         if (error) {
+//             console.log(error);
+//             throw error
+//         }
 
-    } catch (error) {
-        console.error('Error fetching products:', error.message);
-    }
-}
+//     } catch (error) {
+//         console.error('Error fetching products:', error.message);
+//     }
+// }
 
 // send email 
 const snackbarshow = ref(false)
 const loader = ref(false)
 
-const sendEmail = (() => {
-    snackbarshow.value = false,
-        loader.value = true
-    emailjs.sendForm('service_q9o17rp', 'template_0nfu6xe', document.querySelector('#form'), 'FdH-TOKxO9kI59c3N')
-        .then((result) => {
-            console.log('SUCCESS!', result.text);
-            snackbarshow.value = true
-            loader.value = false
-            document.querySelector('#form').reset()
-        }, (error) => {
-            console.log('FAILED...', error);
-        });
-})
+// const sendEmail = (() => {
+//     snackbarshow.value = false,
+//         loader.value = true
+//     emailjs.sendForm('service_q9o17rp', 'template_0nfu6xe', document.querySelector('#form'), 'FdH-TOKxO9kI59c3N')
+//         .then((result) => {
+//             console.log('SUCCESS!', result.text);
+//             snackbarshow.value = true
+//             loader.value = false
+//             document.querySelector('#form').reset()
+//         }, (error) => {
+//             console.log('FAILED...', error);
+//         });
+// })
 // const from_name = ref('Ali');
 // const reply_to = ref('test@test.com');
 // const subject = ref('Support');

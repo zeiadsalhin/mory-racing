@@ -1,7 +1,7 @@
 <script setup>
 import { useTheme } from 'vuetify'
 const theme = useTheme();
-import Swal from 'sweetalert2'
+// import Swal from 'sweetalert2'
 const supabase = useSupabaseClient()
 const user = useSupabaseUser()
 const dataview = ref()
