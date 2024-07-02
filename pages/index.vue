@@ -1,4 +1,7 @@
 <script setup>
+import AboutGame from '~/components/AboutGame.vue';
+import Shapes from '~/components/Shapes.vue';
+
 // onMounted(() => {
 //     // handleuser()
 // })
@@ -27,8 +30,12 @@ useSeoMeta({
 </script>
 <template>
     <div>
+        <Shapes/>
         <Carousel />
         <GameLaunchDialog />
+        <AboutGame/>
+        <Footer/>
+
         <!-- <Ads />
        
         <v-container>

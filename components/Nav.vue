@@ -112,7 +112,7 @@ async function getavatar() {
 </script>
 <template>
     <div>
-        <v-app-bar color="black" :elevation="2" app>
+        <v-app-bar color="surface" :elevation="10" app>
             <nuxt-link to="/">
                 <v-toolbar-title class="md:p-4">
                     <!-- <h1 class="font-bold text-xl">Alfa Store</h1> -->
@@ -120,17 +120,18 @@ async function getavatar() {
                         class="md:p-" width="150" alt="logo">
                 </v-toolbar-title>
             </nuxt-link>
-            <v-spacer />
-            <v-spacer />
-            <v-spacer />
+            <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer />
+            <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer />
+            <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer />
             <v-spacer /><v-spacer /><v-spacer /><v-spacer /><v-spacer /><v-spacer /><v-spacer /><v-spacer /><v-spacer /><v-spacer />
             <!-- <nuxt-link to="/">
                 <v-btn class="mr-md-2" icon>
-                    <v-icon size="20">mdi-home</v-icon></v-btn>
+                    <v-icon size="20">mdi-home-variant</v-icon>
+                </v-btn>
             </nuxt-link> -->
             <nuxt-link :to="isUser ? '/user/account' : '/admin'">
                 <v-btn class="mr-md-2" icon>
-                    <v-avatar v-if="avatar" size="25"><v-img :src="avatar"></v-img></v-avatar>
+                    <v-avatar v-if="avatar" size="20"><v-img :src="avatar"></v-img></v-avatar>
                     <v-icon v-else size="20">mdi-account-outline</v-icon>
                 </v-btn>
             </nuxt-link>
@@ -152,8 +153,8 @@ async function getavatar() {
                 <v-icon size="20">mdi-brightness-7</v-icon>
             </v-btn> -->
 
-            <v-btn @click="" variant="tonal" color="#E53935" class="p-5 text-h6 font-weight-medium">
-                <v-icon size="25" class="mx-1">mdi-play-box</v-icon>
+            <v-btn @click="" variant="text" color="#E53935" class="mr-3 text-h6 font-weight-medium">
+                <v-icon size="25" class="mr-1">mdi-play</v-icon>
                 <p class="text-white">Play</p>
             </v-btn>
             <v-spacer />

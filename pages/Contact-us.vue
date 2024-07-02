@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 const phoneNumber = ref('NO DATA')
 const email = ref('NO DATA')
 const address = ref('NO DATA')
@@ -28,19 +28,19 @@ onMounted(() => {
 const snackbarshow = ref(false)
 const loader = ref(false)
 
-// const sendEmail = (() => {
-//     snackbarshow.value = false,
-//         loader.value = true
-//     emailjs.sendForm('service_q9o17rp', 'template_0nfu6xe', document.querySelector('#form'), 'FdH-TOKxO9kI59c3N')
-//         .then((result) => {
-//             console.log('SUCCESS!', result.text);
-//             snackbarshow.value = true
-//             loader.value = false
-//             document.querySelector('#form').reset()
-//         }, (error) => {
-//             console.log('FAILED...', error);
-//         });
-// })
+const sendEmail = (() => {
+    snackbarshow.value = false,
+        loader.value = true
+    emailjs.sendForm('service_q9o17rp', 'template_0nfu6xe', document.querySelector('#form'), 'FdH-TOKxO9kI59c3N')
+        .then((result) => {
+            console.log('SUCCESS!', result.text);
+            snackbarshow.value = true
+            loader.value = false
+            document.querySelector('#form').reset()
+        }, (error) => {
+            console.log('FAILED...', error);
+        });
+})
 // const from_name = ref('Ali');
 // const reply_to = ref('test@test.com');
 // const subject = ref('Support');
@@ -67,10 +67,10 @@ const loader = ref(false)
 </script>
 <template>
     <div class="my-aut py-2">
-        <v-card class="mx-auto text-center md:w-1/2">
+        <v-card  color="grey-darken-4" class="mx-auto text-center md:w-11/12">
             <h1 class="text-3xl mt-10 font-bold">Contact Us</h1>
             <div class="h-0.5 w-2/3 mx-auto bg-zinc-800 rounded-full mt-5 mb-5"></div>
-            <v-card-text>
+            <!-- <v-card-text>
                 <div class="contact-info text-lg space-y-3 mb-10">
                     <p><v-icon class="mb-1 mx-1" size="20">mdi-phone</v-icon> Phone: <a class="hover:opacity-80"
                             :href="'tel:' + phoneNumber">{{
@@ -80,13 +80,13 @@ const loader = ref(false)
                                 email }}</a></p>
                     <p><v-icon class="mb-1 mx-1" size="20">mdi-map</v-icon> Address: <br>{{ address }}</p>
                 </div>
-            </v-card-text>
+            </v-card-text> -->
         </v-card>
-        <v-card variant="flat"
-            class="contact mt-10a py-10 mb-10 md:w-11/12 mx-auto flex-col justify-center text-center bg-gray-800 dark:bg-gray-950 text-white">
+        <v-card variant="flat" color="grey-darken-4"
+            class="contact mt-10a  mb-10 md:w-11/12 mx-auto flex-col justify-center text-center">
             <h1 class="text-3xl dark:text-white text-center font-bold p-5">Need help?</h1>
             <p class="p-2">Please fill the form below to reach us:</p>
-            <form id="form" class="space-y-2  mx-auto  w-9/12" @submit.prevent="sendEmail">
+            <form id="form" class="space-y-2 mb-10  mx-auto  w-9/12" @submit.prevent="sendEmail">
                 <div class="md:aflex flex-row justify-center mb-5 md:w-1/3 mx-auto">
                     <input id="name" required
                         class="bg-gray-100 dark:bg-gray-300 placeholder-current text-black p-2 rounded-md focus:outline-none w-full mb-2"
