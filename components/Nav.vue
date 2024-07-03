@@ -94,21 +94,18 @@ async function getavatar() {
 }
 
 // handle log in and log out
-// const user = useSupabaseUser()
-// watch(user, () => {
-//     if (user.value) {
-//         fetchCartItems();
-//         getavatar();
-//         if (user?.user_metadata?.role == 'admin') {
-//             isUser.value = false
-//         } else {
-//             isUser.value = true
-//         }
-//     } else {
-//         fetchCartItems();
-//         getavatar();
-//     }
-// }, { immediate: true })
+const user = useSupabaseUser()
+watch(user, () => {
+    if (user.value) {
+        // fetchCartItems();
+        getavatar();
+        isUser.value = true
+    } else {
+        // fetchCartItems();
+        getavatar();
+        isUser.value = false
+    }
+}, { immediate: true })
 </script>
 <template>
     <div>
@@ -137,7 +134,8 @@ async function getavatar() {
                     <v-avatar size="20"><v-img :src="avatar"></v-img></v-avatar>
                     <!-- <v-icon v-else size="20">mdi-account-outline</v-icon> -->
                 </v-btn>
-                <v-btn v-else variant="tonal">Login</v-btn>
+                <v-btn v-if="!isUser" variant="tonal">Login</v-btn>
+                <v-icon v-else size="20" icon>mdi-account-outline</v-icon>
             </nuxt-link>
             <!-- <nuxt-link to="/products"><v-btn class="mr-md-2" icon>
                     <v-icon size="20">mdi-store-outline</v-icon>
@@ -157,7 +155,7 @@ async function getavatar() {
                 <v-icon size="20">mdi-brightness-7</v-icon>
             </v-btn> -->
 
-            <v-btn @click="" variant="text" color="#E53935" class="mr-3 text-h6 font-weight-medium">
+            <v-btn @click="" variant="text" :ripple="false" color="#E53935" class="mr-3 text-h6 font-weight-medium">
                 <v-icon size="25" class="mr-1">mdi-play</v-icon>
                 <p class="text-white">Play</p>
             </v-btn>

@@ -10,6 +10,10 @@ const props = defineProps({
         type: String,
         default: "Message Sent successfully!" // Default message
     },
+    color: {
+        type: String,
+        default: "grey-darken-4"
+    },
     timeout: {
         type: Number,
         default: 2000 // Default timeout
@@ -26,7 +30,7 @@ watch(() => props.snackbar, (newValue, oldValue) => {
 <template>
     <div>
         <div class="text-center ma-2">
-            <v-snackbar v-model="snackbar" location="top" color="grey-darken-4" :timeout="timeout">
+            <v-snackbar v-model="snackbar" location="top" :color="color" :timeout="timeout">
                 <div class="flex">
                     <v-icon class="mx-2" size="30">{{ icon }}</v-icon>
                     <p class="text-lg my-auto">{{ message }}</p>

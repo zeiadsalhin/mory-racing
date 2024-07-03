@@ -64,21 +64,20 @@ async function oneClickLogin() { // login by email link included token
                 <div class="form mt-3">
                     <p class="text-md md:text-xl">To request a passwordless login link please</p>
                     <label class="p-3 text-md md:text-xl block ">Enter your Email:</label>
-                    <input placeholder="Enter your registered Email" id="email" v-model="email"
-                        :class="theme.global.current.value.dark ? 'bg-zinc-900 text-white' : 'bg-zinc-100 text-zinc-900'"
-                        class=" placeholder:text-sm p-3 md:p-3 rounded-md outline outline-1 outline-zinc-500 focus:outline-2 w-2/3 "
-                        type="email" required />
+                    <v-text-field variant="outlined" placeholder="Enter your registered Email" id="email"
+                        v-model="email" :class="theme.global.current.value.dark ? '' : ''"
+                        class=" placeholder:text-sm rounded-md mx-auto w-11/12 " type="email" required />
                 </div>
                 <!--Display error message if any-->
                 <p class="text-red-500" v-if="errMsg">{{ errMsg }}</p>
                 <!--Confirmation message-->
                 <div class="">
                     <p class="text-green-600 mb-2" v-if="succMsg">{{ succMsg }}</p>
-                    <button @click="" type="submit"
+                    <v-btn @click="" type="submit"
                         :class="theme.global.current.value.dark ? 'bg-zinc-950 text-white' : 'bg-zinc-700 text-white'"
                         class="px-5 py-2 mx-auto rounded-md hover:cursor-pointer hover:bg-zinc-600 hover:text-gray-800 bg-gray-800 ">
                         {{ succMsg ? 'Wait ' + countdown : 'Send login link' }}
-                    </button>
+                    </v-btn>
                 </div>
                 <NuxtLink @click="$router.back()"><button type="button"
                         class="mt-5 py-2 opacity-70 w-fit hover:cursor-pointer amx-auto bloack underline">
