@@ -32,6 +32,7 @@ useSeoMeta({
     <div>
         <Shapes/>
         <Carousel />
+        <GameFeatures/>
         <GameLaunchDialog />
         <AboutGame/>
         <Footer/>

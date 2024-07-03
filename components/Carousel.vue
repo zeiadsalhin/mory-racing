@@ -1,5 +1,6 @@
 <template>
     <h1 id="offers" class="text-2xl font-semibold p-5 mx-auto text-center">Discover Next Gen Racing games</h1>
+        <transition name="fade" mode="out-in">
     <v-parallax src="/public/b.webp " class="md:h-[500px] h-full">
         <div class="d-flex flex-column fill-height justify-center alaign-center text-white">
             <div class="rounded-md backdrop-brightness-75   md:m-10 md:p-10 p-5 ">
@@ -16,6 +17,7 @@
             </div>
         </div>
     </v-parallax>
+</transition>
     <!-- <v-carousel height="65vh" :hide-delimiters="true" class="p-1">
         <v-carousel-item v-if="items" v-for="(item, i) in items" :key="i" :src="JSON.parse(item.image)[0]" cover>
             <v-img height="100vh">

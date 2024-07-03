@@ -172,8 +172,8 @@ watch(user, () => {
 }, { immediate: true })
 </script>
 <template>
-    <div class="back w-full flex min-h-screen"
-        style="background: url('/b.webp'), no-repeat;background-attachment: fixed;background-size: cover; width: 100%; ">
+     <transition name="fade" mode="out-in">
+    <v-img src="/signup.webp" cover height="100%" class="1 w-full min-h-screen">
         <!--Form Body-->
         <!--will only render when no user exist-->
         <div v-if="dataview" :class="theme.global.current.value.dark ? 'bg-zinc-8a00 text-white' : ' text-black'"
@@ -181,7 +181,7 @@ watch(user, () => {
 
             <div
                 class="left md:w-2/5 h-fit rounded-md bg-zinc-950 backdrop-blur-md bg-opacity-80 shadow-2xl  shadow-zinc-950 m-2">
-                <h1 class="text-3xl md:text-4xl text-center font-extrabold p-5">Sign Up</h1>
+                <h1 class="text-3xl md:text-4xl text-center font-extrabold p-5 mt-2">Sign Up</h1>
                 <div class="w-1/4 h-1 mt-5 rounded-xl mx-auto bg-red-800"></div>
 
                 <form id="form" class="p-5 text-center text-sm mx-auto justify-center flex-col w-full md:w-9/12 mt-3"
@@ -303,17 +303,18 @@ watch(user, () => {
                 </form>
             </div>
 
-            <div class="right">
-                <v-img src="/icon.ico" :class="theme.global.current.value.dark ? 'bg-inherit ' : 'bg-zinc-700'"
-                    class="p-5 mx-auto mb-5" width="150" alt="logo"></v-img>
-
+            <div class="right w-fit flex mx-auto my-auto p-2 backdrop-blur-md shadow-2xl shadow-black bg-zinc-900 bg-opacity-0 rounded-sm">
+                <v-img src="/racing_flag.webp" :class="theme.global.current.value.dark ? 'bg-inherit ' : 'bg-zinc-700'"
+                    class="p-5 mx-auto mb- bg-transparent " width="100" alt="logo"></v-img>
+                <h1 class="ml-2 mr-2 my-auto md:text-6xl text-xl font-black  text-red-600">Mory </h1><h1 class="md:text-5xl text-xl my-auto font-semibold"> Racing</h1>
 
             </div>
             <!--End of body-->
             <NotificationBar :snackbar="snackbarshow" icon="mdi-check-bold" message="Signed up successfully!"
                 color="green" :timeout="3000" />
         </div>
-    </div>
+    </v-img>
+</transition>
 </template>
 <style>
 .tick-list {

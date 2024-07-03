@@ -77,7 +77,7 @@ const signInGithub = async () => {
 }
 
 // One click login toggle
-const oneClick = ref(false)
+const oneClick = ref(false);
 const oneClickLogintoggle = (() => {
     oneClick.value = true
 
@@ -99,22 +99,22 @@ watch(user, () => {
 </script>
 <template>
     <div>
+        <!-- <v-lazy> -->
+
         <!--Login Form Body-->
         <!--will only render when no user exist-->
         <div v-if="dataview" class="md:flex">
-            <div class="1 w-full flex min-h-screen justify-end"
-                style="background: url('/b.webp'), no-repeat;background-attachment: fixed;background-size: cover; width: 100%; ">
+            <transition name="fade" mode="out-in">
+            <v-img src="/b.webp" cover height="100%" class="1 w-full min-h-screen -mt-16">
                 <div
-                    class="2 m-3 flex-col justify-center mx-auto md:w-1/3 w-11/12 h-fit rounded-md bg-zinc-950 backdrop-blur-md bg-opacity-75">
-                    <div v-if="!oneClick" class="login with email">
-                        <div class="logo flex md:w-11/12 mx-auto md:p-5 p-3 justify-around">
+                    class="2 m-3 mt-20 flex flex-col justify-center mx-auto md:min-w-lg md:max-w-lg w-11/12 h-fit rounded-md bg-zinc-950 backdrop-blur-md bg-opacity-75">
+                    <div v-if="oneClick==false" class="login with email">
+                        <div class="logo flex md:w-11/12 mx-auto md:p-5 p-3 justify-center">
                             <!-- <v-img src="/icon.ico" :class="theme.global.current.value.dark ? '' : 'bg-zinc-800'"
                                 class="m-2 h-20 maax-auto" width="200" alt="logo"></v-img> -->
                             <div class="1 mx-auto">
                                 <h1 class="flex text-3xl md:text-5xl my-auto text-center font-semibold p-2">
-                                    <!-- <v-icon size="30" color="red-darken-4" class="m-2">mdi-racing-helmet</v-icon> -->
-                                    <p class="my-auto">
-                                    <p class="text-red-600 mr-1">Mory</p> Racing</p>
+                                    <p class="text-red-600 mr-1">Mory</p><p class="my-auto">Racing</p>
                                     <div class="w-10 my-auto">
                                         <div class="w-11/12 h-1 bg-red-600 m-1"></div>
                                         <div class="w-9/12 h-1 bg-slate-600 m-1"></div>
@@ -139,9 +139,6 @@ watch(user, () => {
                         <p class="underline inline-block">{{ emailconfirm
                             }}</p>, Please confirm it before signing in.</p>
 
-
-                        <!-- <div class="w-1/4 h-1 mt-5 rounded-xl mx-auto bg-gray-600 dark:bg-gray-900"></div> -->
-                        <!--login with google-->
                         <div class="md:flex flex w-9/12 justify-center text-center mx-auto p-3">
                             <v-btn @click="signInGoogle" min-height="45" min-width="80" class="m-2"
                                 color="grey-lighten-2">
@@ -159,8 +156,6 @@ watch(user, () => {
                             <p class="text-center my-auto text-xl font-semibold w-16">Or</p>
                             <div class="w-1/2 h-1 my-auto rounded-xl mx-auto bg-zinc-900 opacity-80"></div>
                         </div>
-
-
 
                         <form id="form" class="p-2 w-11/12 md:w-2/3 h-fit text-center mx-auto justify-center flex-col"
                             @submit.prevent="signIn">
@@ -211,19 +206,17 @@ watch(user, () => {
                                         Sign Up
                                     </button></NuxtLink>
                             </div>
-                            <!--Return to Sign Up page-->
-                            <!-- <NuxtLink to="/signup"><button
-                        class="px-5 m-5 py-2 w-fit hover:cursor-pointer mx-auto block hover:underline">
-                        return to Sign Up
-                    </button></NuxtLink> -->
                         </form>
                     </div>
                     <div v-else>
                         <OneClickLogin />
                     </div>
                 </div>
-            </div>
+            </v-img>
+        </transition>
         </div>
+  
+   <!--  </v-lazy> -->
         <!--End of Body-->
     </div>
 </template>

@@ -59,12 +59,12 @@ async function oneClickLogin() { // login by email link included token
             </div>
 
             <div class="w-1/4 h-1 mt-5 rounded-xl mx-auto bg-zinc-800"></div>
-            <form id="form" class="space-y-5 p-5 h-96 text-center mx-auto justify-center flex-col"
+            <form id="ocform" class="space-y-5 p-5 h-96 text-center mx-auto justify-center flex-col"
                 @submit.prevent="oneClickLogin">
                 <div class="form mt-3">
                     <p class="text-md md:text-xl">To request a passwordless login link please</p>
                     <label class="p-3 text-md md:text-xl block ">Enter your Email:</label>
-                    <v-text-field variant="outlined" placeholder="Enter your registered Email" id="email"
+                    <v-text-field variant="outlined" placeholder="Enter your registered Email" id="ocemail"
                         v-model="email" :class="theme.global.current.value.dark ? '' : ''"
                         class=" placeholder:text-sm rounded-md mx-auto w-11/12 " type="email" required />
                 </div>
