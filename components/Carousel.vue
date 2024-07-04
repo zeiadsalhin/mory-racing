@@ -1,23 +1,40 @@
+<script setup>
+
+
+// handle Auth state
+const user = useSupabaseUser()
+const isUser = ref(true)
+watch(user, () => {
+    if (user.value) {
+        isUser.value = true
+    } else {
+        isUser.value = false
+    }
+}, { immediate: true })
+</script>
 <template>
     <h1 id="offers" class="text-2xl font-semibold p-5 mx-auto text-center">Discover Next Gen Racing games</h1>
-        <transition name="fade" mode="out-in">
-    <v-parallax src="/public/b.webp " class="md:h-[500px] h-full">
-        <div class="d-flex flex-column fill-height justify-center alaign-center text-white">
-            <div class="rounded-md backdrop-brightness-75   md:m-10 md:p-10 p-5 ">
-                <h1 class="text-h4 w-fit font-weight-bold mb-4">
-                    Mory Racing is Live!
-                </h1>
-                <p class="text-subtitle md:w-1/3 brightness-90 font-weight-light px-3  mb-4">Enjoy the online ultimate
-                    racing
-                    experience
-                    now with Mory racing enhanced version
-                </p>
-                <v-btn color="red" variant="outlined" class="text-h6 m-2">Play Now</v-btn>
+    <transition name="fade" mode="out-in">
+        <v-parallax src="/public/b.webp " class="md:h-[500px] h-full">
+            <div class="d-flex flex-column fill-height justify-center alaign-center text-white">
+                <div class="rounded-md backdrop-brightness-75   md:m-10 md:p-10 p-5 ">
+                    <h1 class="text-h4 w-fit font-weight-bold mb-4">
+                        Mory Racing is Live!
+                    </h1>
+                    <p class="text-subtitle md:w-1/3 brightness-90 font-weight-light px-3  mb-4">Enjoy the online
+                        ultimate
+                        racing
+                        experience
+                        now with Mory racing enhanced version
+                    </p>
+                    <v-btn :to="isUser ? '/user/account' : '/login'" color="red" variant="flat" :ripple="false"
+                        class="text-h6 m-2">Play
+                        Now</v-btn>
 
+                </div>
             </div>
-        </div>
-    </v-parallax>
-</transition>
+        </v-parallax>
+    </transition>
     <!-- <v-carousel height="65vh" :hide-delimiters="true" class="p-1">
         <v-carousel-item v-if="items" v-for="(item, i) in items" :key="i" :src="JSON.parse(item.image)[0]" cover>
             <v-img height="100vh">

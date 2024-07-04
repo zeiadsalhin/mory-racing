@@ -191,7 +191,7 @@ watch(user, () => {
                                         </button></NuxtLink>
                                 </div>
                                 <!--Display error message if any-->
-                                <p class="text-red-500" v-if="errMsg">{{ errMsg }}</p>
+                                <p class="bg-red-700 m-3 rounded-sm" v-if="errMsg">{{ errMsg.message }}</p>
 
                                 <!--Submit button-->
                                 <v-btn @click="" type="submit" max-height="44" min-height="44" variant="outlined"
