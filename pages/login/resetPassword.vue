@@ -53,6 +53,7 @@ function toggleVisibility() {
 }
 
 // Update Password
+const snackbarshow = ref(false)
 async function resetpassword() {// password reset for user
     const supabase = useSupabaseClient()
     const user = useSupabaseUser()
@@ -71,18 +72,13 @@ async function resetpassword() {// password reset for user
                 // display success message
                 console.log("updated")
 
-                Swal.fire({
-                    title: 'Success',
-                    icon: 'success',
-                    text: 'Password updated successfully',
-                    toast: true,
-                    timer: 2000,
-                    showConfirmButton: false,
-                }).then(() => {
+                snackbarshow.value = true
+                setTimeout(() => {
                     password.value = ''
                     passwordconfirm.value = ''
                     navigateTo('/account')
-                })
+                }, 2000);
+
             }
         } else {
             errMsg.value = 'Password does not match'
@@ -139,5 +135,7 @@ async function resetpassword() {// password reset for user
             <v-btn type="submit" class="ma-5 flex w-1/3 justify-center" min-height="40"
                 color="grey-darken-2">Reset</v-btn>
         </form>
+        <NotificationBar :snackbar="snackbarshow" icon="mdi-lock-check" message="Password updated successfully!"
+            color="green" :timeout="2000" />
     </div>
 </template>

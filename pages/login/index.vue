@@ -82,6 +82,13 @@ const oneClickLogintoggle = (() => {
     oneClick.value = true
 
 })
+// Password page toggle
+const resetpasswordpage = ref(false);
+const resetPasswordPagetoggle = (() => {
+    resetpasswordpage.value = true
+    oneClick.value = false
+
+})
 
 watch(user, () => {
     if (user.value) {
@@ -108,7 +115,7 @@ watch(user, () => {
                 <v-img src="/b.webp" cover height="100%" class="1 w-full min-h-screen -mt-16">
                     <div
                         class="2 m-3 mt-20 flex flex-col justify-center mx-auto md:min-w-lg md:max-w-lg w-11/12 h-fit rounded-md bg-zinc-950 backdrop-blur-md bg-opacity-75">
-                        <div v-if="oneClick == false" class="login with email">
+                        <div v-if="oneClick == false && resetpasswordpage == false" class="login with email">
                             <div class="logo flex md:w-11/12 mx-auto md:p-5 p-3 justify-center">
                                 <!-- <v-img src="/icon.ico" :class="theme.global.current.value.dark ? '' : 'bg-zinc-800'"
                                 class="m-2 h-20 maax-auto" width="200" alt="logo"></v-img> -->
@@ -185,10 +192,10 @@ watch(user, () => {
                                         OneClick Login
                                     </button>
                                     <!-- </NuxtLink> -->
-                                    <NuxtLink to="/login/requestPasswordReset"><button type="button"
-                                            class="py- opacity-70 w-fit hover:cursor-pointer amx-auto bloack underline">
-                                            Forget Password?
-                                        </button></NuxtLink>
+                                    <button type="button" @click="resetPasswordPagetoggle"
+                                        class="py- opacity-70 w-fit hover:cursor-pointer amx-auto bloack underline">
+                                        Forget Password?
+                                    </button>
                                 </div>
                                 <!--Display error message if any-->
                                 <p class="bg-red-700 m-3 rounded-sm" v-if="errMsg">{{ errMsg.message }}</p>
@@ -211,8 +218,11 @@ watch(user, () => {
                                 </div>
                             </form>
                         </div>
-                        <div v-else>
+                        <div v-if="oneClick">
                             <OneClickLogin />
+                        </div>
+                        <div v-if="resetpasswordpage">
+                            <requestPasswordReset />
                         </div>
                     </div>
                 </v-img>

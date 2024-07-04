@@ -51,7 +51,7 @@ async function oneClickLogin() { // login by email link included token
     <div>
         <!--form body-->
         <!--renders on all states-->
-        <div :class="theme.global.current.value.dark ? 'bg-zinc-90a0 text-white' : 'bg-zinc-1a00'"
+        <div
             class="about mta-20 p-1 md:ap-10 am-10 flex-co   l justify-center mx-auto w-11/12 h-fit shadow-inner rounded-md">
             <div class="title flex flex-col p-5">
                 <v-icon class="mx-auto" size="55">mdi-fingerprint</v-icon>
