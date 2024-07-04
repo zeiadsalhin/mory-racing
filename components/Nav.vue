@@ -132,10 +132,12 @@ watch(user, () => {
             <nuxt-link :to="isUser ? '/user/account' : '/admin'">
                 <v-btn v-if="avatar" class="mr-md-2" icon>
                     <v-avatar size="20"><v-img :src="avatar"></v-img></v-avatar>
-                    <!-- <v-icon v-else size="20">mdi-account-outline</v-icon> -->
+                    <v-tooltip activator="parent" location="start">My account</v-tooltip>
                 </v-btn>
+                <v-btn v-else v-if="isUser" icon><v-icon size="30">mdi-account-outline</v-icon>
+                    <v-tooltip activator="parent" location="start">My account</v-tooltip></v-btn>
                 <v-btn v-if="!isUser" variant="tonal">Login</v-btn>
-                <v-icon v-else size="20" icon>mdi-account-outline</v-icon>
+
             </nuxt-link>
             <!-- <nuxt-link to="/products"><v-btn class="mr-md-2" icon>
                     <v-icon size="20">mdi-store-outline</v-icon>
