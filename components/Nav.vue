@@ -84,9 +84,10 @@ async function getavatar() {
     const supabase = useSupabaseClient()
     try {
         const { data, error } = await supabase.auth.getSession(); // get session status from local cookies
-        avatar.value = data?.session ? data.session.user.identities[0].identity_data.avatar_url : null
+        avatar.value = data?.session?.user ? (data.session.user.identities[0] ? data.session.user.identities[0].identity_data.avatar_url : data.session.user.identities[1].identity_data.avatar_url) : null
         // displayname.value = data.session.user.identities[0].identity_data.first_name || data.session.user.identities[0].identity_data.full_name // Display registered username
         // get account type
+        // console.log(data.session);
 
     } catch (error) {
         // console.log(error);
@@ -131,12 +132,12 @@ watch(user, () => {
             </nuxt-link> -->
             <nuxt-link :to="isUser ? '/user/account' : '/admin'">
                 <v-btn v-if="avatar" class="mr-md-2" icon>
-                    <v-avatar size="20"><v-img :src="avatar"></v-img></v-avatar>
-                    <v-tooltip activator="parent" location="start">My account</v-tooltip>
+                    <v-avatar size="30"><v-img :src="avatar ? avatar : null"></v-img></v-avatar>
+                    <v-tooltip v-if="avatar" activator="parent" location="start">My account</v-tooltip>
                 </v-btn>
-                <v-btn v-else v-if="isUser" icon><v-icon size="30">mdi-account-outline</v-icon>
-                    <v-tooltip activator="parent" location="start">My account</v-tooltip></v-btn>
-                <v-btn v-if="!isUser" variant="tonal">Login</v-btn>
+                <v-btn v-else v-if="isUser" class="mr-md-2" icon><v-icon size="30">mdi-account-outline</v-icon>
+                </v-btn>
+                <v-btn v-if="!isUser" class="mr-2" variant="tonal">Login</v-btn>
 
             </nuxt-link>
             <!-- <nuxt-link to="/products"><v-btn class="mr-md-2" icon>
@@ -157,9 +158,9 @@ watch(user, () => {
                 <v-icon size="20">mdi-brightness-7</v-icon>
             </v-btn> -->
 
-            <v-btn :to="isUser ? '/user/account' : '/login'" @click="" variant="text" :ripple="false" color="#E53935"
-                class="mr-3 text-h6 font-weight-medium">
-                <v-icon size="25" class="mr-1">mdi-play</v-icon>
+            <v-btn :to="isUser ? '' : '/login'" @click="" variant="text" :ripple="false" color="#E53935"
+                class="mr-2 text-h6 font-weight-medium">
+                <v-icon size="25" class="mr-">mdi-play</v-icon>
                 <p class="text-white">Play</p>
             </v-btn>
             <v-spacer />

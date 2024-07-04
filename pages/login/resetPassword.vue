@@ -76,7 +76,7 @@ async function resetpassword() {// password reset for user
                 setTimeout(() => {
                     password.value = ''
                     passwordconfirm.value = ''
-                    navigateTo('/account')
+                    navigateTo('/user/account')
                 }, 2000);
 
             }

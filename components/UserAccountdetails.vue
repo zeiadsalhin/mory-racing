@@ -13,6 +13,7 @@ const email = ref()
 const isDisablede = ref(true);
 const signin = ref()
 const auth = ref()
+const subsState = ref(true)
 onMounted(() => {
     FetchUserData()
 })
@@ -61,35 +62,46 @@ async function LogOut() {
 </script>
 <template>
     <div>
-        <div v-if="dataview" class="mt- md:w-11/12  px-4 py-10 md:p-5 text-centera mx-auto"
+
+        <div v-if="dataview" class="mt- md:w-11/12  px-4 m:py-10 md:p-5 text-center mx-auto"
             :class="theme.global.current.value.dark ? 'text-white bg-zinc-950' : 'text-zinc-800 bg-zinc-100'">
-            <div class="welcome flex justify-start space-x-3 md:p-2">
-                <div class="w-1.5 h-10 bg-zinc-950 rounded-sm"></div>
-                <div class="icon p-"><v-img v-if="avatar" :src="avatar" width="40" class="mx-auto rounded-full"></v-img>
-                    <v-icon v-else size="40">mdi-account</v-icon>
-                </div>
-                <p class="font-semibold text-2xl text-left my-auto">Welcome, {{ displayname }}</p>
+            <div class="back mb-5a py-5 flex justify-start">
+                <v-btn to="/" :ripple="false" min-width="50" max-width="50" class="w-fit"><v-icon
+                        size="30">mdi-chevron-left</v-icon></v-btn>
             </div>
-
-            <div class="logout flex mt-10"><v-btn @click="LogOut" min-height="40" min-width="120" class="m-5"
-                    color="grey-darken-3"><v-icon class="mx-1">mdi-exit-to-app</v-icon>Logout</v-btn>
-                <p class="my-auto">Last login: {{ signin }}</p>
-            </div>
-            <div class="bg-zinc-800 w-1/3 ml-3 h-0.5 mt-10 mb-5"></div>
-            <div class="details flex-col text-left md:px-10 px-5">
-                <div class="Accountdetails flex space-x-3 py-2 mb-3">
-                    <div class="w-1 h-10 bg-zinc-800 rounded-sm"></div>
-                    <h1 class="text-2xl font-semibold my-auto">Account Details:</h1>
+            <div class="1 md:px-10 w-fit">
+                <div class="welcome md:flex md:justify-start md:space-x-3 md:p-2">
+                    <div class="w-1.5 h-10 bg-zinc-950 rounded-sm"></div>
+                    <div class="icon p-"><v-img v-if="avatar" :src="avatar" width="40"
+                            class="mx-auto rounded-full"></v-img>
+                        <v-icon v-else size="40">mdi-account</v-icon>
+                    </div>
+                    <p class="font-semibold text-2xl md:text-left text-center p-2 my-auto">Welcome, {{ displayname }} !
+                    </p>
+                    <v-btn readonly variant="tonal" :color="subsState ? 'green' : 'grey-darken-1'"
+                        class="flex justify-center text-center align-middle items-center mx-auto my-auto w-fit">
+                        {{ subsState ? 'Subscribed' : 'Free' }}</v-btn>
                 </div>
-                <!--phone input and suffix-->
+
+                <div class="logout flex mt-10"><v-btn @click="LogOut" min-height="40" min-width="120" class="m-5"
+                        color="grey-darken-3"><v-icon class="mx-1">mdi-exit-to-app</v-icon>Logout</v-btn>
+                    <p class="my-auto">Last login: {{ signin }}</p>
+                </div>
+                <div class="bg-zinc-800 w-1/3 ml-3 h-0.5 mt-10 mb-5"></div>
+                <div class="details flex-col text-left md:px-10 px-5">
+                    <div class="Accountdetails flex space-x-3 py-2 mb-3">
+                        <div class="w-1 h-10 bg-zinc-800 rounded-sm"></div>
+                        <h1 class="text-2xl font-semibold my-auto">Account Details:</h1>
+                    </div>
+                    <!--phone input and suffix-->
 
 
-                <div class="email">
-                    <form @submit.prevent="UpdateEmail" class="w-full flex py-2 space-x-2">
-                        <label for="id" class="text-xl my-auto">Email:</label>
-                        <input :disabled="isDisablede" v-model="email" class="text-lg p-0.5 my-auto w-full"
-                            :class="isDisablede ? '' : 'outline outline-1 outline-zinc-500'" required></input>
-                        <!-- <v-btn v-if="isDisablede" @click="isDisablede = false" max-height="30" class="w-4"
+                    <div class="email">
+                        <form @submit.prevent="UpdateEmail" class="w-full flex py-2 space-x-2">
+                            <label for="id" class="text-xl my-auto">Email:</label>
+                            <input :disabled="isDisablede" v-model="email" class="text-lg p-0.5 my-auto w-full"
+                                :class="isDisablede ? '' : 'outline outline-1 outline-zinc-500'" required></input>
+                            <!-- <v-btn v-if="isDisablede" @click="isDisablede = false" max-height="30" class="w-4"
                             variant="tonal"><v-icon>{{
                                 isDisablede ?
                                     'mdi-pencil' : '' }}</v-icon></v-btn>
@@ -105,31 +117,56 @@ async function LogOut() {
                                         '' : 'mdi-close' }}</v-icon>
                             </v-btn>
                         </div> -->
-                    </form>
-                </div>
-                <div class="authenticationstate w-full py-2 space-x-5">
-                    <label class="text-xl">Account:</label>
-                    <label for="auth" class="text-lg my-auto">{{ auth }}</label>
-                    <template v-if="auth == 'authenticated'">
-                        <v-icon class="mb-1" size="25">mdi-check-decagram</v-icon>
-                    </template>
-                </div>
-                <div class="Accountdetails flex space-x-3 py-2 mb-3 mt-5">
-                    <div class="w-1 h-10 bg-zinc-800 rounded-sm"></div>
-                    <h1 class="text-2xl font-semibold my-auto">Subscription Details:</h1>
-                </div>
-                <p class="text-xl">Subscription Status:</p>
-                <p class="text-xl py-2">Subscription Start:</p>
-                <p class="text-xl py-">Subscription End:</p>
+                        </form>
+                    </div>
+                    <div class="authenticationstate w-full py-2 space-x-5">
+                        <label class="text-xl">Account:</label>
+                        <label for="auth" class="text-lg my-auto">{{ auth }}</label>
+                        <template v-if="auth == 'authenticated'">
+                            <v-icon class="mb-1" size="25">mdi-check-decagram</v-icon>
+                        </template>
+                    </div>
+                    <div class="Accountdetails flex space-x-3 py-2 mb-3 mt-5">
+                        <div class="w-1 h-10 bg-zinc-800 rounded-sm"></div>
+                        <h1 class="text-2xl font-semibold my-auto">Subscription Details:</h1>
+                    </div>
+                    <div class="statues">
+                        <p class="text-xl inline-block">Subscription Status: </p> <v-btn readonly variant="text"
+                            :color="subsState ? 'green' : 'grey-darken-1'"
+                            class="flex justify-center text-center align-middle items-center mx-auto my-auto w-fit">
+                            {{ subsState ? 'Subscribed' : 'Free' }}</v-btn>
+                    </div>
 
-                <v-btn @click="" type="button" max-height="40" min-height="40" variant="text" color="red"
-                    :ripple="false" :elevation="1" class="m-5a w-fit">
-                    Cancel
-                </v-btn>
-                <v-btn @click="" type="button" max-height="40" min-height="40" variant="tonal" color="green"
-                    :ripple="false" :elevation="0" class="m-5 w-fit">
-                    Renew
-                </v-btn>
+                    <div class="start">
+                        <p class="text-xl py-2">Subscription Start:</p> <v-btn readonly variant="text"
+                            :color="subsState ? 'green' : 'grey-darken-1'"
+                            class="flex justify-center text-center align-middle items-center mx-auto my-auto w-fit">
+                            {{ subsState ? '2024' : 'not available' }}</v-btn>
+                    </div>
+                    <div class="end">
+                        <p class="text-xl py-2">Subscription End:</p>
+                        <v-btn readonly variant="text" :color="subsState ? 'red-darken-4' : 'grey-darken-1'"
+                            class="flex justify-center text-center align-middle items-center mx-auto my-auto w-fit">
+                            {{ subsState ? '2024' : 'not available' }}</v-btn>
+                    </div>
+
+                    <div v-if="subsState" class="manage">
+                        <v-btn @click="subsState = false" type="button" max-height="40" min-height="40" variant="text"
+                            color="red" :ripple="false" :elevation="1" class="m-5a w-fit">
+                            Cancel
+                        </v-btn>
+                        <v-btn @click="" type="button" max-height="40" min-height="40" variant="tonal" color="green"
+                            :ripple="false" :elevation="0" class="m-5 w-fit">
+                            Renew
+                        </v-btn>
+                    </div>
+                    <div v-else class="subscribe">
+                        <v-btn @click="subsState = true" type="button" max-height="40" min-height="40"
+                            variant="outlined" color="green" :elevation="0" class="m-5 w-fit">
+                            <v-icon class="mr-1">mdi-plus-thick</v-icon> Subscribe now
+                        </v-btn>
+                    </div>
+                </div>
             </div>
             <div class="bg-zinc-800 w-1/3 mx-auto h-0.5 mt-10 mb-5"></div>
             <!-- <ResetPassword /> -->
