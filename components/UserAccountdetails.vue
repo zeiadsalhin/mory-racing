@@ -17,6 +17,7 @@ const subsState = ref(false)
 const apiState = ref(true)
 onMounted(() => {
     FetchUserData()
+    fetchUserSubs()
 })
 //fetch user data
 async function FetchUserData() {
@@ -58,6 +59,25 @@ async function LogOut() {
         // })
     } catch (error) {
         console.log(error)
+    }
+}
+
+// fetch subscriptions
+async function fetchUserSubs() {
+    const user = useSupabaseUser();
+    const UserId = user.value.id
+    try {
+        const { data, error } = await supabase
+            .from('user_orders')
+            .select()
+            .eq('uid', UserId);
+        const Subscription = data[0]
+
+        if (Subscription.order_details.id && Subscription.order_details.status == 'COMPLETED') {
+            subsState.value = true
+        }
+    } catch (error) {
+        console.log(error);
     }
 }
 </script>
@@ -158,7 +178,7 @@ async function LogOut() {
                                 </v-btn>
                             </div>
                             <div v-else class="subscribe">
-                                <v-btn @click="subsState = true" type="button" max-height="40" min-height="40"
+                                <v-btn to="#plans" @click="" type="button" max-height="40" min-height="40"
                                     variant="outlined" color="green" :elevation="0" class="m-5 w-fit">
                                     <v-icon class="mr-1">mdi-plus-thick</v-icon> Subscribe now
                                 </v-btn>
@@ -202,6 +222,7 @@ async function LogOut() {
                 <!-- <UserAccountAddresses /> -->
             </div>
             <div class="bg-zinc-800 w-1/3 mx-auto h-0.5 mt-10 mb-5"></div>
+            <SubsPlans />
             <div class="bg-zinc-800 w-1/3 mx-auto h-0.5 mt-10 mb-5"></div>
         </div>
     </div>

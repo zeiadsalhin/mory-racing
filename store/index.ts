@@ -73,7 +73,7 @@ export const useMainStore = defineStore('main', {
       await this.saveCartToSupabase();
     },
 
-    async saveCartToSupabase() {
+    async saveOrder() {
       const supabase = useSupabaseClient();
       const user = useSupabaseUser();
 
@@ -91,26 +91,25 @@ export const useMainStore = defineStore('main', {
 
       // const supabaseUserId = data.session.user.id;
 
-      const cartItems = this.items.map(item => ({
-        product: { // Include the entire product object
-          id: item.product.id,
-          name: item.product.name,
-          image: item.product.image,
-          price: item.product.price,
-        },
-        quantity: item.quantity,
-        selectedOption: item.selectedOption,
-        discountedPrice: item.discountedPrice,
+      const order = this.orders
+          // name: item.order.name,
+          // image: item.order.image,
+          // price: item.order.price,
+
+        // quantity: item.quantity,
+        // selectedOption: item.selectedOption,
+        // discountedPrice: item.discountedPrice,
         
-      }));
+     
 
       try {
         const { data, error } = await supabase
-          .from('users_cart')
-          .upsert({
+          .from('user_orders')
+          .insert({
             uid: (userdata.session.user.id),
-            cart_items: cartItems,
-          }, { onConflict: ['uid'] });
+            order_details: order,
+            order_status: order.status,
+          })
 
         if (error) {
           console.error('Error saving cart items:', error.message);
@@ -159,5 +158,9 @@ export const useMainStore = defineStore('main', {
     setCheckoutPrice(checkoutPrice) {
       this.checkoutPrice = checkoutPrice;
     },
+    async captureOrder(orderData) {
+      this.orders = orderData
+      await this.saveOrder();
+    }
   },
 });
