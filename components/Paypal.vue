@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="w-60 mx-auto" ref="paypalContainer"></div>
+        <div class="w-[18rem] height-[20rem] mx-auto" ref="paypalContainer"></div>
         <button v-if="perror" class="text-red-500">Error: {{ perror }}</button>
     </div>
 </template>
@@ -43,7 +43,7 @@ const setLoaded = () => {
             const order = await actions.order.capture();
             paidFor.value = true;
             // console.log(order);
-            mainStore.captureOrder(order)
+            mainStore.captureOrder(order, props.plan)
             router.push(`/user/orders/invoice&${order.id}`)
             // mainStore.clearCart();
         },

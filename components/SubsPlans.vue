@@ -35,21 +35,22 @@ const SelectPlan = (planv, planp, pland) => {
 
 <template>
     <div>
-        <div v-if="showPlans" class="plans">
+        <div v-if="showPlans" id="plans" class="plans">
             <p class="font-semibold text-2xl md:text-left text-center p-2 my-auto">Available Plans:
             </p>
 
-            <div id="plans" class="h-full md:flex justify-center md:space-x-5 w-full m-10 mx-auto"
+            <div class="h-full md:flex justify-center md:space-x-5 w-full m-10 mx-auto text-white"
                 :class="{ 'dark': popular }">
                 <div
-                    class="relative flex flex-col h-full mb-8 md:max-w-[20rem] p-6 rounded-2xl bg-zinc-900 shadow shadow-slate-950/5">
+                    class="relative flex flex-col h-full mb-8 md:max-w-[20rem] p-6 rounded-2xl bg-zinc-900 border border-slate-200 shadow shadow-slate-950/5">
                     <div v-if="popular.daily" class="absolute top-0 right-0 mr-6 -mt-4">
                         <div
                             class="inline-flex items-center text-xs font-semibold py-1.5 px-3 bg-red-600 text-white rounded-full shadow-sm shadow-slate-950/5">
                             Most Popular</div>
                     </div>
                     <div class="mb-5">
-                        <div class="text-slate-900 dark:text-slate-200 font-semibold mb-1">{{ planName.daily }}</div>
+                        <div class="text-slate-900 dark:text-slate-200 font-semibold text-xl mb-1">{{ planName.daily }}
+                        </div>
                         <div class="inline-flex items-baseline mb-2">
                             <span class="text-slate-900 dark:text-slate-200 font-bold text-3xl">$</span>
                             <span class="text-slate-900 dark:text-slate-200 font-bold text-4xl">{{ price.daily }}</span>
@@ -78,14 +79,15 @@ const SelectPlan = (planv, planp, pland) => {
                 </div>
 
                 <div
-                    class="relative flex flex-col h-full mb-8 md:max-w-[20rem]  p-6 rounded-2xl bg-zinc-900 shadow shadow-slate-950/5">
+                    class="relative flex flex-col h-full mb-8 md:max-w-[20rem]  p-6 rounded-2xl bg-zinc-900 border border-slate-200 shadow shadow-slate-950/5">
                     <div v-if="popular.monthly" class="absolute top-0 right-0 mr-6 -mt-4">
                         <div
                             class="inline-flex items-center text-xs font-semibold py-1.5 px-3 bg-red-600 text-white rounded-full shadow-sm shadow-slate-950/5">
                             Most Popular</div>
                     </div>
                     <div class="mb-5">
-                        <div class="text-slate-900 dark:text-slate-200 font-semibold mb-1">{{ planName.monthly }}</div>
+                        <div class="text-slate-900 dark:text-slate-200 font-semibold text-xl mb-1">{{ planName.monthly
+                            }}</div>
                         <div class="inline-flex items-baseline mb-2">
                             <span class="text-slate-900 dark:text-slate-200 font-bold text-3xl">$</span>
                             <span class="text-slate-900 dark:text-slate-200 font-bold text-4xl">{{ price.monthly
@@ -115,10 +117,14 @@ const SelectPlan = (planv, planp, pland) => {
                 </div>
             </div>
         </div>
-        <div v-else class="payments md:w-1/2 space-y-5 mx-auto">
-            <p class="underline font-semibold p-5">Selected: {{ planSelected }}, ${{ planPrice }}
-                {{ planSelected === 'Mory Racing Lite' ? '/day' : '/month' }}</p>
-            <p class="font-semibold text-2xl md:text-left text- p-2 my-auto">Select Payment Method:
+        <div v-else class="payments md:w-1/2 space-y-5 min-h-[30rem] mx-auto">
+            <p class="font-semibold p-4 my-auto"><v-icon>mdi-check-circle</v-icon>Selected:
+            <p class="underline inline-block">{{ planSelected }}</p>, ${{ planPrice }}
+            {{ planSelected === 'Mory Racing Lite' ? '/day' : '/month' }}</p>
+            <p class="font-semibold text-2xl md:text-left text- p-2 my-auto"><v-icon
+                    class="m-2">mdi-credit-card-outline</v-icon>Select
+                Payment
+                Method:
             </p>
             <div class="paymentmethods p-5">
                 <Paypal :plan="planSelected" :price="planPrice" :description="planDesc" />

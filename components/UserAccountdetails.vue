@@ -13,7 +13,8 @@ const email = ref()
 const isDisablede = ref(true);
 const signin = ref()
 const auth = ref()
-const subsState = ref(false)
+const subsState = ref(null);
+const subsStateLoad = ref(true)
 const apiState = ref(true)
 onMounted(() => {
     FetchUserData()
@@ -63,6 +64,9 @@ async function LogOut() {
 }
 
 // fetch subscriptions
+const subsPeroid = ref();
+const subscriptionStart = ref('');
+const subscriptionEnd = ref('');
 async function fetchUserSubs() {
     const user = useSupabaseUser();
     const UserId = user.value.id
@@ -72,14 +76,31 @@ async function fetchUserSubs() {
             .select()
             .eq('uid', UserId);
         const Subscription = data[0]
-
-        if (Subscription.order_details.id && Subscription.order_details.status == 'COMPLETED') {
+        //
+        const { data: subsdata, error2 } = await supabase
+            .from('user_subscriptions')
+            .select()
+            .eq('uid', UserId)
+            .eq('status', 'Active');
+        const subsPeroid = subsdata[0]
+        subscriptionStart.value = subsPeroid ? new Date(subsdata[0].subscription_start).toISOString().split('T')[0] : ''
+        subscriptionEnd.value = subsPeroid ? new Date(subsdata[0].subscription_end).toISOString().split('T')[0] : ''
+        // console.log();
+        if (Subscription.order_details.id && Subscription.order_details.status == 'COMPLETED' && new Date() <= new Date(subscriptionEnd.value) && subsPeroid.status == 'Active') {
             subsState.value = true
+            subsStateLoad.value = false
+        } else {
+            subsState.value = false
+            subsStateLoad.value = false
         }
     } catch (error) {
         console.log(error);
     }
 }
+
+
+
+
 </script>
 <template>
     <div>
@@ -101,9 +122,12 @@ async function fetchUserSubs() {
                         <p class="font-semibold text-2xl md:text-left text-center p-2 my-auto">Welcome, {{ displayname
                             }} !
                         </p>
-                        <v-btn readonly variant="tonal" :color="subsState ? 'green' : 'grey-darken-1'"
+                        <v-btn v-if="!subsStateLoad" readonly variant="tonal"
+                            :color="subsState ? 'green' : 'grey-darken-1'"
                             class="flex justify-center text-center align-middle items-center mx-auto my-auto w-fit">
                             {{ subsState ? 'Subscribed' : 'Free' }}</v-btn>
+
+                        <v-skeleton-loader v-else type="chip" class="mx-auto my-auto w-32"></v-skeleton-loader>
                     </div>
 
                     <div class="logout flex mt-10  w-fit text-center mx-auto"><v-btn @click="LogOut" min-height="40"
@@ -141,7 +165,7 @@ async function fetchUserSubs() {
                             </div>
                         </div>
 
-                        <v-card color="black" :elevation="6" variant="elevated"
+                        <v-card v-if="!subsStateLoad" color="black" :elevation="6" variant="elevated"
                             class="details right min-w-fit flex-col text-left pa-5">
                             <div class="Subscriptiondetails flex space-x-3 py-3 mb-3">
                                 <v-icon class="my-auto" size="30">mdi-cloud-sync</v-icon>
@@ -158,21 +182,21 @@ async function fetchUserSubs() {
                                 <p class="text-xl py-2">Start Date:</p> <v-btn readonly variant="text"
                                     :color="subsState ? 'green' : 'grey-darken-1'"
                                     class="flex justify-center text-h6 text-center mx-auto my-auto w-fit">
-                                    {{ subsState ? '2024-01-01' : 'not available' }}</v-btn>
+                                    {{ subsState ? subscriptionStart : 'not available' }}</v-btn>
                             </div>
                             <div v-if="subsState" class="end px-5">
                                 <p class="text-xl py-2">End Date:</p>
                                 <v-btn readonly variant="text" :color="subsState ? 'red-darken-4' : 'grey-darken-1'"
                                     class="flex justify-center text-h6 text-center mx-auto my-auto w-fit">
-                                    {{ subsState ? '2024-01-01' : 'not available' }}</v-btn>
+                                    {{ subsState ? subscriptionEnd : 'not available' }}</v-btn>
                             </div>
 
-                            <div v-if="subsState" class="manage px-5">
-                                <v-btn @click="subsState = false" type="button" max-height="40" min-height="40"
-                                    variant="text" color="red" :ripple="false" :elevation="1" class="m-5a w-fit">
-                                    Cancel
-                                </v-btn>
-                                <v-btn @click="" type="button" max-height="40" min-height="40" variant="tonal"
+                            <div v-if="subsState" class="manage w-fit bg-zinc-7a00 flex my-auto px-5">
+                                <!-- <v-btn @click="cancelSubs" type="button" max-height="40" min-height="40" variant="tonal"
+                                    color="red" :ripple="false" :elevation="1" class="m-5a w-fit"> -->
+                                <CancelationDialog class="w-fit my-auto" @fetch-subs="fetchUserSubs" />
+                                <!-- </v-btn> -->
+                                <v-btn @click="" disabled type="button" max-height="40" min-height="40" variant="tonal"
                                     color="green" :ripple="false" :elevation="0" class="m-5 w-fit">
                                     Renew
                                 </v-btn>
@@ -185,6 +209,8 @@ async function fetchUserSubs() {
                             </div>
 
                         </v-card>
+                        <v-skeleton-loader v-else type="image" min-width="300" max-height="150"
+                            class="my-auto"></v-skeleton-loader>
                     </div>
                 </div>
                 <div class="2 md:px-10 w-fit mx-auto my-5 md:min-w-fit">
@@ -222,7 +248,9 @@ async function fetchUserSubs() {
                 <!-- <UserAccountAddresses /> -->
             </div>
             <div class="bg-zinc-800 w-1/3 mx-auto h-0.5 mt-10 mb-5"></div>
-            <SubsPlans />
+            <div v-if="!subsState">
+                <SubsPlans />
+            </div>
             <div class="bg-zinc-800 w-1/3 mx-auto h-0.5 mt-10 mb-5"></div>
         </div>
     </div>

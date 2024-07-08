@@ -6,6 +6,9 @@ const order = computed(() => mainStore.orders);
 function printPage() {
     window.print();
 }
+onBeforeMount(() => {
+    order.value == 0 ? navigateTo('/user/account') : '';
+})
 
 //seo 
 useSeoMeta({
@@ -18,15 +21,16 @@ useSeoMeta({
 })
 </script>
 <template>
-    <div class="mt- flex-col justify-center mx-auto text-center p-1">
-        <v-icon icon="mdi-check-circle" class="m-5" style="font-size: 4rem;"></v-icon>
+    <div v-if="order.length != 0" class="mt- flex-col justify-center mx-auto text-center p-1">
+        <v-icon icon="mdi-check-circle" color="green" class="m-5" style="font-size: 4rem;"></v-icon>
         <h1 class="text-center text-2xl ">Success! Order Completed</h1>
         <div class="order data flex justify-center space-x-2 text-center">
             <h2 class="font-semibold text-lg py-5">Order ID:</h2>
             <p class="my-auto">{{ order.id }}</p>
         </div>
         <p class="my-auto text-xl font-semibold">"{{ order.purchase_units[0].description }}"</p>
-
+        <button @click="printPage()" class="text-lg px-5 rounded-sm bg-zinc-800 mt-5"> <v-icon
+                icon="mdi-printer-outline" class="m-2"></v-icon>Print</button>
         <div class="main md:flex justify-center md:space-x-5 md:m-5 p-5 mt-10 w-fit mx-auto bg-zinc-900">
             <div class="1 p-3 md:p-5 space-y-3 m-2">
                 <h2 class="font-semibold text-2xl text-left text-white">Payer info:</h2>
@@ -79,7 +83,6 @@ useSeoMeta({
                 </div>
             </div>
         </div>
-        <button @click="printPage()" class="text-lg px-5 rounded-sm bg-zinc-800 mb-10"> <v-icon
-                icon="mdi-printer-outline" class="m-2"></v-icon>Print</button>
+
     </div>
 </template>

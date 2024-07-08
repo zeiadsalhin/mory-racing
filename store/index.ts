@@ -7,6 +7,7 @@ export const useMainStore = defineStore('main', {
     discountedPrice: null,
     checkoutPrice:null,
     orders: [],
+    plan:null,
   }),
   getters: {
     totalPrice() {
@@ -92,15 +93,6 @@ export const useMainStore = defineStore('main', {
       // const supabaseUserId = data.session.user.id;
 
       const order = this.orders
-          // name: item.order.name,
-          // image: item.order.image,
-          // price: item.order.price,
-
-        // quantity: item.quantity,
-        // selectedOption: item.selectedOption,
-        // discountedPrice: item.discountedPrice,
-        
-     
 
       try {
         const { data, error } = await supabase
@@ -112,13 +104,34 @@ export const useMainStore = defineStore('main', {
           })
 
         if (error) {
-          console.error('Error saving cart items:', error.message);
+          console.error('Error saving Order:', error.message);
         } else {
-          // Optionally handle success message or clear cart locally
-        }
+        
+          // insert sdate to database
+        const startDate = new Date();
+        const subscriptionStart = ref(startDate);
+        const subscriptionEnd = ref('');
+        const endDate = new Date(startDate);
+        this.plan=='Mory Racing Lite'?endDate.setDate(endDate.getDate() + 1):endDate.setMonth(endDate.getMonth() + 1);
+        subscriptionEnd.value = endDate;
+        const { data, error } = await supabase
+            .from('user_subscriptions')
+            .insert({
+              uid: (userdata.session.user.id),
+              transaction_id: order.id,
+                subscription_start: new Date(),
+                subscription_end: endDate,
+                status: 'Active',
+            })
+            if(error){
+              console.log(error);
+              
+            }
+          }
       } catch (error) {
-        console.error('Error saving cart items:', error.message);
+        console.error('Error saving Order:', error.message);
       }
+
     },
 
     async fetchCartFromSupabase() {
@@ -158,8 +171,11 @@ export const useMainStore = defineStore('main', {
     setCheckoutPrice(checkoutPrice) {
       this.checkoutPrice = checkoutPrice;
     },
-    async captureOrder(orderData) {
+    async captureOrder(orderData, planSelected) {
       this.orders = orderData
+      this.plan=planSelected
+      // console.log(this.plan);
+      
       await this.saveOrder();
     }
   },
