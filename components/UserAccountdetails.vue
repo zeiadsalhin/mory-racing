@@ -105,7 +105,7 @@ async function fetchUserSubs() {
 <template>
     <div>
 
-        <div v-if="dataview" class="md:w-11/12 min-w-fit  apx-4 m:py-10 md:p-5 text-center mx-auto"
+        <div v-if="dataview" class="md:w-11/12 min-w-fit px-4 m:py-10 md:p-5 text-center mx-auto"
             :class="theme.global.current.value.dark ? 'text-white bg-zinc-950' : 'text-zinc-800 bg-zinc-100'">
             <div class="back mb-5a py-5 flex justify-start">
                 <v-btn to="/" :ripple="false" min-width="50" max-width="50" class="w-fit"><v-icon

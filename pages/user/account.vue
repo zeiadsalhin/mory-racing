@@ -41,7 +41,9 @@ useSeoMeta({
 </script>
 <template>
     <div>
-        <UserAccountdetails />
-        <!-- <BottomNav /> -->
+        <div style="background: url('https://mory-racing.netlify.app/icon.ico');background-size: 10%;">
+            <UserAccountdetails />
+            <!-- <BottomNav /> -->
+        </div>
     </div>
 </template>
