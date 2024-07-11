@@ -100,7 +100,7 @@ export const useMainStore = defineStore('main', {
           .insert({
             uid: (userdata.session.user.id),
             order_details: order,
-            order_status: order.status,
+            order_status: order.status?order.status:JSON.stringify(order.invoice.transaction_status),
           })
 
         if (error) {
@@ -118,7 +118,7 @@ export const useMainStore = defineStore('main', {
             .from('user_subscriptions')
             .insert({
               uid: (userdata.session.user.id),
-              transaction_id: order.id,
+              transaction_id: order.id?order.id:JSON.stringify(order.invoice.invoice_id),
                 subscription_start: new Date(),
                 subscription_end: endDate,
                 status: 'Active',
