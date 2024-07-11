@@ -71,7 +71,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       appUrl: 'http://localhost:3000',
-      stripePk: 'pk_test_51PbCugI4aHqhinrA9sCytQD7jIlhqLWBYQireLPZjFtcIEBs5Sgxt46yDomCTz6xHjnloKIJIveFxbgmNjZ9f0la00uY4BdDvv',
+      stripePk: 'pk_test_51P5QowHndLqqnsBRVpdsfH0OUfKfxl5fNWNlK8wtaSgbKOmbWzYeFZxX9KKFcDAtAX1J4gDcjjh1Eq8R58ZjkI2W00QPdoeNpJ',
     },
   }
 })
