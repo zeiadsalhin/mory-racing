@@ -1,9 +1,9 @@
 <script setup>
 useSeoMeta({
-    title: 'Mory Racing - Restore access',
-    ogTitle: 'Mory Racing - Restore Access',
-    description: 'Welcome to Mory racing game',
-    ogDescription: 'Welcome to Mory racing game',
+    title: 'Chattok Gaming - Restore access',
+    ogTitle: 'Chattok Gaming - Restore Access',
+    description: 'Welcome to Chattok Gaming',
+    ogDescription: 'Welcome to Chattok Gaming',
     ogImage: 'https://mory-racing.netlify.app/mainicon.ico',
     twitterCard: 'summary_large_image',
 })
@@ -45,16 +45,16 @@ async function resetpassword() { // reset password by email link included token
                 <div class="reform mt-3">
                     <p class="text-md md:text-xl">To request a password reset link please</p>
                     <label class="p-3 text-md md:text-xl block ">Enter your Email:</label>
-                    <v-text-field variant="outlined" placeholder="Enter your registered Email" id="reemail"
-                        v-model="email" class=" placeholder:text-sm rounded-md mx-auto w-11/12 " type="email"
-                        required />
+                    <v-text-field variant="outlined" color="#00f2ea" placeholder="Enter your registered Email"
+                        id="reemail" v-model="email" class=" placeholder:text-sm rounded-md mx-auto w-11/12 "
+                        type="email" required />
                 </div>
                 <!--Display error message if any-->
                 <p class="text-red-500" v-if="errMsg">{{ errMsg }}</p>
                 <!--Confirmation message-->
                 <div class="">
                     <p class="text-green-600 mb-2" v-if="succMsg">{{ succMsg }}</p>
-                    <v-btn @click="" type="submit" class="px-5 py-2 mx-auto rounded-md">
+                    <v-btn @click="" type="submit" color="#ff0050" class="px-5 py-2 mx-auto rounded-md">
                         {{ succMsg ? 'Sent ' : 'Send login link' }}
                     </v-btn>
                 </div>

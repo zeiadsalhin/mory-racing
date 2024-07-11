@@ -105,59 +105,55 @@ async function fetchUserSubs() {
 <template>
     <div>
 
-        <div v-if="dataview" class="md:w-11/12 min-w-fit  px-4 m:py-10 md:p-5 text-center mx-auto"
+        <div v-if="dataview" class="md:w-11/12 min-w-fit  apx-4 m:py-10 md:p-5 text-center mx-auto"
             :class="theme.global.current.value.dark ? 'text-white bg-zinc-950' : 'text-zinc-800 bg-zinc-100'">
             <div class="back mb-5a py-5 flex justify-start">
                 <v-btn to="/" :ripple="false" min-width="50" max-width="50" class="w-fit"><v-icon
                         size="30">mdi-chevron-left</v-icon></v-btn>
             </div>
-            <div class="main lg:flex flex-row justify-around">
+            <div class="main lg:flex flex-row justify-around text-sm">
                 <div class="1 md:px-10 w-fit md:w-8/12  ">
                     <div class="welcome md:flex md:justify-start md:space-x-3 md:p-2 w-fit text-center mx-auto">
                         <div class="w-1.5 h-10 bg-zinc-950 my-auto rounded-sm"></div>
                         <div class="icon p-"><v-img v-if="avatar" :src="avatar" width="60"
-                                class="mx-auto rounded-full"></v-img>
+                                class="mx-auto rounded-full outline outline-2 outline-[#00f2ea]"></v-img>
                             <v-icon v-else size="40">mdi-account</v-icon>
                         </div>
-                        <p class="font-semibold text-2xl md:text-left text-center p-2 my-auto">Welcome, {{ displayname
+                        <p class="font-semibold text-md md:text-left text-center p-2 my-auto">Welcome, {{ displayname
                             }} !
                         </p>
                         <v-btn v-if="!subsStateLoad" readonly variant="tonal"
                             :color="subsState ? 'green' : 'grey-darken-1'"
-                            class="flex justify-center text-center align-middle items-center mx-auto my-auto w-fit">
+                            class="flex justify-center text-subtitle text-center align-middle items-center mx-auto my-auto w-fit">
                             {{ subsState ? 'Subscribed' : 'Free' }}</v-btn>
 
                         <v-skeleton-loader v-else type="chip" class="mx-auto my-auto w-32"></v-skeleton-loader>
                     </div>
 
                     <div class="logout flex mt-10  w-fit text-center mx-auto"><v-btn @click="LogOut" min-height="40"
-                            min-width="120" class="m-5" color="grey-darken-3"><v-icon
+                            min-width="120" class="m-5" color="#ff0050"><v-icon
                                 class="mx-1">mdi-exit-to-app</v-icon>Logout</v-btn>
-                        <p class="my-auto">Last login: {{ signin }}</p>
+                        <p class="my-auto max-w-[12rem]">Last login: {{ signin }}</p>
                     </div>
                     <div class="bg-zinc-800 w-9/12 mx-auto h-0.5 mt-10 mb-5"></div>
-                    <div class="details md:flex flex-row text-left md:px-10 px-5">
-                        <div class="Accountdetails left flex-col text-left md:p-5 p-3">
+                    <div
+                        class="details md:flex flex-row text-left md:px-10 px-5 space-y-5 md:space-y-0 md:space-x-5 space-x-0">
+                        <div class="Accountdetails bg-[#000] left flex-col text-left md:p-5 p-5">
 
-                            <div class="Accountdetails flex space-x-3 py-3 mb-3">
+                            <div class="Accountdetails flex space-x-3 py-3 mb-3 text-xs">
                                 <v-icon class="my-auto" size="30">mdi-account-details</v-icon>
-                                <h1 class="text-2xl font-semibold my-auto">Account Details:</h1>
+                                <h1 class="text-lg font-semibold my-auto">Account Details:</h1>
                             </div>
                             <!--phone input and suffix-->
 
-                            <div class="data px-3">
-                                <div class="email">
-                                    <form @submit.prevent="UpdateEmail" class="w-full flex py-2 space-x-2">
-                                        <label for="id" class="text-xl my-auto">Email:</label>
-                                        <input :disabled="isDisablede" v-model="email"
-                                            class="text-lg p-0.5 my-auto w-full"
-                                            :class="isDisablede ? '' : 'outline outline-1 outline-zinc-500'"
-                                            required></input>
-                                    </form>
+                            <div class="data ml-2">
+                                <div class="email flex w-full mb-2">
+                                    <p for="id" class="text-md my-auto">Email:</p>
+                                    <p class="text-md ml-2 my-auto w-fit">{{ email }}</p>
                                 </div>
-                                <div class="authenticationstate w-full py-2 space-x-5">
-                                    <label class="text-xl">Account:</label>
-                                    <label for="auth" class="text-lg my-auto">{{ auth }}</label>
+                                <div class="authenticationstate w-full py-2 md:aspace-x-5">
+                                    <label class="text-md">Account:</label>
+                                    <label for="auth" class="text-md my-auto p-3">{{ auth }}</label>
                                     <template v-if="auth == 'authenticated'">
                                         <v-icon class="mb-1" size="25">mdi-check-decagram</v-icon>
                                     </template>
@@ -165,15 +161,15 @@ async function fetchUserSubs() {
                             </div>
                         </div>
 
-                        <v-card v-if="!subsStateLoad" color="black" :elevation="6" variant="elevated"
-                            class="details right min-w-fit flex-col text-left pa-5">
+                        <v-card v-if="!subsStateLoad" color="#ff0050" :elevation="6" variant="outlined"
+                            class="details right min-w-fit flex-col text-left pa-5 text-h7">
                             <div class="Subscriptiondetails flex space-x-3 py-3 mb-3">
                                 <v-icon class="my-auto" size="30">mdi-cloud-sync</v-icon>
-                                <h1 class="text-2xl font-semibold my-auto">Subscription Details:</h1>
+                                <h1 class="text-lg font-semibold my-auto">Subscription Details:</h1>
                             </div>
                             <div class="statues px-5">
-                                <p class="text-xl inline-block">Subscription Status: </p> <v-btn readonly variant="text"
-                                    :color="subsState ? 'green' : 'grey-darken-1'"
+                                <p class="text-lg inline-block text-white">Subscription Status: </p> <v-btn readonly
+                                    variant="text" :color="subsState ? 'green' : 'grey-darken-1'"
                                     class="flex justify-center text-center align-middle items-center mx-auto my-auto w-fit">
                                     {{ subsState ? 'Subscribed' : 'Free' }}</v-btn>
                             </div>
@@ -213,29 +209,29 @@ async function fetchUserSubs() {
                             class="my-auto"></v-skeleton-loader>
                     </div>
                 </div>
-                <div class="2 md:px-10 w-fit mx-auto my-5 md:min-w-fit">
-                    <v-card class="states min-w-fit flex-col text-left pa-5">
+                <div class="2 md:px-10 w-fit mx-auto my-5 md:min-w-fit text-sm">
+                    <v-card class="states min-w-fit flex-col text-left pa-5 " color="#00f2ea" variant="tonal">
                         <div class="title flex mb-3">
                             <v-icon class="mx-2" size="30">mdi-pulse</v-icon>
-                            <h1 class="text-2xl font-semibold ">Status:</h1>
+                            <h1 class="text-lg font-semibold ">Status:</h1>
                         </div>
                         <div class="content w-fit">
                             <div class="game flex px-5">
-                                <h1 class="text-xl py-2">Game Server: </h1>
+                                <h1 class="text-md py-2 text-white">Game Server: </h1>
                                 <v-btn readonly variant="text" :color="apiState ? 'green-darken-1' : 'red-darken-1'"
-                                    class="flex justify-center text-h6 text-center mx-auto my-auto w-fit">
+                                    class="flex justify-center text-sm text-center mx-auto my-auto w-fit">
                                     {{ apiState ? 'Operational' : 'down' }}</v-btn>
                             </div>
                             <div class="api flex px-5">
-                                <h1 class="text-xl py-2">API: </h1>
+                                <h1 class="text-md py-2 text-white">API: </h1>
                                 <v-btn readonly variant="text" :color="apiState ? 'green-darken-1' : 'red-darken-1'"
-                                    class="flex justify-center text-h6 text-center mx-auto my-auto w-fit">
+                                    class="flex justify-center text-sm text-center mx-auto my-auto w-fit">
                                     {{ apiState ? 'Operational' : 'down' }}</v-btn>
                             </div>
                             <div class="run flex px-5">
-                                <h1 class="text-xl py-2">Game Access: </h1>
-                                <v-btn readonly variant="text" :color="!apiState ? 'green-darken-1' : 'red-darken-1'"
-                                    class="flex justify-center text-h6 text-center mx-auto my-auto w-fit"
+                                <h1 class="text-md py-2 text-white">Game Access: </h1>
+                                <v-btn readonly variant="text" :color="!apiState ? 'green-darken-1' : '#ff0050'"
+                                    class="flex justify-center text-sm text-center mx-auto my-auto w-fit"
                                     :prepend-icon="!apiState ? '' : 'mdi-alert'">
                                     {{ !apiState ? 'Operational' : 'down' }}</v-btn>
                             </div>

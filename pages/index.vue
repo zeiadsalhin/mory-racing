@@ -20,22 +20,22 @@ import Shapes from '~/components/Shapes.vue';
 //     }
 // }
 useSeoMeta({
-    title: 'Mory Racing',
-    ogTitle: 'Mory Racing',
-    description: 'Welcome to Mory racing game',
-    ogDescription: 'Welcome to Mory racing game',
+    title: 'Chattok Gaming',
+    ogTitle: 'Chattok Gaming',
+    description: 'Welcome to Chattok Gaming',
+    ogDescription: 'Welcome to Chattok Gaming',
     ogImage: 'https://mory-racing.netlify.app/mainicon.ico',
     twitterCard: 'summary_large_image',
 })
 </script>
 <template>
     <div>
-        <Shapes/>
+        <Shapes />
         <Carousel />
-        <GameFeatures/>
+        <GameFeatures />
         <GameLaunchDialog />
-        <AboutGame/>
-        <Footer/>
+        <AboutGame />
+        <Footer />
 
         <!-- <Ads />
        

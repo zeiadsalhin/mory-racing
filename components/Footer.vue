@@ -5,18 +5,20 @@ const date = new Date().getFullYear()
 </script>
 <template>
     <div class="custom-card transition ease-in-out duration-300 w-full h-5 mb-"
-        :class="theme.global.current.value.dark ? 'bg-red-800 ' : 'bg-[#444]'">
+        :class="theme.global.current.value.dark ? 'bg-[#ff0050] ' : 'bg-[#444]'">
     </div>
     <div class="custom-card transition ease-in-out duration-300 w-full h-5"
-        :class="theme.global.current.value.dark ? 'bg-[#222] ' : 'bg-[#444]'">
+        :class="theme.global.current.value.dark ? 'bg-[#00f2ea] ' : 'bg-[#444]'">
     </div>
     <div class="custom-card transition ease-in-out duration-300 w-full h-5"
-        :class="theme.global.current.value.dark ? 'bg-[#111] ' : 'bg-[#444]'">
+        :class="theme.global.current.value.dark ? 'bg-[#000] ' : 'bg-[#444]'">
     </div>
     <v-card :tile="true" :flat="true" class="pa-md-10 pa-5 text-center" color="black">
         <div class="main md:flex flex-row justify-around p-5">
             <div class="1 p-1">
-                <v-img src="/mainicon.ico" class="p-5 mx-auto" width="250" alt="logo"></v-img>
+                <v-lazy>
+                    <v-img src="/icon.ico" class="p-5 mx-auto" width="250" alt="logo"></v-img>
+                </v-lazy>
             </div>
             <div class="2 p-5 flex flex-col">
                 <p class="text-lg text-left font-weight-bold mt-5 mb-2">Mory Racing</p>
@@ -48,8 +50,8 @@ const date = new Date().getFullYear()
         <!-- <br /> -->
         <!-- <div class="h-0.5 w-1/3 mx-auto bg-zinc-800 rounded-full mt-5 mb-5"></div> -->
         <div class=" flex w-fit mt-5">
-            <p class="opacity-80">©{{ date }} - Mory Racing</p>
-            <v-img src="/public/racing_flag.webp" class="mx-2" width="40"></v-img>
+            <p class="opacity-80">©{{ date }} - Chattok Gaming</p>
+            <!-- <v-img src="/public/racing_flag.webp" class="mx-2" width="40"></v-img> -->
         </div>
     </v-card>
 

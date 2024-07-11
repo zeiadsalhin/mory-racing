@@ -15,7 +15,7 @@ const features = [
         <transition name="fade" mode="out-in">
             <v-img id="features" src="/features.webp" cover
                 class="features md:w-9/12 mx-auto md:p-20 p-5 mt-10 rounded-sm bg-opacity-80 backdrop-brightness-75  bg-red-800"
-                gradient="to top, rgba(0, 0, 0, 0.5), rgba(153, 27, 27, 0)),linear-gradient(to top, rgba(153, 27, 27, 0.9), rgba(0, 0, 0, 0.4)),linear-gradient(to top, rgba(153, 27, 27, 0.5), rgba(0, 0, 0, 0.4)">
+                gradient="to top, rgba(0, 0, 0, 0.5), rgba(255, 0, 80, 0)),linear-gradient(to top, rgba(255, 0, 80, 0.9), rgba(0, 0, 0, 0.4)),linear-gradient(to top, rgba(255, 0, 80, 0.5), rgba(0, 0, 0, 0.4)">
                 <div class="md:text-3xl text-2xl font-medium flex">
                     <v-icon class="mx-3 my-auto" size="35">mdi-gamepad-circle</v-icon>
                     <h1 class="my-auto font-semibold"> Key Features</h1>

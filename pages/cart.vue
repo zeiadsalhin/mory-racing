@@ -5,10 +5,10 @@
 </template>
 <script setup>
 useSeoMeta({
-    title: 'Mory Racing - Cart',
-    ogTitle: 'Mory Racing - Cart',
-    description: 'Welcome to Mory racing game',
-    ogDescription: 'Welcome to Mory racing game',
+    title: 'Chattok Gaming - Cart',
+    ogTitle: 'Chattok Gaming - Cart',
+    description: 'Welcome to Chattok Gaming',
+    ogDescription: 'Welcome to Chattok Gaming',
     ogImage: 'https://mory-racing.netlify.app/mainicon.ico',
     twitterCard: 'summary_large_image',
 })

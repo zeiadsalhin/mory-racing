@@ -5,8 +5,8 @@
                 <div class="flex justify-center items-center h-full">
                     <div class="flex flex-col items-center">
                         <div>
-                            <img src="/b.webp" alt="MoryLogo" srcset="/mainicon.ico"
-                                class="w-48 animate-pulse text-zinc-300">
+                            <img src="/b.webp" alt="MoryLogo" srcset="/icon.ico"
+                                class="w-48 animate-pulsea text-zinc-300">
                         </div>
                         <!-- <div class="mt-4">
                             <h1 class="text-3xl font-semibold p-2 text-center animate-pulse text-zinc-300">Mory Racing

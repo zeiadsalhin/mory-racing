@@ -1,9 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400;500;600;700;800;900;1000&display=swap');
-body {
- 
-    font-family: 'Roboto', sans-serif;
-    /* background-color: #f0f0f0; */
-    /* background-color: transparent; */
-    /* background-color: black; */
-  
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400;500;600;700;800;900;1000&display=swap'); */
+
+ body{
+  * {
+    font-family: 'Horizon', 'sans-serif';
+    
+  }
+ }
+  @font-face {
+    font-family: Horizon;
+    src: url(fonts/Horizon.otf);
+    font-weight: 'heavy';
+    font-style: 'heavy';
   }

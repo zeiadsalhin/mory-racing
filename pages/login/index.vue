@@ -1,9 +1,9 @@
 <script setup>
 useSeoMeta({
-    title: 'Mory Racing - Login to your account',
-    ogTitle: 'Mory Racing - Login to your account',
-    description: 'Welcome to Mory racing game',
-    ogDescription: 'Welcome to Mory racing game',
+    title: 'Chattok Gaming - Login to your account',
+    ogTitle: 'Chattok Gaming - Login to your account',
+    description: 'Welcome to Chattok Gaming ',
+    ogDescription: 'Welcome to Chattok Gaming ',
     ogImage: 'https://mory-racing.netlify.app/mainicon.ico',
     twitterCard: 'summary_large_image',
 })
@@ -121,18 +121,18 @@ watch(user, () => {
                                 class="m-2 h-20 maax-auto" width="200" alt="logo"></v-img> -->
                                 <div class="1 mx-auto">
                                     <h1 class="flex text-3xl md:text-5xl my-auto text-center font-semibold p-2">
-                                        <p class="text-red-600 mr-1">Mory</p>
+                                        <p class="text-[#ff0050] mr-1">Mory</p>
                                         <p class="my-auto">Racing</p>
                                         <div class="w-10 my-auto">
-                                            <div class="w-11/12 h-1 bg-red-600 m-1"></div>
-                                            <div class="w-9/12 h-1 bg-slate-600 m-1"></div>
-                                            <div class="w-2/3  h-1 bg-slate-300 m-1"></div>
+                                            <div class="w-11/12 h-1 bg-[#ff0050] m-1"></div>
+                                            <div class="w-9/12 h-1 bg-[#00f2ea] m-1"></div>
+                                            <div class="w-2/3  h-1 bg-[#000] m-1"></div>
                                         </div>
                                     </h1>
                                 </div>
                                 <div class="2 my-auto">
                                     <h1
-                                        class="text-xl md:text-xl my-auto text-center mx-auto font-medium  bg-red-800 rounded-sm opacity-80 px-2 py-1">
+                                        class="text-xl md:text-xl my-auto text-center mx-auto font-medium  bg-[#ff0050] rounded-sm opacity-80 px-2 py-1">
                                         Log in
                                     </h1>
                                 </div>
@@ -170,7 +170,7 @@ watch(user, () => {
                                 @submit.prevent="signIn">
                                 <!--input fields-->
                                 <v-text-field variant="outlined" label="Email*" id="email" v-model="email"
-                                    :color="theme.global.current.value.dark ? 'red-lighten-1' : 'surface'"
+                                    :color="theme.global.current.value.dark ? '#ff0050' : '#ff0050'"
                                     :bg-color="theme.global.current.value.dark ? '' : 'grey-lighten-4'"
                                     spellcheck="false" type="email" @focus="isFocused2 = true"
                                     @blur="isFocused2 = false" required />
@@ -179,7 +179,7 @@ watch(user, () => {
                                     <v-text-field variant="outlined" label="Password*" id="password" v-model="password"
                                         :append-inner-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                                         @click:append-inner="toggleVisibility"
-                                        :color="theme.global.current.value.dark ? 'red-lighten-1' : 'surface'"
+                                        :color="theme.global.current.value.dark ? '#ff0050' : '#ff0050'"
                                         :bg-color="theme.global.current.value.dark ? '' : 'grey-lighten-4'"
                                         class="my-auto p-" :type="showPassword ? 'text' : 'password'" minlength="6"
                                         @focus="isFocused4 = true" @blur="isFocused4 = false" required></v-text-field>
@@ -202,17 +202,17 @@ watch(user, () => {
 
                                 <!--Submit button-->
                                 <v-btn @click="" type="submit" max-height="44" min-height="44" variant="outlined"
-                                    color="red" :prepend-icon="authenticating ? '' : 'mdi-play'" :ripple="false"
+                                    color="#ff0050" :prepend-icon="authenticating ? '' : 'mdi-play'" :ripple="false"
                                     :elevation="1" class="m-5 w-44 text-lg rounded-md hover:cursor-pointer">
-                                    <v-progress-circular v-if="authenticating" width="2" size="20" color="darken-blue-4"
+                                    <v-progress-circular v-if="authenticating" width="2" size="20" color="#ff0050"
                                         class="m-1" indeterminate></v-progress-circular>
                                     Log in
                                 </v-btn>
                                 <div class="flex w-fit space-x-5 mx-auto mt-">
                                     <!--navigate to login page-->
                                     <p class="mr- my-auto text-center">Don't have an account?</p>
-                                    <NuxtLink to="/signup"><button type="button"
-                                            class="py-2 opacity-70 w-fiat mx-auto block hover:underline">
+                                    <NuxtLink to="/signup" class="text-[#ff0050]"><button type="button"
+                                            class="py-2 opacity-100 w-fiat mx-auto block hover:underline">
                                             Sign Up
                                         </button></NuxtLink>
                                 </div>

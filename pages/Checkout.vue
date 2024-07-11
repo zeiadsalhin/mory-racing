@@ -200,10 +200,10 @@ async function proccess() {
 
 //seo
 useSeoMeta({
-    title: 'Mory Racing - SecureCheckout',
-    ogTitle: 'Mory Racing - SecureCheckout',
-    description: 'Welcome to Mory racing game',
-    ogDescription: 'Welcome to Mory racing game',
+    title: 'Chattok Gaming - SecureCheckout',
+    ogTitle: 'Chattok Gaming - SecureCheckout',
+    description: 'Welcome to Chattok Gaming',
+    ogDescription: 'Welcome to Chattok Gaming',
     ogImage: 'https://mory-racing.netlify.app/mainicon.ico',
     twitterCard: 'summary_large_image',
 })

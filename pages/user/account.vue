@@ -30,10 +30,10 @@ onMounted(async () => {
 });
 //seo 
 useSeoMeta({
-    title: 'Mory Racing - User Account',
-    ogTitle: 'Mory Racing - User Account',
-    description: 'Welcome to Mory racing game',
-    ogDescription: 'Welcome to Mory racing game',
+    title: 'Chattok Gaming - User Account',
+    ogTitle: 'Chattok Gaming - User Account',
+    description: 'Welcome to Chattok Gaming',
+    ogDescription: 'Welcome to Chattok Gaming',
     ogImage: 'https://mory-racing.netlify.app/mainicon.ico',
     twitterCard: 'summary_large_image',
 })

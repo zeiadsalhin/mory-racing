@@ -12,10 +12,10 @@ onBeforeMount(() => {
 
 //seo 
 useSeoMeta({
-    title: `Mory Racing Order Confirmation ${order.value.id}`,
-    ogTitle: `Mory Racing Order Confirmation ${order.value.id}`,
-    description: 'Mory Racing Invoice system',
-    ogDescription: 'Mory Racing Invoice system',
+    title: `Chattok Gaming Order Confirmation ${order.value.id}`,
+    ogTitle: `Chattok Gaming Order Confirmation ${order.value.id}`,
+    description: 'Chattok Gaming Invoice system',
+    ogDescription: 'Chattok Gaming Invoice system',
     ogImage: 'https://mory-racing.netlify.app/mainicon.ico',
     twitterCard: 'summary_large_image',
 })

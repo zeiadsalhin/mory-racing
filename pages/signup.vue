@@ -1,9 +1,9 @@
 <script setup>
 useSeoMeta({
-    title: 'Mory Racing - Register new user',
-    ogTitle: 'Mory Racing - Register new user',
-    description: 'Welcome to Mory racing game',
-    ogDescription: 'Welcome to Mory racing game',
+    title: 'Chattok Gaming - Register new user',
+    ogTitle: 'Chattok Gaming - Register new user',
+    description: 'Welcome to Chattok Gaming',
+    ogDescription: 'Welcome to Chattok Gaming',
     ogImage: 'https://mory-racing.netlify.app/mainicon.ico',
     twitterCard: 'summary_large_image',
 })
@@ -182,7 +182,7 @@ watch(user, () => {
                 <div
                     class="left md:w-2/5 h-fit rounded-md bg-zinc-950 backdrop-blur-md bg-opacity-80 shadow-2xl  shadow-zinc-950 m-2">
                     <h1 class="text-3xl md:text-4xl text-center font-extrabold p-5 mt-2">Sign Up</h1>
-                    <div class="w-1/4 h-1 mt-5 rounded-xl mx-auto bg-red-800"></div>
+                    <div class="w-1/4 h-1 mt-5 rounded-xl mx-auto bg-[#ff0050]"></div>
 
                     <form id="form"
                         class="p-5 text-center text-sm mx-auto justify-center flex-col w-full md:w-9/12 mt-3"
@@ -193,7 +193,8 @@ watch(user, () => {
                                 <!-- <label class=" text-lg md:text-xl text-right p-3">Name<span
                                 class="required text-red-600">*</span></label> -->
                                 <v-text-field variant="outlined" label="Name*" id="name" type="name"
-                                    v-model="displayname" :color="theme.global.current.value.dark ? '' : 'surface'"
+                                    v-model="displayname"
+                                    :color="theme.global.current.value.dark ? '#ff0050' : 'surface'"
                                     :bg-color="theme.global.current.value.dark ? '' : 'grey-lighten-4'"
                                     spellcheck="false" required></v-text-field>
                             </div>
@@ -204,7 +205,7 @@ watch(user, () => {
                                 <!-- <label class="  text-lg md:text-xl  p-3">Email<span
                                 class="required text-red-600">*</span></label> -->
                                 <v-text-field variant="outlined" label="Email*" id="email" v-model="email"
-                                    :color="theme.global.current.value.dark ? '' : 'surface'"
+                                    :color="theme.global.current.value.dark ? '#ff0050' : 'surface'"
                                     :bg-color="theme.global.current.value.dark ? '' : 'grey-lighten-4'"
                                     spellcheck="false" type="email" @focus="isFocused2 = true"
                                     @blur="isFocused2 = false" required />
@@ -221,7 +222,7 @@ watch(user, () => {
                                 <v-text-field variant="outlined" label="Password*" id="password" v-model="password"
                                     :append-inner-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                                     @click:append-inner="toggleVisibility"
-                                    :color="theme.global.current.value.dark ? '' : 'surface'"
+                                    :color="theme.global.current.value.dark ? '#ff0050' : 'surface'"
                                     :bg-color="theme.global.current.value.dark ? '' : 'grey-lighten-4'"
                                     class="my-auto p-" :type="showPassword ? 'text' : 'password'"
                                     @input="validatePassword()" minlength="6" @focus="isFocused4 = true"
@@ -267,7 +268,7 @@ watch(user, () => {
                                 size="20">mdi-alert</v-icon>{{ errMsg
                             }}</p>
                         <!--Submit button-->
-                        <v-btn @click="" type="submit" max-height="44" min-height="44" variant="outlined" color="gray"
+                        <v-btn @click="" type="submit" max-height="44" min-height="44" variant="flat" color="#ff0050"
                             :elevation="1" :prepend-icon="authenticating ? '' : 'mdi-account-plus'" :ripple="false"
                             class=" w-44 text-lg rounded-md hover:cursor-pointer">
                             <v-progress-circular v-if="authenticating" width="2" size="20" color="darken-blue-4"
@@ -294,12 +295,12 @@ watch(user, () => {
 
                         <!--separator-->
                         <div class="flex w-fit space-x-5 mx-auto mt-5">
-                            <div class=" w-1 h-8 my-auto rounded-xl mx-auto bg-gray-800">
+                            <div class=" w-1 h-8 my-auto rounded-xl mx-auto bg-[#00f2ea]">
                             </div>
                             <!--navigate to login page-->
                             <p class="mr-5 my-auto text-center">Already have an account?</p>
                             <NuxtLink to="/login" onclick=""
-                                :class="theme.global.current.value.dark ? 'bg-zinc-800 text-white hover:bg-gray-700' : 'bg-zinc-900 hover:bg-zinc-800 text-white hover:text-gray-50'"
+                                :class="theme.global.current.value.dark ? 'bg-[#000] text-white hover:bg-[#ff0050]' : 'bg-[#000] text-white hover:bg-[#ff0050]'"
                                 class="text-center mx-auto flex w-fit h-fit justify-center m-3 px-6 py-2 rounded-sm hover:cursor-pointer">
                                 login</NuxtLink>
                         </div>

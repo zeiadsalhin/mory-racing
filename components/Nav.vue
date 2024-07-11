@@ -115,7 +115,7 @@ watch(user, () => {
                 <v-toolbar-title class="md:p-4">
                     <!-- <h1 class="font-bold text-xl">Alfa Store</h1> -->
                     <img src="/mainicon.ico" :class="theme.global.current.value.dark ? 'bg-inherit ' : 'bg-'"
-                        class="md:p-" width="150" alt="logo">
+                        class="m-5" width="50" alt="logo">
                 </v-toolbar-title>
             </nuxt-link>
             <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer />
@@ -158,7 +158,7 @@ watch(user, () => {
                 <v-icon size="20">mdi-brightness-7</v-icon>
             </v-btn> -->
 
-            <v-btn :to="isUser ? '' : '/login'" @click="" variant="text" :ripple="false" color="#E53935"
+            <v-btn :to="isUser ? '' : '/login'" @click="" variant="text" :ripple="false" color="#ff0050"
                 class="mr-2 text-h6 font-weight-medium">
                 <v-icon size="25" class="mr-">mdi-play</v-icon>
                 <p class="text-white">Play</p>

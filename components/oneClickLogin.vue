@@ -1,9 +1,9 @@
 <script setup>
 useSeoMeta({
-    title: 'Mory Racing - oneClick Login',
-    ogTitle: 'Mory Racing - oneClick Login',
-    description: 'Welcome to Mory racing game',
-    ogDescription: 'Welcome to Mory racing game',
+    title: 'Chattok Gaming - oneClick Login',
+    ogTitle: 'Chattok Gaming - oneClick Login',
+    description: 'Welcome to Chattok Gaming',
+    ogDescription: 'Welcome to Chattok Gaming',
     ogImage: 'https://mory-racing.netlify.app/mainicon.ico',
     twitterCard: 'summary_large_image',
 })
@@ -64,8 +64,8 @@ async function oneClickLogin() { // login by email link included token
                 <div class="form mt-3">
                     <p class="text-md md:text-xl">To request a passwordless login link please</p>
                     <label class="p-3 text-md md:text-xl block ">Enter your Email:</label>
-                    <v-text-field variant="outlined" placeholder="Enter your registered Email" id="ocemail"
-                        v-model="email" :class="theme.global.current.value.dark ? '' : ''"
+                    <v-text-field variant="outlined" color="#00f2ea" placeholder="Enter your registered Email"
+                        id="ocemail" v-model="email" :class="theme.global.current.value.dark ? '' : ''"
                         class=" placeholder:text-sm rounded-md mx-auto w-11/12 " type="email" required />
                 </div>
                 <!--Display error message if any-->
@@ -73,9 +73,9 @@ async function oneClickLogin() { // login by email link included token
                 <!--Confirmation message-->
                 <div class="">
                     <p class="text-green-600 mb-2" v-if="succMsg">{{ succMsg }}</p>
-                    <v-btn @click="" type="submit"
-                        :class="theme.global.current.value.dark ? 'bg-zinc-950 text-white' : 'bg-zinc-700 text-white'"
-                        class="px-5 py-2 mx-auto rounded-md hover:cursor-pointer hover:bg-zinc-600 hover:text-gray-800 bg-gray-800 ">
+                    <v-btn @click="" type="submit" color="#ff0050"
+                        :class="theme.global.current.value.dark ? 'bg-[#ff0050] text-white' : ' text-white'"
+                        class="px-5 py-2 mx-auto rounded-md hover:cursor-pointer ">
                         {{ succMsg ? 'Wait ' + countdown : 'Send login link' }}
                     </v-btn>
                 </div>

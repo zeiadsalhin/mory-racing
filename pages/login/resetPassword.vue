@@ -1,9 +1,9 @@
 <script setup>
 useSeoMeta({
-    title: 'Mory Racing - Account Recovery',
-    ogTitle: 'Mory Racing - Account Recovery',
-    description: 'Welcome to Mory racing game',
-    ogDescription: 'Welcome to Mory racing game',
+    title: 'Chattok Gaming - Account Recovery',
+    ogTitle: 'Chattok Gaming - Account Recovery',
+    description: 'Welcome to Chattok Gaming',
+    ogDescription: 'Welcome to Chattok Gaming',
     ogImage: 'https://mory-racing.netlify.app/mainicon.ico',
     twitterCard: 'summary_large_image',
 })
