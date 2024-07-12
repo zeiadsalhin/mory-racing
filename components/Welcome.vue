@@ -35,9 +35,9 @@
         <div class="2">
             <v-lazy>
                 <transition name="fade" mode="out-in">
-                    <v-parallax src="/credits.webp" cover height="auto" class="skills md:p-40 p-5"
-                        gradient="to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.0)),linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)">
-                        <div class="md:text-3xl text-2xl font-medium flex">
+                    <v-parallax src="/icon_min.ico" cover height="fit-content" class="skills md:p-40 p-5"
+                        gradient="to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)">
+                        <div class="md:text-3xl text-2xl font-bold flex">
                             <v-icon class="mx-3 my-auto" size="30">mdi-gamepad</v-icon>
                             <h1 class="my-auto"> Why Choose ChatTok Gaming?</h1>
                         </div>

@@ -116,11 +116,12 @@ watch(user, () => {
                     <div
                         class="2 m-3 mt-20 flex flex-col justify-center mx-auto md:min-w-lg md:max-w-lg w-11/12 h-fit rounded-md bg-zinc-950 backdrop-blur-md bg-opacity-75">
                         <div v-if="oneClick == false && resetpasswordpage == false" class="login with email">
-                            <div class="logo flex md:w-11/12 mx-auto md:p-5 p-3 justify-center">
+                            <div class="logo md:aflex md:w-11/12 mx-auto md:p-5 p-3 justify-center">
                                 <!-- <v-img src="/icon.ico" :class="theme.global.current.value.dark ? '' : 'bg-zinc-800'"
                                 class="m-2 h-20 maax-auto" width="200" alt="logo"></v-img> -->
                                 <div class="1 mx-auto">
-                                    <h1 class="flex text-3xl md:text-3xl my-auto text-center font-semibold p-2">
+                                    <h1
+                                        class="flex justify-center text-3xl md:text-3xl  my-auto text-center font-semibold p-2">
                                         <p class="text-[#ff0050] mr-1">Chattok</p>
                                         <p class="my-auto">Gaming</p>
                                         <div class="w-10 my-auto">
@@ -208,9 +209,9 @@ watch(user, () => {
                                         class="m-1" indeterminate></v-progress-circular>
                                     Log in
                                 </v-btn>
-                                <div class="flex w-fit space-x-5 mx-auto mt-">
+                                <div class="flex w-fit md:space-x-5 space-x-3 text-xs mx-auto mt-">
                                     <!--navigate to login page-->
-                                    <p class="mr- my-auto text-center text-sm">Don't have an account?</p>
+                                    <p class="mr- my-auto text-center md:text-sm text-xs">Don't have an account?</p>
                                     <NuxtLink to="/signup" class="text-[#ff0050]"><button type="button"
                                             class="py-2 opacity-100 w-fiat mx-auto block hover:underline">
                                             Sign Up

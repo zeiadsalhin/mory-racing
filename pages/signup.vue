@@ -177,15 +177,15 @@ watch(user, () => {
             <!--Form Body-->
             <!--will only render when no user exist-->
             <div v-if="dataview" :class="theme.global.current.value.dark ? 'bg-zinc-8a00 text-white' : ' text-black'"
-                class="md:flex md:justify-around mx-auto md:space-x-20 h-fit w-full">
+                class="lg:flex lg:justify-around mx-auto lg:space-x-20 h-fit w-full">
 
                 <div
-                    class="left md:w-2/5 h-fit rounded-md bg-zinc-950 backdrop-blur-md bg-opacity-80 shadow-2xl  shadow-zinc-950 m-2">
+                    class="left md:w-2/5 mx-auto min-w-fit h-fit rounded-md bg-zinc-950 backdrop-blur-md bg-opacity-80 shadow-2xl  shadow-zinc-950 m-2">
                     <h1 class="text-3xl md:text-4xl text-center font-extrabold p-5 mt-2">Sign Up</h1>
                     <div class="w-1/4 h-1 mt-5 rounded-xl mx-auto bg-[#ff0050]"></div>
 
                     <form id="form"
-                        class="p-5 text-center text-sm mx-auto justify-center flex-col w-full md:w-9/12 mt-3"
+                        class="p-5 text-center text-sm mx-auto justify-center flex-col w-full lg:w-9/12 mt-3"
                         @submit.prevent="signUpNewUser">
                         <div class="userdata w-full md:grid grid-cols-2  gap-1">
 

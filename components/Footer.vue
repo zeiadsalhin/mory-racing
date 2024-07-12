@@ -13,15 +13,15 @@ const date = new Date().getFullYear()
     <div class="custom-card transition ease-in-out duration-300 w-full h-5"
         :class="theme.global.current.value.dark ? 'bg-[#000] ' : 'bg-[#444]'">
     </div>
-    <v-card :tile="true" :flat="true" class="pa-md-10 pa-5 text-center" color="black">
+    <v-card :tile="true" :flat="true" class="pa-md-10 pa-5 mb-10 text-center" color="black">
         <div class="main md:flex flex-row justify-around p-5">
             <div class="1 p-1">
                 <v-lazy>
-                    <v-img src="/icon.ico" class="p-5 mx-auto" width="250" alt="logo"></v-img>
+                    <v-img src="/icon.ico" class="p-5 mx-auto" width="200" alt="logo"></v-img>
                 </v-lazy>
             </div>
             <div class="2 p-5 flex flex-col">
-                <p class="text-lg text-left font-weight-bold mt-5 mb-2">Mory Racing</p>
+                <p class="text-lg text-left font-weight-bold mt-5 mb-2">Chattok Gaming</p>
                 <nuxtLink :to="b.link" color="surface" class="space-y-2 brightness-75 hover:brightness-100 flex"
                     v-for="(b, i) in navigation" :key="`navigation${i}`" fab depressed>
                     <p>{{ b.name }}</p>
@@ -76,7 +76,7 @@ const date = new Date().getFullYear()
         <br />
         <!-- <br /> -->
         <!-- <div class="h-0.5 w-1/3 mx-auto bg-zinc-800 rounded-full mt-5 mb-5"></div> -->
-        <div class=" flex w-fit mt-5">
+        <div class=" flex w-fit mt-10">
             <p class="opacity-80">©{{ date }} - Chattok Gaming</p>
             <!-- <v-img src="/public/racing_flag.webp" class="mx-2" width="40"></v-img> -->
         </div>

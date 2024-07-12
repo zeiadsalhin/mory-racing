@@ -34,6 +34,7 @@ useSeoMeta({
         <Carousel />
         <Welcome />
         <GameFeatures />
+        <HowitWorks />
         <GameLaunchDialog />
         <AboutGame />
         <Footer />
