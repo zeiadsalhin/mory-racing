@@ -22,8 +22,8 @@ import Shapes from '~/components/Shapes.vue';
 useSeoMeta({
     title: 'Chattok Gaming',
     ogTitle: 'Chattok Gaming',
-    description: 'Welcome to Chattok Gaming',
-    ogDescription: 'Welcome to Chattok Gaming',
+    description: 'Welcome to ChatTok Gaming! Are you ready to elevate your TikTok presence and engage your audience like never before? At ChatTok Gaming, we offer you the chance to use games on your TikTok live shows to captivate your followers and increase your visibility.',
+    ogDescription: 'Welcome to ChatTok Gaming! Are you ready to elevate your TikTok presence and engage your audience like never before? At ChatTok Gaming, we offer you the chance to use games on your TikTok live shows to captivate your followers and increase your visibility.',
     ogImage: 'https://mory-racing.netlify.app/mainicon.ico',
     twitterCard: 'summary_large_image',
 })
