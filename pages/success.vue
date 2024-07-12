@@ -41,7 +41,7 @@ const updatestripeuser = async () => {
     const user = useSupabaseUser()
     try {
         const { data, error } = await supabase.auth.updateUser({
-            options: { data: { stripe_cus_id: resInvoice.value.subs_details.customer_id } }
+            data: { stripe_cus_id: resInvoice.value.subs_details.customer_id }
         })
         if (error) {
             console.log(error);
