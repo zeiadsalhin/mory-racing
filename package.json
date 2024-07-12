@@ -16,6 +16,7 @@
     "@nuxt/image": "^1.7.0",
     "@nuxt/types": "^2.18.1",
     "@nuxtjs/tailwindcss": "latest",
+    "@paypal/sdk-client": "^4.0.194",
     "@pinia/nuxt": "latest",
     "@stripe/stripe-js": "^4.1.0",
     "@unlok-co/nuxt-stripe": "^3.0.0",

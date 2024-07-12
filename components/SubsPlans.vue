@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const yearly: boolean = true;
 const popular = { daily: false, monthly: true }; // or set it to true or false as needed
+const plan_id = { lite: 'price_1PbK2wHndLqqnsBR3EjfRMcx', ultimate: 'no' }
 const planName = { daily: "Mory Racing Lite", monthly: "Mory Racing Ultimate" };
 const planDescription = { daily: "Mory Racing Plan with limited access, 24h of unlimited racing", monthly: "Mory Racing Plan with full access, gameplay, and live racing" };
 const features = {
@@ -20,11 +21,13 @@ const price = { daily: 3, monthly: 70 }
 // selected Plan
 const showPlans = ref(true)
 const planSelected = ref();
+const plan_price_id = ref();
 const planPrice = ref();
 const planDesc = ref();
 
-const SelectPlan = (planv, planp, pland) => {
+const SelectPlan = (planv, plan_id, planp, pland) => {
     planSelected.value = planv
+    plan_price_id.value = plan_id
     planPrice.value = planp
     planDesc.value = pland
     showPlans.value = false
@@ -58,7 +61,7 @@ const SelectPlan = (planv, planp, pland) => {
                             <span class="text-slate-500 font-medium">/day</span>
                         </div>
                         <div class="text-sm text-slate-500 mb-5">{{ planDescription.daily }}</div>
-                        <a @click="SelectPlan(planName.daily, price.daily, planDescription.daily)"
+                        <a @click="SelectPlan(planName.daily, plan_id.lite, price.daily, planDescription.daily)"
                             class="w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-[#ff0050] px-3.5 py-2.5 text-sm font-medium text-white shadow-sm shadow-[#ff0050]/10 hover:bg-[zinc-600] focus:outline-none focus:ring-2 focus:ring-[#00f2ea] transition-colors duration-150"
                             href="#0">
                             Purchase Plan
@@ -96,7 +99,7 @@ const SelectPlan = (planv, planp, pland) => {
                             <span class="text-slate-500 font-medium">/mo</span>
                         </div>
                         <div class="text-sm text-slate-500 mb-5">{{ planDescription.monthly }}</div>
-                        <a @click="SelectPlan(planName.monthly, price.monthly, planDescription.monthly)"
+                        <a @click="SelectPlan(planName.monthly, plan_id.ultimate, price.monthly, planDescription.monthly)"
                             class="w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-[#ff0050] px-3.5 py-2.5 text-sm font-medium text-white shadow-sm shadow-[#ff0050]/10 hover:bg-[zinc-600] focus:outline-none focus:ring-2 focus:ring-[#00f2ea] transition-colors duration-150"
                             href="#1">
                             Purchase Plan
@@ -130,11 +133,14 @@ const SelectPlan = (planv, planp, pland) => {
                 Payment
                 Method:
             </p>
-            <div class="paymentmethods p-5">
+            <div class="paymentmethods p-1">
+                <p class="onetime p-1">One-Time purchase</p>
                 <Paypal :plan="planSelected" :price="planPrice" :description="planDesc" />
-                <Stripe />
+                <p class="onetime p-3">or Subscribing</p>
+                <Paypal-subs :plan="planSelected" :price="planPrice" :description="planDesc" />
+                <Stripe :plan="plan_price_id" />
             </div>
-            <v-btn @click="showPlans = true">Back</v-btn>
+            <v-btn @click="showPlans = true" class="ma-4 mt-10">Back</v-btn>
         </v-card>
     </div>
 </template>

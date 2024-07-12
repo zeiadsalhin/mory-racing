@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="w-[18rem] height-[20rem] mx-auto" ref="paypalContainer"></div>
-        <button v-if="perror" class="text-red-500">Error: {{ perror }}</button>
+        <p v-if="perror" class="text-red-500 font-sans text-sm">Error: {{ perror }}</p>
     </div>
 </template>
 
@@ -22,7 +22,7 @@ const loaded = ref(false);
 const paidFor = ref(false);
 const perror = ref(null)
 
-
+// One payment
 const setLoaded = () => {
     loaded.value = true;
     paypal.Buttons({
@@ -47,9 +47,9 @@ const setLoaded = () => {
             router.push(`/user/orders/invoice&${order.id}`)
             // mainStore.clearCart();
         },
-        onError: err => {
+        onError: async (err) => {
             console.log(err);
-            perror.value = err
+            perror.value = err.message
         },
         style: {
             tagline: false,
@@ -67,5 +67,4 @@ const paypalContainer = ref(null); // Define a ref for the PayPal container
 onMounted(() => {
     setLoaded()
 });
-
 </script>

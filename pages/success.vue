@@ -26,7 +26,7 @@ onMounted(async () => {
         });
         const res = await response.json();
         console.log(res);
-        mainStore.captureOrder(res)
+        // mainStore.captureOrder(res)
     }
 
     setTimeout(() => {

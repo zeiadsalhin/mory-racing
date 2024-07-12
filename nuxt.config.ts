@@ -10,6 +10,9 @@ export default defineNuxtConfig({
   meta: [
     { hid: 'description', name: 'description', content: 'Welcome to Chattok Gaming' }
   ],
+  script: [
+    { src: `https://www.paypal.com/sdk/js?client-id=${process.env.PAYPAL}&vault=true&intent=subscription`, body: true }
+  ],
     },
     // pageTransition: { name: 'page', mode: 'out-in' }
   },
@@ -41,6 +44,8 @@ export default defineNuxtConfig({
   },
   paypal: {
     clientId: import.meta.env.PAYPAL,
+    vault: true,
+    // intent: 'subscription',
   },
   supabase: {
     // Options
