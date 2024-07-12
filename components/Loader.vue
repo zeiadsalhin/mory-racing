@@ -5,7 +5,7 @@
                 <div class="flex justify-center items-center h-full">
                     <div class="flex flex-col items-center">
                         <div>
-                            <img src="/b.webp" alt="MoryLogo" srcset="/icon.ico"
+                            <img src="/icon_min.ico" alt="MoryLogo" srcset="/icon_min.ico"
                                 class="w-48 animate-pulsea text-zinc-300">
                         </div>
                         <!-- <div class="mt-4">

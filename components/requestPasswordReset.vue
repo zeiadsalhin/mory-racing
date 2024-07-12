@@ -43,8 +43,8 @@ async function resetpassword() { // reset password by email link included token
             <form id="form" class="space-y-5 p-5 h-96 text-center mx-auto justify-center flex-col"
                 @submit.prevent="resetpassword">
                 <div class="reform mt-3">
-                    <p class="text-md md:text-xl">To request a password reset link please</p>
-                    <label class="p-3 text-md md:text-xl block ">Enter your Email:</label>
+                    <p class="text-md md:text-md">To request a password reset link please</p>
+                    <label class="p-3 text-md md:text-lg block ">Enter your Email:</label>
                     <v-text-field variant="outlined" color="#00f2ea" placeholder="Enter your registered Email"
                         id="reemail" v-model="email" class=" placeholder:text-sm rounded-md mx-auto w-11/12 "
                         type="email" required />

@@ -2,7 +2,7 @@
   <div>
     <NuxtLayout>
       <v-app>
-        <!-- <Loader /> -->
+        <Loader />
         <Nav />
         <v-main>
           <NuxtPage />

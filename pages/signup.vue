@@ -239,7 +239,7 @@ watch(user, () => {
                             </div>
 
                             <ul>Must Include</ul>
-                            <div class="main flex p-1">
+                            <div class="main flex p-1 text-xs">
                                 <div class="1">
                                     <li :class="capital ? 'text-green-500' : 'text-red-600'"><v-icon size="20">{{
                                         capital ?
@@ -298,7 +298,7 @@ watch(user, () => {
                             <div class=" w-1 h-8 my-auto rounded-xl mx-auto bg-[#00f2ea]">
                             </div>
                             <!--navigate to login page-->
-                            <p class="mr-5 my-auto text-center">Already have an account?</p>
+                            <p class="mr-5 my-auto text-center text-xs">Already have an account?</p>
                             <NuxtLink to="/login" onclick=""
                                 :class="theme.global.current.value.dark ? 'bg-[#000] text-white hover:bg-[#ff0050]' : 'bg-[#000] text-white hover:bg-[#ff0050]'"
                                 class="text-center mx-auto flex w-fit h-fit justify-center m-3 px-6 py-2 rounded-sm hover:cursor-pointer">
@@ -317,8 +317,8 @@ watch(user, () => {
                     <v-img src="/racing_flag.webp"
                         :class="theme.global.current.value.dark ? 'bg-inherit ' : 'bg-zinc-700'"
                         class="p-5 mx-auto mb- bg-transparent " width="100" alt="logo"></v-img>
-                    <h1 class="ml-2 mr-2 my-auto md:text-6xl text-xl font-black  text-red-600">Mory </h1>
-                    <h1 class="md:text-5xl text-xl my-auto font-semibold"> Racing</h1>
+                    <h1 class="ml-2 mr-2 my-auto md:text-6xl text-xl font-black  text-red-600">Chattok </h1>
+                    <h1 class="md:text-5xl text-xl my-auto font-semibold"> Gaming</h1>
 
                 </div>
                 <!--End of body-->

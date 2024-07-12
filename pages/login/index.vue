@@ -120,9 +120,9 @@ watch(user, () => {
                                 <!-- <v-img src="/icon.ico" :class="theme.global.current.value.dark ? '' : 'bg-zinc-800'"
                                 class="m-2 h-20 maax-auto" width="200" alt="logo"></v-img> -->
                                 <div class="1 mx-auto">
-                                    <h1 class="flex text-3xl md:text-5xl my-auto text-center font-semibold p-2">
-                                        <p class="text-[#ff0050] mr-1">Mory</p>
-                                        <p class="my-auto">Racing</p>
+                                    <h1 class="flex text-3xl md:text-3xl my-auto text-center font-semibold p-2">
+                                        <p class="text-[#ff0050] mr-1">Chattok</p>
+                                        <p class="my-auto">Gaming</p>
                                         <div class="w-10 my-auto">
                                             <div class="w-11/12 h-1 bg-[#ff0050] m-1"></div>
                                             <div class="w-9/12 h-1 bg-[#00f2ea] m-1"></div>
@@ -132,14 +132,14 @@ watch(user, () => {
                                 </div>
                                 <div class="2 my-auto">
                                     <h1
-                                        class="text-xl md:text-xl my-auto text-center mx-auto font-medium  bg-[#ff0050] rounded-sm opacity-80 px-2 py-1">
+                                        class="text-sm md:text-sm my-auto text-center mx-auto font-medium  bg-[#ff0050] rounded-sm opacity-80 px-2 py-1">
                                         Log in
                                     </h1>
                                 </div>
                             </div>
                             <!--Confirmation-->
                             <p v-if="emailconfirm"
-                                class="w-10/12 mt-5 mx-auto shadow-md rounded-sm bg-green-600 text-white my-2 p-3">
+                                class="w-10/12 mt-5 mx-auto text-xs shadow-md rounded-sm bg-green-600 text-white my-2 p-3">
                                 <v-icon class="mx-1" size="25">mdi-email-check</v-icon>A
                                 confirmation
                                 sent to Your
@@ -188,12 +188,12 @@ watch(user, () => {
                                 <div class="options flex justify-between mx-auto w-full text-sm mt-">
                                     <!-- <NuxtLink to="#oneClickLogin"> -->
                                     <button type="button" @click="oneClickLogintoggle"
-                                        class="py- opacity-70 w-fit hover:cursor-pointer amx-auto bloack underline">
+                                        class="py- text-xs opacity-70 w-fit hover:cursor-pointer amx-auto bloack underline">
                                         OneClick Login
                                     </button>
                                     <!-- </NuxtLink> -->
                                     <button type="button" @click="resetPasswordPagetoggle"
-                                        class="py- opacity-70 w-fit hover:cursor-pointer amx-auto bloack underline">
+                                        class="py- text-xs opacity-70 w-fit hover:cursor-pointer amx-auto bloack underline">
                                         Forget Password?
                                     </button>
                                 </div>
@@ -210,7 +210,7 @@ watch(user, () => {
                                 </v-btn>
                                 <div class="flex w-fit space-x-5 mx-auto mt-">
                                     <!--navigate to login page-->
-                                    <p class="mr- my-auto text-center">Don't have an account?</p>
+                                    <p class="mr- my-auto text-center text-sm">Don't have an account?</p>
                                     <NuxtLink to="/signup" class="text-[#ff0050]"><button type="button"
                                             class="py-2 opacity-100 w-fiat mx-auto block hover:underline">
                                             Sign Up

@@ -119,7 +119,7 @@ async function fetchUserSubs() {
                                 class="mx-auto rounded-full outline outline-2 outline-[#00f2ea]"></v-img>
                             <v-icon v-else size="40">mdi-account</v-icon>
                         </div>
-                        <p class="font-semibold text-md md:text-left text-center p-2 my-auto">Welcome, {{ displayname
+                        <p class="font-semibold text-lg md:text-left text-center p-2 my-auto">Welcome, {{ displayname
                             }} !
                         </p>
                         <v-btn v-if="!subsStateLoad" readonly variant="tonal"
@@ -133,7 +133,7 @@ async function fetchUserSubs() {
                     <div class="logout flex mt-10  w-fit text-center mx-auto"><v-btn @click="LogOut" min-height="40"
                             min-width="120" class="m-5" color="#ff0050"><v-icon
                                 class="mx-1">mdi-exit-to-app</v-icon>Logout</v-btn>
-                        <p class="my-auto max-w-[12rem]">Last login: {{ signin }}</p>
+                        <p class="my-auto text-xs md:text-md max-w-[12rem]">Last login: {{ signin }}</p>
                     </div>
                     <div class="bg-zinc-800 w-9/12 mx-auto h-0.5 mt-10 mb-5"></div>
                     <div
@@ -153,9 +153,9 @@ async function fetchUserSubs() {
                                 </div>
                                 <div class="authenticationstate w-full py-2 md:aspace-x-5">
                                     <label class="text-md">Account:</label>
-                                    <label for="auth" class="text-md my-auto p-3">{{ auth }}</label>
+                                    <label for="auth" class="text-md my-auto p-2">{{ auth }}</label>
                                     <template v-if="auth == 'authenticated'">
-                                        <v-icon class="mb-1" size="25">mdi-check-decagram</v-icon>
+                                        <v-icon class="mb-1" size="22">mdi-check-decagram</v-icon>
                                     </template>
                                 </div>
                             </div>
@@ -168,7 +168,7 @@ async function fetchUserSubs() {
                                 <h1 class="text-lg font-semibold my-auto">Subscription Details:</h1>
                             </div>
                             <div class="statues px-5">
-                                <p class="text-lg inline-block text-white">Subscription Status: </p> <v-btn readonly
+                                <p class="text-md inline-block text-white">Subscription Status: </p> <v-btn readonly
                                     variant="text" :color="subsState ? 'green' : 'grey-darken-1'"
                                     class="flex justify-center text-center align-middle items-center mx-auto my-auto w-fit">
                                     {{ subsState ? 'Subscribed' : 'Free' }}</v-btn>
