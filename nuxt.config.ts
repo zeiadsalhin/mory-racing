@@ -8,7 +8,8 @@ export default defineNuxtConfig({
       title: 'Chattok Gaming',
       link: [{ rel: 'icon', type: 'image/x-icon', href: "/mainicon.ico" }],
   meta: [
-    { hid: 'description', name: 'description', content: 'Welcome to ChatTok Gaming! Are you ready to elevate your TikTok presence and engage your audience like never before? At ChatTok Gaming, we offer you the chance to use games on your TikTok live shows to captivate your followers and increase your visibility.' }
+    { hid: 'description', name: 'description', content: 'Welcome to ChatTok Gaming! Are you ready to elevate your TikTok presence and engage your audience like never before? At ChatTok Gaming, we offer you the chance to use games on your TikTok live shows to captivate your followers and increase your visibility.' },
+    { hid: 'og:image', property: 'og:image', content: 'https://mory-racing.netlify.app/mainicon.ico' }
   ],
   script: [
     { src: `https://www.paypal.com/sdk/js?client-id=${process.env.PAYPAL}&vault=true&intent=subscription`, body: true }
