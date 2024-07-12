@@ -26,11 +26,11 @@ onMounted(async () => {
         });
         const res = await response.json();
         console.log(res);
-        // mainStore.captureOrder(res)
+        mainStore.captureOrder(res)
     }
 
     setTimeout(() => {
-        navigateTo('/stripec')
+        navigateTo('/user/account')
         // console.log(new Date(1720693943).getTime() / 1000
         // );
     }, 5000);
