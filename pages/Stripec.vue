@@ -1,6 +1,7 @@
 <template>
     <div>
         <button @click="checkout">Checkout</button>
+        <button @click="updatestripeuser">UPdateUser</button>
     </div>
 </template>
 

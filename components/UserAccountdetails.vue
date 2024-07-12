@@ -86,7 +86,7 @@ async function fetchUserSubs() {
         subscriptionStart.value = subsPeroid ? new Date(subsdata[0].subscription_start).toISOString().split('T')[0] : ''
         subscriptionEnd.value = subsPeroid ? new Date(subsdata[0].subscription_end).toISOString().split('T')[0] : ''
         // console.log();
-        if (Subscription.order_details.id && Subscription.order_details.status == 'COMPLETED' && new Date() <= new Date(subscriptionEnd.value) && subsPeroid.status == 'Active') {
+        if (Subscription.order_details.id && Subscription.order_details.status == 'COMPLETED' || '"complete"' && new Date() <= new Date(subscriptionEnd.value) && subsPeroid.status == 'Active') {
             subsState.value = true
             subsStateLoad.value = false
         } else {
