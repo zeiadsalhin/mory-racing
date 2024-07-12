@@ -15,8 +15,12 @@ export default defineEventHandler(async (event) => {
             },
         ],
         mode: 'subscription',
-        success_url: `http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `http://localhost:3000/cancel`,
+        success_url: process.env.NODE_ENV === 'production'
+      ? `https://chattokgaming.com/success?session_id={CHECKOUT_SESSION_ID}`
+      : `http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: process.env.NODE_ENV === 'production'
+      ? `https://chattokgaming.com/cancel`
+      :`http://localhost:3000/cancel`,
     });
     console.log('SESSION :' + session);
     return { id: session.id };
