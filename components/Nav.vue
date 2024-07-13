@@ -114,8 +114,8 @@ watch(user, () => {
             <nuxt-link to="/">
                 <v-toolbar-title class="md:p-4">
                     <!-- <h1 class="font-bold text-xl">Alfa Store</h1> -->
-                    <img src="/mainicon.ico" :class="theme.global.current.value.dark ? 'bg-inherit ' : 'bg-'"
-                        class="m-5" width="50" alt="logo">
+                    <v-img src="/mainicon.ico" :class="theme.global.current.value.dark ? 'bg-inherit ' : 'bg-'"
+                        class="m-5" width="50" height="50" alt="logo"></v-img>
                 </v-toolbar-title>
             </nuxt-link>
             <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer /> <v-spacer />
