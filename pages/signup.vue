@@ -29,6 +29,7 @@ const minlength = ref(false)
 const passwordStrength = computed(() => Math.min(password.value.length * 15, 100));
 const showPassword = ref(false)
 const phone = ref('')
+const checkbox = ref(false)
 const dataview = ref()
 const authenticating = ref(false)
 // show password
@@ -232,7 +233,7 @@ watch(user, () => {
 
                         <!--Error Message password-->
                         <p id="errorp" class="hidden text-sm text-red-700">Please Check your Password</p>
-                        <span class="tick-list block text-sm text-left p-2 -mt-2 mb-5 space-y-1">
+                        <span class="tick-list block text-sm text-left p-2 -mt-2 mb- space-y-1">
                             <div class="passwordchecker w-10/12 mx-auto">
                                 <v-progress-linear v-if="password" :model-value="passwordStrength"
                                     :color="passwordStrengthColor" height="5"></v-progress-linear>
@@ -263,6 +264,16 @@ watch(user, () => {
                                 </div>
                             </div>
                         </span>
+                        <!--Terms Of service-->
+                        <v-checkbox v-model="checkbox" required>
+                            <template v-slot:label>
+                                <div class="text-xs flex">
+                                    <p class="my-auto"> I agree to</p>
+                                    <TermsofservicesDialog @click.stop />
+
+                                </div>
+                            </template>
+                        </v-checkbox>
                         <!--Display error message if any-->
                         <p class="bg-red-600 text-white p-1 m-2" v-if="errMsg"><v-icon class="mx-2"
                                 size="20">mdi-alert</v-icon>{{ errMsg

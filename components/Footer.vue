@@ -98,7 +98,7 @@ export default {
                 { icon: "", name: "Home", link: "/" },
                 { icon: "", name: "About", link: "#about" },
                 { icon: "", name: "Offers", link: "#offers" },
-                { icon: "", name: "Terms of service", link: "#" },
+                { icon: "", name: "Terms of service", link: "/TermsOfService" },
                 { icon: "", name: "Contact Us", link: "/Contact-us" },
             ],
         };
