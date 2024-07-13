@@ -134,10 +134,10 @@ const SelectPlan = (planv, plan_id, planp, pland) => {
                 Method:
             </p>
             <div class="paymentmethods p-1">
-                <p class="onetime p-2">One-Time purchase</p>
-                <Paypal :plan="planSelected" :price="planPrice" :description="planDesc" />
-                <p class="onetime p-3 mt-5">or Subscribing</p>
-                <Paypal-subs :plan="planSelected" :price="planPrice" :description="planDesc" />
+                <!-- <p class="onetime p-2">One-Time purchase</p>
+                <Paypal :plan="planSelected" :price="planPrice" :description="planDesc" /> -->
+                <p class="onetime p-3 mt-5">Subscribe:</p>
+                <!-- <Paypal-subs :plan="planSelected" :price="planPrice" :description="planDesc" /> -->
                 <Stripe :plan="plan_price_id" />
             </div>
             <v-btn @click="showPlans = true" class="ma-4 mt-10">Back</v-btn>

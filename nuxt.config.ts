@@ -11,9 +11,9 @@ export default defineNuxtConfig({
     { hid: 'description', name: 'description', content: 'Welcome to ChatTok Gaming! Are you ready to elevate your TikTok presence and engage your audience like never before? At ChatTok Gaming, we offer you the chance to use games on your TikTok live shows to captivate your followers and increase your visibility.' },
     { hid: 'og:image', name: 'og:image', content: 'https://mory-racing.netlify.app/mainicon.ico' }
   ],
-  script: [
-    { src: `https://www.paypal.com/sdk/js?client-id=${process.env.PAYPAL}&vault=true&intent=subscription`, body: true }
-  ],
+  // script: [
+  //   { src: `https://www.paypal.com/sdk/js?client-id=${process.env.PAYPAL}&vault=true&intent=subscription`, body: true }
+  // ],
     },
     // pageTransition: { name: 'page', mode: 'out-in' }
   },
@@ -24,7 +24,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxt/image',
     '@nuxt/content',
-    'nuxt-paypal',
+    // 'nuxt-paypal',
     // "@unlok-co/nuxt-stripe",
     '@pinia/nuxt',
     '@nuxtjs/supabase',
@@ -43,11 +43,11 @@ export default defineNuxtConfig({
       },
     },
   },
-  paypal: {
-    clientId: import.meta.env.PAYPAL,
-    vault: true,
-    // intent: 'subscription',
-  },
+  // paypal: {
+  //   clientId: import.meta.env.PAYPAL,
+  //   vault: true,
+  //   // intent: 'subscription',
+  // },
   supabase: {
     // Options
     redirectOptions: {
