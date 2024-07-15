@@ -141,8 +141,9 @@ async function fetchUserSubs() {
 
 
                     <div
-                        class="1 min-w-fit md:px-10a w-fit md:w-fit align-middle items-center lg:flex flex-row justify-center space-y-5 space-x-0 md:space-x-5 md:space-y-0  p-5">
-                        <div class="details md:flex flex-row text-left space-y-5 md:space-y-0 md:space-x-5 space-x-0">
+                        class="1 min-w-fit md:px-10a w-fit md:w-fit align-middle items-center lg:flex flex-row justify-center space-y-5 space-x-0 md:space-x-5 md:space-y-0  md:p-5">
+                        <div
+                            class="details md:flex flex-row text-left space-y-5 md:space-y-0 md:space-x-5 space-x-0 w-fit mx-auto">
                             <div
                                 class="Accountdetails bg-[#000] left  md:min-h-[22rem] w-full flex-col text-left md:p-5 p-5">
 
@@ -167,7 +168,7 @@ async function fetchUserSubs() {
                                 </div>
                             </div>
                         </div>
-                        <div class="2  md:min-h-[22rem] mx-auto">
+                        <div class="2  md:min-h-[22rem] w-fit mx-auto">
                             <v-card v-if="!subsStateLoad" color="#ff0050" :elevation="6" variant="outlined"
                                 class="details right min-w-fit ma-5 md:min-h-[22rem] flex-col text-left pa-5 text-h7">
                                 <div class="Subscriptiondetails flex space-x-3 py-3 mb-3">
@@ -226,8 +227,7 @@ async function fetchUserSubs() {
                             <div class="games md:flex flex-row space-y-5 md:space-y-0 min-h-fit mx-auto amax-w-fit">
                                 <div class="1 flex flex-col  px-2 mx-auto text-center ">
                                     <div class="statues">
-                                        <v-img cover
-                                            src="https://play-lh.googleusercontent.com/56dVgsf7IdjH1JKPJ73dNKYAfvJK6PGCcsR5-cxW6CMtgS9uCYJklhted1AwnYSKuAk=w526-h296-rw"
+                                        <v-img cover src="/street_racing.webp"
                                             class="min-w-[5rem] min-h-[4rem] max-w-[5rem] max-h-[4rem] mx-auto rounded-sm brightness-125 "
                                             width="130" height="90" alt="street racing">
                                             <p class="bottom-0 absolute text-md font-semibold text-red-800">Street
@@ -242,8 +242,7 @@ async function fetchUserSubs() {
                                 </div>
                                 <div class="2 flex flex-col  px-2 mx-auto text-center ">
                                     <div class="statues">
-                                        <v-img cover
-                                            src="https://t3.ftcdn.net/jpg/06/35/40/64/360_F_635406432_dbKvATUF6eliCYYf4OjlRkbHaM8QukvE.jpg"
+                                        <v-img cover src="/zombie_hunters.webp"
                                             class="min-w-[5rem] min-h-[4rem] max-w-[5rem] max-h-[4rem] mx-auto rounded-sm brightness-125 "
                                             width="130" height="90" alt="street racing">
                                             <p class="bottom-0 absolute text-md font-semibold text-red-800">Zombie
@@ -258,8 +257,7 @@ async function fetchUserSubs() {
                                 </div>
                                 <div class="3 flex flex-col  px-2 mx-auto text-center ">
                                     <div class="statues">
-                                        <v-img cover
-                                            src="https://images.ctfassets.net/rvt0uslu5yqp/3T1Ydo75bY7mALEp8Fnod7/83feba4d770ce6179d0f47c9f132b827/Mentimeter_Applications_Web_HowTo_2021-06.jpeg"
+                                        <v-img cover src="/trivia.webp"
                                             class="min-w-[5rem] min-h-[4rem] max-w-[5rem] max-h-[4rem] mx-auto rounded-sm brightness-125 "
                                             width="130" height="90" alt="street racing">
                                             <p class="bottom-0 absolute text-md font-semibold text-red-800">Trivia
