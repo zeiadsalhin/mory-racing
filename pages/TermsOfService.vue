@@ -2,7 +2,7 @@
     <div>
         <div class="privacypolicy font-sans m-5 max-w-9/12 md:w-9/12 w-11/12 mx-auto">
             <h1 class="text-xl"> Privacy Policy</h1>
-            <p class="font-sans p-1">Effective Date: [Insert Date]</p>
+            <p class="font-sans p-1">Effective Date: 07/14/2024</p>
 
             ChatTok Gaming ("we," "our," "us") is committed to protecting your privacy. This Privacy Policy explains how
             we collect, use, disclose, and safeguard your information when you use our website and services.<br><br>
@@ -85,7 +85,7 @@
         </div>
         <div class="termsofservice font-sans m-5 mt-10 max-w-9/12 md:w-9/12 w-11/12 mx-auto">
             <h1 class="text-xl"> Terms of Service</h1>
-            <p class="font-sans p-1">Effective Date: [Insert Date]</p>
+            <p class="font-sans p-1">Effective Date: 07/14/2024</p>
 
             Welcome to ChatTok Gaming. By using our website and services, you agree to comply with and be bound by the
             following terms and conditions. Please review these Terms of Service carefully before using our
