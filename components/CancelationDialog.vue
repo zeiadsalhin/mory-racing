@@ -90,10 +90,12 @@ const cancelSubscription = async () => {
                     <template v-slot:text>
                         <v-card-title class="text-center"><v-icon class="mx-auto" color="red"
                                 size="40">mdi-alert</v-icon></v-card-title>
-                        <h1 class="text-xl font-weight-bold mb-3 text-center">Your Current Subscription will
+                        <h1 class="text-xl font-weight-bold mb-3 text-center  font-sans font-bold">Your Current
+                            Subscription will
                             be canceled!</h1>
                         <div>
-                            <p v-if="props.successMessage" class="success-message text-red-600">{{ props.successMessage
+                            <p v-if="props.successMessage" class="success-message text-red-600  font-sans font-bold">{{
+                                props.successMessage
                                 }}</p>
                         </div>
                         <v-spacer></v-spacer>

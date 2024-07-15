@@ -125,7 +125,7 @@ const fetchUserSubsStripe = async () => {
                 // console.log('Subscription called successfully.' + JSON.stringify(sss));
 
                 if (result.subscription?.data[0]?.status == 'active') {
-                    subsPlan.value = sss ? sss.items.data[0].metadata?.name ? sss.items.data[0].metadata?.name : sss.plan.id + ' - ' + (sss.plan.amount / 100).toFixed(0) + sss.plan.currency : ''
+                    subsPlan.value = sss ? sss.items.data[0].metadata?.name ? sss.items.data[0].metadata?.name : sss.plan.id + ' - ' + (sss.plan.amount / 100).toFixed(0) + sss.plan.currency.toUpperCase() : ''
                     autoPay.value = sss ? sss.collection_method : ''
                     subscriptionStart.value = sss ? new Date(sss.current_period_start * 1000).toISOString().split('T')[0] : ''
                     subscriptionEnd.value = sss ? new Date(sss.current_period_end * 1000).toISOString().split('T')[0] : ''
@@ -157,13 +157,12 @@ const fetchUserSubsStripe = async () => {
 <template>
     <div>
 
-        <div v-if="dataview" class="md:w-11/12 min-w-fit px-4 m:py-10 md:p-5 text-center mx-auto"
+        <div v-if="dataview" class="text-subtitle-1 md:w-11/12 min-w-fit px-4 m:py-10 md:p-5 text-center mx-auto"
             :class="theme.global.current.value.dark ? 'text-white bg-zinc-950' : 'text-zinc-800 bg-zinc-100'">
             <div class="back mb-5a py-5 flex justify-start">
                 <v-btn to="/" :ripple="false" min-width="50" max-width="50" class="w-fit"><v-icon
                         size="30">mdi-chevron-left</v-icon></v-btn>
             </div>
-            <button @click="fetchUserSubsStripe">get</button>
             <div class="main lg:flex flex-row justify-center text-sm ">
                 <div class="1 md:px-10a w-fit md:w-8/12 flex flex-col mx-auto">
                     <div class="flex flex-col justify-center w-fit">
@@ -175,7 +174,7 @@ const fetchUserSubsStripe = async () => {
                             </div>
                             <p class="font-semibold text-lg md:text-left text-center p-2 my-auto">Welcome, {{
                                 displayname
-                                }} !
+                            }} !
                             </p>
                             <v-btn v-if="!subsStateLoad" readonly variant="tonal"
                                 :color="subsState ? 'green' : 'grey-darken-1'"
@@ -221,40 +220,44 @@ const fetchUserSubsStripe = async () => {
                                 </div>
                             </div>
                         </div>
-                        <div class="2  md:min-h-[22rem] w-fit md:mx-auto">
+                        <div class="2  md:min-h-[22rem] w-fit md:mx-auto font-sans">
                             <v-card v-if="!subsStateLoad" color="#ff0050" :elevation="6" variant="outlined"
-                                class="details right min-w-fit md:ma-5 md:min-h-[22rem] flex-col text-left md:pa-5 pa-1 text-h7">
+                                class="details right min-w-fit text-body-1 font-weight-thin md:ma-5 md:min-h-[22rem] flex-col text-left md:pa-5 pa-1 text-h7">
                                 <div class="Subscriptiondetails flex p-3 space-x-3 py-3 mb-3">
                                     <v-icon class="my-auto" size="30">mdi-cloud-sync</v-icon>
-                                    <h1 class="text-lg font-semibold my-auto">Subscription Details:</h1>
+                                    <h1 class="text-2xl font-semibolda my-auto font-sans font-bold">Subscription
+                                        Details:
+                                    </h1>
                                 </div>
                                 <div class="plan px-5">
-                                    <p class="text-md inline-block text-white">Subscription plan: </p>
-                                    <p class="text-left p-2 w-fit max-w-[15rem]">
+                                    <p class="text-lg inline-block text-white font-sans font-bold">Subscription
+                                        plan:
+                                    </p>
+                                    <p class="text-left font-sans font-semibold p-2 w-fit max-w-[15rem]">
                                         {{ subsState ? subsPlan : 'Free' }}</p>
                                 </div>
                                 <div class="pay px-5" v-if="autoPay && cancelStatus != 'Valid till end of billing'">
-                                    <p class="text-md inline-block text-white">Auto payment: </p>
-                                    <p class="text-left p-2 w-fit max-w-[18rem]">
-                                        {{ autoPay ? autoPay + ' - ' + 'on' : '' }}</p>
+                                    <p class="text-md inline-block text-white font-sans font-bold">Auto payment: </p>
+                                    <p class="text-left text-lg font-sans font-semibold p-2 w-fit max-w-[18rem]">
+                                        {{ autoPay ? autoPay + ' - ' + 'ON' : '' }}</p>
                                 </div>
                                 <div class="statues px-5">
-                                    <p class="text-md inline-block text-white">Subscription Status: </p> <v-btn readonly
-                                        variant="text" :color="subsState ? 'green' : 'grey-darken-1'"
-                                        class="flex justify-center text-center align-middle items-center mx-auto my-auto w-fit">
+                                    <p class="text-lg inline-block text-white font-sans font-bold">Subscription Status:
+                                    </p> <v-btn readonly variant="text" :color="subsState ? 'green' : 'grey-darken-1'"
+                                        class="flex justify-center text-center font-sans font-semibold align-middle items-center mx-auto my-auto w-fit">
                                         {{ subsState ? cancelStatus : 'Free' }}</v-btn>
                                 </div>
 
                                 <div v-if="subsState" class="start px-5">
-                                    <p class="text-xl py-2">Start Date:</p> <v-btn readonly variant="text"
-                                        :color="subsState ? 'green' : 'grey-darken-1'"
-                                        class="flex justify-center text-h6 text-center mx-auto my-auto w-fit">
+                                    <p class="text-xl py-2 font-sans font-bold">Start Date:</p> <v-btn readonly
+                                        variant="text" :color="subsState ? 'green' : 'grey-darken-1'"
+                                        class="flex justify-center text-h6 text-center font-sans font-semibold mx-auto my-auto w-fit">
                                         {{ subsState ? subscriptionStart : 'not available' }}</v-btn>
                                 </div>
                                 <div v-if="subsState" class="end px-5">
-                                    <p class="text-xl py-2">End Date:</p>
+                                    <p class="text-xl py-2 font-sans font-bold">End Date:</p>
                                     <v-btn readonly variant="text" :color="subsState ? 'red-darken-4' : 'grey-darken-1'"
-                                        class="flex justify-center text-h6 text-center mx-auto my-auto w-fit">
+                                        class="flex justify-center text-h6 text-center font-sans font-semibold mx-auto my-auto w-fit">
                                         {{ subsState ? subscriptionEnd : 'not available' }}</v-btn>
                                 </div>
 
