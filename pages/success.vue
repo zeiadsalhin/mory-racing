@@ -8,6 +8,7 @@
                     <h1 class="p-2 text-xl font-semibold">Order Completed !</h1>
                     <p class="p-2">Your payment was successful.</p>
                     <p class="text-sm">Redirecting in {{ countdown }}</p>
+                    <p class="text-xs p-1">Please don't close or refresh!</p>
                 </div>
             </div>
 
@@ -50,7 +51,7 @@ const updatestripeuser = async () => {
     const user = useSupabaseUser()
     try {
         const { data, error } = await supabase.auth.updateUser({
-            data: { stripe_cus_id: resInvoice.value.subs_details.customer_id }
+            data: { stripe_cus_id: resInvoice.value.subs_details.customer_id, stripe_subs_id: resInvoice.value.subs_details.subs_id }
         })
         if (error) {
             console.log(error);

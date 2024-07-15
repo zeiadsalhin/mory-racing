@@ -43,6 +43,35 @@ async function cancelSubs() {
     }
 
 }
+
+const cancelSubscription = async () => {
+    const user = useSupabaseUser();
+    // console.log(user.value);
+    // const cus_id = user.value.user_metadata.stripe_cus_id; // Replace with the actual subscription ID
+    const subscriptionId = user.value.user_metadata.stripe_subs_id; // Replace with the actual subscription ID
+    try {
+        const response = await fetch('/api/cancel-subscription', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ subscriptionId }),
+        });
+
+        const result = await response.json();
+        if (result.success) {
+            // message.value = 'Subscription cancelled successfully.';
+            console.log('Subscription cancelled successfully.');
+            emit('fetch-subs');
+        } else {
+            // message.value = `Failed to cancel subscription: ${result.error}`;
+            console.log(`Failed to cancel subscription: ${result.error}`);
+        }
+    } catch (error) {
+        // message.value = `Error: ${error.message}`;
+        console.log(`Error: ${error.message}`);
+    }
+};
 </script>
 <template>
     <div class="pa-4 text-center">
@@ -79,7 +108,7 @@ async function cancelSubs() {
                             @click="isActive.value = false"></v-btn>
 
                         <v-btn color="red" :elevation="4" text="Confirm" variant="outlined"
-                            @click="isActive.value = false; cancelSubs()"></v-btn>
+                            @click="isActive.value = false; cancelSubscription()"></v-btn>
                     </v-card-actions>
                 </v-card>
             </template>

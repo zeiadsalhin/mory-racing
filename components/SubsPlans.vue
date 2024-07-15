@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const yearly: boolean = true;
 const popular = { daily: false, monthly: true }; // or set it to true or false as needed
-const plan_id = { lite: 'price_1PbK2wHndLqqnsBR3EjfRMcx', ultimate: 'no' }
+const plan_id = { lite: 'price_1PbK2wHndLqqnsBR3EjfRMcx', ultimate: 'price_1PcnU9HndLqqnsBRtGe9Y73g' }
 const planName = { daily: "Mory Racing Lite", monthly: "Mory Racing Ultimate" };
 const planDescription = { daily: "Mory Racing Plan with limited access, 24h of unlimited racing", monthly: "Mory Racing Plan with full access, gameplay, and live racing" };
 const features = {

@@ -18,7 +18,7 @@ const subsStateLoad = ref(true)
 const apiState = ref(true)
 onMounted(() => {
     FetchUserData()
-    fetchUserSubs()
+    fetchUserSubsStripe()
 })
 //fetch user data
 async function FetchUserData() {
@@ -64,39 +64,84 @@ async function LogOut() {
 }
 
 // fetch subscriptions
+const subsPlan = ref('')
+const autoPay = ref('')
 const subsPeroid = ref();
 const subscriptionStart = ref('');
 const subscriptionEnd = ref('');
-async function fetchUserSubs() {
+const cancelStatus = ref('')
+// async function fetchUserSubs() {
+//     const user = useSupabaseUser();
+//     const UserId = user.value.id
+//     try {
+//         const { data, error } = await supabase
+//             .from('user_orders')
+//             .select()
+//             .eq('uid', UserId);
+//         const Subscription = data[0]
+//         //
+//         const { data: subsdata, error2 } = await supabase
+//             .from('user_subscriptions')
+//             .select()
+//             .eq('uid', UserId)
+//             .eq('status', 'Active');
+//         const subsPeroid = subsdata[0]
+//         subscriptionStart.value = subsPeroid ? new Date(subsdata[0].subscription_start).toISOString().split('T')[0] : ''
+//         subscriptionEnd.value = subsPeroid ? new Date(subsdata[0].subscription_end).toISOString().split('T')[0] : ''
+//         // console.log();
+//         if (Subscription.order_details.id && Subscription.order_details.status == 'COMPLETED' || '"complete"' && new Date() <= new Date(subscriptionEnd.value) && subsPeroid.status == 'Active') {
+//             subsState.value = true
+//             subsStateLoad.value = false
+//         } else {
+//             subsState.value = false
+//             subsStateLoad.value = false
+//         }
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
+
+// fetch stripe subscription
+const fetchUserSubsStripe = async () => {
     const user = useSupabaseUser();
-    const UserId = user.value.id
+    // console.log(user.value);
+    const cus_id = user.value.user_metadata.stripe_cus_id; // Replace with the actual subscription ID
     try {
-        const { data, error } = await supabase
-            .from('user_orders')
-            .select()
-            .eq('uid', UserId);
-        const Subscription = data[0]
-        //
-        const { data: subsdata, error2 } = await supabase
-            .from('user_subscriptions')
-            .select()
-            .eq('uid', UserId)
-            .eq('status', 'Active');
-        const subsPeroid = subsdata[0]
-        subscriptionStart.value = subsPeroid ? new Date(subsdata[0].subscription_start).toISOString().split('T')[0] : ''
-        subscriptionEnd.value = subsPeroid ? new Date(subsdata[0].subscription_end).toISOString().split('T')[0] : ''
-        // console.log();
-        if (Subscription.order_details.id && Subscription.order_details.status == 'COMPLETED' || '"complete"' && new Date() <= new Date(subscriptionEnd.value) && subsPeroid.status == 'Active') {
-            subsState.value = true
-            subsStateLoad.value = false
+        const response = await fetch('/api/get-user-subscriptions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ cus_id }),
+        });
+
+        const result = await response.json();
+        if (result.success) {
+            // message.value = 'Subscription cancelled successfully.';
+            const sss = result.subscription.data[0]
+            // console.log('Subscription called successfully.' + JSON.stringify(sss));
+
+            if (result.subscription?.data[0]?.status == 'active') {
+                subsPlan.value = sss ? sss.items.data[0].metadata?.name ? sss.items.data[0].metadata?.name : sss.plan.id + ' - ' + (sss.plan.amount / 100).toFixed(0) + sss.plan.currency : ''
+                autoPay.value = sss ? sss.collection_method : ''
+                subscriptionStart.value = sss ? new Date(sss.current_period_start * 1000).toISOString().split('T')[0] : ''
+                subscriptionEnd.value = sss ? new Date(sss.current_period_end * 1000).toISOString().split('T')[0] : ''
+                cancelStatus.value = sss ? sss.cancel_at_period_end ? 'Valid till end of billing' : 'Subscribed' : ''
+                subsState.value = true
+                subsStateLoad.value = false
+            } else {
+                subsState.value = false
+                subsStateLoad.value = false
+            }
         } else {
-            subsState.value = false
-            subsStateLoad.value = false
+            // message.value = `Failed to cancel subscription: ${result.error}`;
+            console.log(`Failed to call subscription: ${result.error}`);
         }
     } catch (error) {
-        console.log(error);
+        // message.value = `Error: ${error.message}`;
+        console.log(`Error: ${error.message}`);
     }
-}
+};
 
 
 
@@ -111,6 +156,7 @@ async function fetchUserSubs() {
                 <v-btn to="/" :ripple="false" min-width="50" max-width="50" class="w-fit"><v-icon
                         size="30">mdi-chevron-left</v-icon></v-btn>
             </div>
+            <button @click="fetchUserSubsStripe">get</button>
             <div class="main lg:flex flex-row justify-center text-sm ">
                 <div class="1 md:px-10a w-fit md:w-8/12 flex flex-col mx-auto">
                     <div class="flex flex-col justify-center w-fit">
@@ -122,7 +168,7 @@ async function fetchUserSubs() {
                             </div>
                             <p class="font-semibold text-lg md:text-left text-center p-2 my-auto">Welcome, {{
                                 displayname
-                                }} !
+                            }} !
                             </p>
                             <v-btn v-if="!subsStateLoad" readonly variant="tonal"
                                 :color="subsState ? 'green' : 'grey-darken-1'"
@@ -168,18 +214,28 @@ async function fetchUserSubs() {
                                 </div>
                             </div>
                         </div>
-                        <div class="2  md:min-h-[22rem] w-fit mx-auto">
+                        <div class="2  md:min-h-[22rem] w-fit md:mx-auto">
                             <v-card v-if="!subsStateLoad" color="#ff0050" :elevation="6" variant="outlined"
-                                class="details right min-w-fit ma-5 md:min-h-[22rem] flex-col text-left pa-5 text-h7">
-                                <div class="Subscriptiondetails flex space-x-3 py-3 mb-3">
+                                class="details right min-w-fit md:ma-5 md:min-h-[22rem] flex-col text-left md:pa-5 pa-1 text-h7">
+                                <div class="Subscriptiondetails flex p-3 space-x-3 py-3 mb-3">
                                     <v-icon class="my-auto" size="30">mdi-cloud-sync</v-icon>
                                     <h1 class="text-lg font-semibold my-auto">Subscription Details:</h1>
+                                </div>
+                                <div class="plan px-5">
+                                    <p class="text-md inline-block text-white">Subscription plan: </p>
+                                    <p class="text-left p-2 w-fit max-w-[15rem]">
+                                        {{ subsState ? subsPlan : 'Free' }}</p>
+                                </div>
+                                <div class="pay px-5" v-if="autoPay && cancelStatus != 'Valid till end of billing'">
+                                    <p class="text-md inline-block text-white">Auto payment: </p>
+                                    <p class="text-left p-2 w-fit max-w-[18rem]">
+                                        {{ autoPay ? autoPay + ' - ' + 'on' : '' }}</p>
                                 </div>
                                 <div class="statues px-5">
                                     <p class="text-md inline-block text-white">Subscription Status: </p> <v-btn readonly
                                         variant="text" :color="subsState ? 'green' : 'grey-darken-1'"
                                         class="flex justify-center text-center align-middle items-center mx-auto my-auto w-fit">
-                                        {{ subsState ? 'Subscribed' : 'Free' }}</v-btn>
+                                        {{ subsState ? cancelStatus : 'Free' }}</v-btn>
                                 </div>
 
                                 <div v-if="subsState" class="start px-5">
@@ -198,7 +254,7 @@ async function fetchUserSubs() {
                                 <div v-if="subsState" class="manage w-fit bg-zinc-7a00 flex my-auto px-5">
                                     <!-- <v-btn @click="cancelSubs" type="button" max-height="40" min-height="40" variant="tonal"
                                     color="red" :ripple="false" :elevation="1" class="m-5a w-fit"> -->
-                                    <CancelationDialog class="w-fit my-auto" @fetch-subs="fetchUserSubs" />
+                                    <CancelationDialog class="w-fit my-auto" @fetch-subs="fetchUserSubsStripe" />
                                     <!-- </v-btn> -->
                                     <v-btn @click="" disabled type="button" max-height="40" min-height="40"
                                         variant="tonal" color="green" :ripple="false" :elevation="0" class="m-5 w-fit">
@@ -264,7 +320,7 @@ async function fetchUserSubs() {
                                             </p>
                                         </v-img>
                                     </div>
-                                    <v-btn disabled :variant="subsState ? 'tonal    ' : 'outlined'"
+                                    <v-btn disabled variant="outlined"
                                         :color="subsState ? 'red-lighten-4' : 'grey-darken-1'"
                                         class="text-center mx-auto mt-2 m-2 my-auto max-w-fit w-fit">
                                         {{ subsState ? 'Soon' : 'Soon' }}</v-btn>
