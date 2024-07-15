@@ -106,40 +106,47 @@ const fetchUserSubsStripe = async () => {
     const user = useSupabaseUser();
     // console.log(user.value);
     const cus_id = user.value.user_metadata.stripe_cus_id; // Replace with the actual subscription ID
-    try {
-        const response = await fetch('/api/get-user-subscriptions', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ cus_id }),
-        });
+    if (cus_id) {
 
-        const result = await response.json();
-        if (result.success) {
-            // message.value = 'Subscription cancelled successfully.';
-            const sss = result.subscription.data[0]
-            // console.log('Subscription called successfully.' + JSON.stringify(sss));
 
-            if (result.subscription?.data[0]?.status == 'active') {
-                subsPlan.value = sss ? sss.items.data[0].metadata?.name ? sss.items.data[0].metadata?.name : sss.plan.id + ' - ' + (sss.plan.amount / 100).toFixed(0) + sss.plan.currency : ''
-                autoPay.value = sss ? sss.collection_method : ''
-                subscriptionStart.value = sss ? new Date(sss.current_period_start * 1000).toISOString().split('T')[0] : ''
-                subscriptionEnd.value = sss ? new Date(sss.current_period_end * 1000).toISOString().split('T')[0] : ''
-                cancelStatus.value = sss ? sss.cancel_at_period_end ? 'Valid till end of billing' : 'Subscribed' : ''
-                subsState.value = true
-                subsStateLoad.value = false
+        try {
+            const response = await fetch('/api/get-user-subscriptions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ cus_id }),
+            });
+
+            const result = await response.json();
+            if (result.success) {
+                // message.value = 'Subscription cancelled successfully.';
+                const sss = result.subscription.data[0]
+                // console.log('Subscription called successfully.' + JSON.stringify(sss));
+
+                if (result.subscription?.data[0]?.status == 'active') {
+                    subsPlan.value = sss ? sss.items.data[0].metadata?.name ? sss.items.data[0].metadata?.name : sss.plan.id + ' - ' + (sss.plan.amount / 100).toFixed(0) + sss.plan.currency : ''
+                    autoPay.value = sss ? sss.collection_method : ''
+                    subscriptionStart.value = sss ? new Date(sss.current_period_start * 1000).toISOString().split('T')[0] : ''
+                    subscriptionEnd.value = sss ? new Date(sss.current_period_end * 1000).toISOString().split('T')[0] : ''
+                    cancelStatus.value = sss ? sss.cancel_at_period_end ? 'Valid till end of billing' : 'Subscribed' : ''
+                    subsState.value = true
+                    subsStateLoad.value = false
+                } else {
+                    subsState.value = false
+                    subsStateLoad.value = false
+                }
             } else {
-                subsState.value = false
-                subsStateLoad.value = false
+                // message.value = `Failed to cancel subscription: ${result.error}`;
+                console.log(`Failed to call subscription: ${result.error}`);
             }
-        } else {
-            // message.value = `Failed to cancel subscription: ${result.error}`;
-            console.log(`Failed to call subscription: ${result.error}`);
+        } catch (error) {
+            // message.value = `Error: ${error.message}`;
+            console.log(`Error: ${error.message}`);
         }
-    } catch (error) {
-        // message.value = `Error: ${error.message}`;
-        console.log(`Error: ${error.message}`);
+    } else {
+        subsState.value = false
+        subsStateLoad.value = false
     }
 };
 
@@ -168,7 +175,7 @@ const fetchUserSubsStripe = async () => {
                             </div>
                             <p class="font-semibold text-lg md:text-left text-center p-2 my-auto">Welcome, {{
                                 displayname
-                            }} !
+                                }} !
                             </p>
                             <v-btn v-if="!subsStateLoad" readonly variant="tonal"
                                 :color="subsState ? 'green' : 'grey-darken-1'"
