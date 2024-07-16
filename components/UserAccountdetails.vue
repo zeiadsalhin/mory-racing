@@ -174,7 +174,7 @@ const startGame = ref(false);
                             </div>
                             <p class="font-semibold text-lg md:text-left text-center p-2 my-auto">Welcome, {{
                                 displayname
-                            }} !
+                                }} !
                             </p>
                             <v-btn v-if="!subsStateLoad" readonly variant="tonal"
                                 :color="subsState ? 'green' : 'grey-darken-1'"
@@ -208,21 +208,22 @@ const startGame = ref(false);
                                 <div class="data ml-2">
                                     <div class="email flex w-full mb-2">
                                         <p for="id" class="text-md my-auto">Email:</p>
-                                        <p class="text-md ml-2 my-auto w-fit">{{ email }}</p>
+                                        <p class="md:text-md text-xs ml-2 my-auto w-fit">{{ email }}</p>
                                     </div>
-                                    <div class="authenticationstate w-full py-2 md:aspace-x-5">
-                                        <label class="text-md">Account:</label>
-                                        <label for="auth" class="text-md my-auto p-2">{{ auth }}</label>
+                                    <div class="authenticationstate flex w-full py-2 md:aspace-x-5">
+                                        <p class="text-md  my-auto">Account:</p>
+                                        <p for="auth" class="md:text-md text-xs ml-2 my-auto w-fit">{{ auth
+                                            }}<v-icon class="ml-1" size="20">mdi-check-decagram</v-icon></p>
                                         <template v-if="auth == 'authenticated'">
-                                            <v-icon class="mb-1" size="22">mdi-check-decagram</v-icon>
+
                                         </template>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="2  md:min-h-[22rem] w-fit md:mx-auto font-sans">
+                        <div class="2  md:min-h-[22rem] w-fit mx-auto font-sans">
                             <v-card v-if="!subsStateLoad" color="#ff0050" :elevation="6" variant="outlined"
-                                class="details right min-w-fit text-body-1 font-weight-thin md:ma-5 md:min-h-[22rem] flex-col text-left md:pa-5 pa-1 text-h7">
+                                class="details right min-w-fit text-body-1 font-weight-thin ma-5 md:min-h-[22rem] flex-col text-left md:pa-5 pa-1 text-h7">
                                 <div class="Subscriptiondetails flex p-3 space-x-3 py-3 mb-3">
                                     <v-icon class="my-auto" size="30">mdi-cloud-sync</v-icon>
                                     <h1 class="text-2xl font-semibolda my-auto font-sans font-bold">Subscription
@@ -285,7 +286,7 @@ const startGame = ref(false);
                         <!------------>
 
                         <v-card v-if="!subsStateLoad" color="#ff0050" :elevation="4" variant="tonal" :border="true"
-                            class="GAMES right ma-5 min-w-fit max-w-fit flex flex-row text-left mx-auto pa-6 text-h7">
+                            class="GAMES right ma-5 min-w-fit max-w-fit flex flex-col text-left mx-auto pa-6 text-h7">
                             <div class="Games flex space-x-3 py-3 mb-3">
                                 <v-icon color="#00f2ea" class="my-auto" size="30">mdi-gamepad-square</v-icon>
                                 <h1 class="text-lg font-semibold my-auto text-[#00f2ea]">Select a game</h1>
@@ -301,7 +302,8 @@ const startGame = ref(false);
                                             </p>
                                         </v-img>
                                     </div>
-                                    <v-btn @click="startGame = true" :variant="subsState ? 'outlined' : 'outlined'"
+                                    <v-btn @click="subsState ? startGame = true : ''"
+                                        :variant="subsState ? 'outlined' : 'outlined'"
                                         :color="subsState ? 'red-darken-4' : 'grey-darken-1'"
                                         class="text-center mx-auto mt-2 m-2 my-auto max-w-fit w-fit">
                                         {{ subsState ? 'GO LIVE !' : 'Subscribe' }}</v-btn>
