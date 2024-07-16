@@ -15,8 +15,8 @@ export default defineEventHandler(async (event) => {
         // // Update the liveId
         jsonData.liveId = newLiveId;
 
-        // Assuming you have an endpoint to update the JSON file, make a PUT or PATCH request
-        const updateResponse = await axios.post(JSONUrl, jsonData, {
+        // // Assuming you have an endpoint to update the JSON file, make a PUT or PATCH request
+        const updateResponse = await axios.patch(JSONUrl, jsonData, {
             headers: {
                 'Content-Type': 'application/json',
             },
