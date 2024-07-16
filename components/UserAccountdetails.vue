@@ -195,7 +195,7 @@ const startGame = ref(false);
                     <div
                         class="1 min-w-fit md:px-10a w-fit md:w-fit align-middle items-center lg:flex flex-row justify-center space-y-5 space-x-0 md:space-x-5 md:space-y-0  md:p-5">
                         <div
-                            class="details md:flex flex-row text-left space-y-5 md:space-y-0 md:space-x-5 space-x-0 w-fit mx-auto">
+                            class="details md:flex flex-row text-left min-w-[20rem] space-y-5 md:space-y-0 md:space-x-5 space-x-0 w-fit mx-auto">
                             <div
                                 class="Accountdetails bg-[#000] left  md:min-h-[22rem] w-full flex-col text-left md:p-5 p-5">
 
@@ -223,7 +223,7 @@ const startGame = ref(false);
                         </div>
                         <div class="2  md:min-h-[22rem] w-fit mx-auto font-sans">
                             <v-card v-if="!subsStateLoad" color="#ff0050" :elevation="6" variant="outlined"
-                                class="details right min-w-fit text-body-1 font-weight-thin ma-5 md:min-h-[22rem] flex-col text-left md:pa-5 pa-1 text-h7">
+                                class="details right min-w-fit text-body-1 font-weight-thin ma-md-5 md:min-h-[22rem] md:min-w-[22rem] flex-col text-left pa-md-5 pa-1 text-h7">
                                 <div class="Subscriptiondetails flex p-3 space-x-3 py-3 mb-3">
                                     <v-icon class="my-auto" size="30">mdi-cloud-sync</v-icon>
                                     <h1 class="text-2xl font-semibolda my-auto font-sans font-bold">Subscription
