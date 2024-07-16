@@ -29,7 +29,7 @@
                 <iframe v-if="newLiveId" :src="gameServer"
                     class="h-[48rem] mt-3 min-w-[20rem]a w-[24rem] md:w-[25.92rem] mx-auto" width="100%" height="100%"
                     frameborder="0"></iframe>
-                <v-btn text="Exit Game" @click="emitEvent" class="ma-1"></v-btn>
+                <v-btn v-if="!authenticating" text="Exit Game" @click="emitEvent" class="ma-1"></v-btn>
             </div>
 
         </v-dialog>
@@ -66,7 +66,7 @@ watch(() => props.open, (newValue, oldValue) => {
 const emits = defineEmits(['resetDialog']);
 const emitEvent = () => {
     emits('resetDialog', fullPlayer.value = false)
-
+    authenticating.value = false
     resultt.value = false
 };
 
