@@ -150,8 +150,8 @@ const fetchUserSubsStripe = async () => {
     }
 };
 
-
-
+// start the live game
+const startGame = ref(false);
 
 </script>
 <template>
@@ -301,11 +301,12 @@ const fetchUserSubsStripe = async () => {
                                             </p>
                                         </v-img>
                                     </div>
-                                    <v-btn :variant="subsState ? 'outlined' : 'outlined'"
+                                    <v-btn @click="startGame = true" :variant="subsState ? 'outlined' : 'outlined'"
                                         :color="subsState ? 'red-darken-4' : 'grey-darken-1'"
                                         class="text-center mx-auto mt-2 m-2 my-auto max-w-fit w-fit">
                                         {{ subsState ? 'GO LIVE !' : 'Subscribe' }}</v-btn>
                                 </div>
+                                <LiveId :open="startGame" @resetDialog="startGame = false" />
                                 <div class="2 flex flex-col  px-2 mx-auto text-center ">
                                     <div class="statues">
                                         <v-img cover src="/zombie_hunters.webp"
