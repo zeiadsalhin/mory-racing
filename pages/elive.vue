@@ -6,20 +6,28 @@
 </template>
 
 <script setup>
-import axios from 'axios';
+import { ref } from 'vue';
 
-const apiUrl = 'https://moryracing.netlify.app/AppSettings.json'; // Replace with your actual API endpoint URL
+const newLiveId = ref('11');
 
-let newLiveId = '11';
-
-async function handleSubmit() {
+const handleSubmit = async () => {
     try {
-        const response = await axios.post(apiUrl, { liveId: newLiveId });
-        alert('Live ID updated successfully!');
-        // Optionally, you can fetch updated data and update your component state
+        const response = await fetch('/api/update-liveId', {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ newLiveId: newLiveId.value }),
+        });
+
+        const result = await response.json();
+        if (result.success) {
+            console.log('Live ID updated successfully.' + JSON.stringify(result));
+        } else {
+            console.log(`Failed to update Live ID: ${result.error}`);
+        }
     } catch (error) {
-        alert('Failed to update Live ID. Please try again later.');
-        console.error('Error:', error);
+        console.log(`Error: ${error.message}`);
     }
-}
+};
 </script>

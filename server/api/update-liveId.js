@@ -1,16 +1,29 @@
-// utils/api.js
-
 import axios from 'axios';
 
 // Replace with your actual API endpoint URL
-const apiUrl = 'https://moryracing.netlify.app/AppSettings.json';
+const JSONUrl = 'https://moryracing.netlify.app/AppSettings.json';
 
-export async function updateLiveId(newLiveId) {
+export default defineEventHandler(async (event) => {
+    const body = await readBody(event);
+    const newLiveId = body.newLiveId;
+
     try {
-        const response = await axios.post(apiUrl, { liveId: newLiveId });
-        return response.data; // Assuming the API responds with updated data
+        // Fetch the existing JSON file
+        const response = await axios.get(JSONUrl);
+        let jsonData = response.data;
+
+        // // Update the liveId
+        jsonData.liveId = newLiveId;
+
+        // Assuming you have an endpoint to update the JSON file, make a PUT or PATCH request
+        const updateResponse = await axios.post(JSONUrl, jsonData, {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        return { success: true, data: jsonData };
     } catch (error) {
-        console.error('Error updating liveId:', error);
-        throw error;
+        return { success: false, error: error.message };
     }
-}
+});
