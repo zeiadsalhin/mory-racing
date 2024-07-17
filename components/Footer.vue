@@ -22,15 +22,15 @@ const date = new Date().getFullYear()
             </div>
             <div class="2 p-5 flex flex-col">
                 <p class="text-lg text-left font-weight-bold mt-5 mb-2">Chattok Gaming</p>
-                <nuxtLink :to="b.link" color="surface" class="space-y-2 brightness-75 hover:brightness-100 flex"
+                <nuxtLink :to="b.link" color="surface" class="space-y-2 brightness-75 hover:brightness-100 w-fit flex"
                     v-for="(b, i) in navigation" :key="`navigation${i}`" fab depressed>
-                    <p>{{ b.name }}</p>
+                    <p class="text-sm p-1 w-fit">{{ b.name }}</p>
                     <!-- <v-icon>{{ b.icon }}</v-icon> -->
                 </nuxtLink>
             </div>
             <div class="3 flex flex-col text-left p-5">
                 <p class="text-md font-weight-bold mt-5 mb-2">Game by</p>
-                <a href="https://github.com/zeiadsalhin"
+                <a href="https://github.com/OmarFahmy03"
                     class="my-auto brightness-50 hover:brightness-100 transform transition ease-in-out duration-400 mt-3 flex justify-start">
                     <v-icon icon="mdi-github" size="30" class="my-auto"></v-icon>
                     <p class="text-md my-auto ml-2">Mory</p>
