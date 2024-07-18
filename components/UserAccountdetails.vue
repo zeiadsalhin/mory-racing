@@ -19,6 +19,7 @@ const apiState = ref(true)
 onMounted(() => {
     FetchUserData()
     fetchUserSubsStripe()
+    getLiveid()
 })
 //fetch user data
 async function FetchUserData() {
@@ -153,6 +154,34 @@ const fetchUserSubsStripe = async () => {
 // start the live game
 const startGame = ref(false);
 
+// get liveId
+const userLiveId = ref('');
+const getLiveid = async () => {
+    try {
+        // loading.value = true
+        const response = await fetch('/api/get-liveId', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            // body: JSON.stringify({ newLiveId: newLiveId.value }),
+        });
+
+        const result = await response.json();
+        if (result.success) {
+            console.log('Live ID:.' + JSON.stringify(result));
+            userLiveId.value = result.data
+            // loading.value = false
+        } else {
+            console.log(`Failed to update Live ID: ${result.error}`);
+            userLiveId.value = result.error;
+            // loading.value = false
+        }
+    } catch (error) {
+        console.log(`Error: ${error.message}`);
+        // loading.value = false
+    }
+};
 </script>
 <template>
     <div>
@@ -176,6 +205,7 @@ const startGame = ref(false);
                                 displayname
                                 }} !
                             </p>
+
                             <v-btn v-if="!subsStateLoad" readonly variant="tonal"
                                 :color="subsState ? 'green' : 'grey-darken-1'"
                                 class="flex justify-center text-subtitle text-center align-middle items-center mx-auto my-auto w-fit">
@@ -183,6 +213,9 @@ const startGame = ref(false);
 
                             <v-skeleton-loader v-else type="chip" class="mx-auto my-auto w-32"></v-skeleton-loader>
                         </div>
+                        <p v-if="userLiveId" class="font-sans text-lg inline-block p-2">Live Id:
+                        <p class="font-semibold inline-block text-sm">{{ userLiveId }}</p>
+                        </p>
                         <div class="logout flex mt-10  w-fit text-center mx-auto"><v-btn @click="LogOut" min-height="40"
                                 min-width="120" class="m-5" color="#ff0050"><v-icon
                                     class="mx-1">mdi-exit-to-app</v-icon>Logout</v-btn>
@@ -308,7 +341,7 @@ const startGame = ref(false);
                                         class="text-center mx-auto mt-2 m-2 my-auto max-w-fit w-fit">
                                         {{ subsState ? 'GO LIVE !' : 'Subscribe' }}</v-btn>
                                 </div>
-                                <LiveId :open="startGame" @resetDialog="startGame = false" />
+                                <LiveId :open="startGame" @resetDialog="startGame = false;" />
                                 <div class="2 flex flex-col  px-2 mx-auto text-center ">
                                     <div class="statues">
                                         <v-img cover src="/zombie_hunters.webp"
