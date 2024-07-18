@@ -6,7 +6,7 @@
             <div v-if="authenticating" class="live flex flex-col m-20 w-[20rem] mx-auto text-center">
                 <h1 class="text-center text-2xl p-3 mb-8 font-bold font-sans">Please Enter Your Live ID</h1>
 
-                <form @submit.prevent="handleSubmit2">
+                <form @submit.prevent="handleSubmit">
                     <v-text-field :disabled="resultt ? false : false" @input="resultt = false" variant="outlined"
                         label="Tiktok Live ID*" id="New Live ID" v-model="newLiveId" color="#ff0050"
                         bg-color="grey-darken-4" spellcheck="false" type="text" class="w-full mx-auto font-sans text-x"
@@ -78,32 +78,32 @@ const exitGame = (() => {
     resultt.value = false
 })
 
-// const handleSubmit = async () => {
-//     try {
-//         loading.value = true
-//         const response = await fetch('/api/update-liveId', {
-//             method: 'PUT',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//             },
-//             body: JSON.stringify({ newLiveId: newLiveId.value }),
-//         });
+const handleSubmit = async () => {
+    try {
+        loading.value = true
+        const response = await fetch('/api/update-liveId', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ newLiveId: newLiveId.value }),
+        });
 
-//         const result = await response.json();
-//         if (result.success) {
-//             console.log('Live ID updated successfully.' + JSON.stringify(result));
-//             resultt.value = result.data
-//             loading.value = false
-//         } else {
-//             console.log(`Failed to update Live ID: ${result.error}`);
-//             resultt.value = result.code = 520 ? 'Please wait 30s before updating your id' : result.error;
-//             loading.value = false
-//         }
-//     } catch (error) {
-//         console.log(`Error: ${error.message}`);
-//         loading.value = false
-//     }
-// };
+        const result = await response.json();
+        if (result.success) {
+            console.log('Live ID updated successfully.' + JSON.stringify(result));
+            resultt.value = result.data
+            loading.value = false
+        } else {
+            console.log(`Failed to update Live ID: ${result.error}`);
+            resultt.value = result.code = 520 ? 'Please wait 30s before updating your id' : result.error;
+            loading.value = false
+        }
+    } catch (error) {
+        console.log(`Error: ${error.message}`);
+        loading.value = false
+    }
+};
 ///
 // const handleSubmit1 = async () => {
 //     try {
