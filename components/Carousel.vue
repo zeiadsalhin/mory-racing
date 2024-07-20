@@ -19,13 +19,13 @@ watch(user, () => {
             <div class="d-flex flex-column fill-height justify-center alaign-center text-white">
                 <div class="rounded-md backdrop-brightness-75   md:m-10 md:p-10 p-5 ">
                     <h1 class="text-3xl w-fit font-weight-bold mb-4">
-                        Mory Racing is Live!
+                        Chattok Gaming is Live!
                     </h1>
                     <p class="text-subtitle md:w-1/3 brightness-90 font-weight-light px-3  mb-4">Enjoy the online
                         ultimate
                         racing
                         experience
-                        now with Mory racing enhanced version
+                        now with enhanced version
                     </p>
                     <v-btn :to="isUser ? '/user/account' : '/login'" color="#ff0050" variant="flat" :ripple="false"
                         class="text-h6 m-2">Play
