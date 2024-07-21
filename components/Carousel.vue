@@ -13,7 +13,7 @@ watch(user, () => {
 }, { immediate: true })
 </script>
 <template>
-    <h1 id="offers" class="text-2xl font-semibold p-5 mx-auto text-center">Discover Next Gen Racing games</h1>
+    <h1 id="offers" class="text-2xl font-semibold p-5 mx-auto text-center italic">Discover Next Gen Racing games</h1>
     <transition name="fade" mode="out-in">
         <v-parallax src="/public/b.webp " class="md:h-[500px] h-full">
             <div class="d-flex flex-column fill-height justify-center alaign-center text-white">
@@ -27,8 +27,8 @@ watch(user, () => {
                         experience
                         now with enhanced version
                     </p>
-                    <v-btn :to="isUser ? '/user/account' : '/login'" color="#ff0050" variant="flat" :ripple="false"
-                        class="text-h6 m-2">Play
+                    <v-btn :to="isUser ? '/user/account#LiveGames' : '/login'" color="#ff0050" variant="flat"
+                        :ripple="false" class="text-h6 m-2">Play
                         Now</v-btn>
 
                 </div>

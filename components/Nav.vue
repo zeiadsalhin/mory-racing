@@ -158,8 +158,8 @@ watch(user, () => {
                 <v-icon size="20">mdi-brightness-7</v-icon>
             </v-btn> -->
 
-            <v-btn :to="isUser ? '' : '/login'" @click="" variant="text" :ripple="false" color="#ff0050"
-                class="mr-2 text-h6 font-weight-medium">
+            <v-btn :to="isUser ? '/user/account#LiveGames' : '/login'" @click="" variant="text" :ripple="false"
+                color="#ff0050" class="mr-2 text-h6 font-weight-medium">
                 <v-icon size="25" class="mr-">mdi-play</v-icon>
                 <p class="text-white">Play</p>
             </v-btn>

@@ -6,7 +6,7 @@ const dialogVisible = ref(false);
 const props = defineProps({
     successMessage: {
         type: String,
-        default: 'I agree to that there is no refund for this one time subscription once I click Cancel',
+        default: 'I agree to that there is no refund for this subscription period once I Cancel',
     },
 });
 

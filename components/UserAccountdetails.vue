@@ -126,7 +126,7 @@ const fetchUserSubsStripe = async () => {
                 // console.log('Subscription called successfully.' + JSON.stringify(sss));
 
                 if (result.subscription?.data[0]?.status == 'active') {
-                    subsPlan.value = sss ? sss.items.data[0].metadata?.name ? sss.items.data[0].metadata?.name : sss.plan.id + ' - ' + (sss.plan.amount / 100).toFixed(0) + sss.plan.currency.toUpperCase() : ''
+                    subsPlan.value = sss ? sss.items.data[0].metadata?.name ? sss.items.data[0].metadata?.name : sss.plan.id == 'price_1PbY0cI4aHqhinrAO1CYGfDG' ? 'Daily' : 'Monthly' + ' - ' + (sss.plan.amount / 100).toFixed(0) + sss.plan.currency.toUpperCase() : ''
                     autoPay.value = sss ? sss.collection_method : ''
                     subscriptionStart.value = sss ? new Date(sss.current_period_start * 1000).toISOString().split('T')[0] : ''
                     subscriptionEnd.value = sss ? new Date(sss.current_period_end * 1000).toISOString().split('T')[0] : ''
@@ -318,7 +318,8 @@ const getLiveid = async () => {
                         </div>
                         <!------------>
 
-                        <v-card v-if="!subsStateLoad" color="#ff0050" :elevation="4" variant="tonal" :border="true"
+                        <v-card id="LiveGames" v-if="!subsStateLoad" color="#ff0050" :elevation="4" variant="tonal"
+                            :border="true"
                             class="GAMES right ma-5 min-w-fit max-w-fit flex flex-col text-left mx-auto pa-6 text-h7">
                             <div class="Games flex space-x-3 py-3 mb-3">
                                 <v-icon color="#00f2ea" class="my-auto" size="30">mdi-gamepad-square</v-icon>
