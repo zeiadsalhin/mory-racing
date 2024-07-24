@@ -37,6 +37,8 @@ export default defineEventHandler(async (event) => {
         const updateResponse = await axios.post(JSONUrl, jsonData, {
             headers: {
                 'Content-Type': 'application/json',
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
             },
         });
 

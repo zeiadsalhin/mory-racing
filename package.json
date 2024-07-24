@@ -34,7 +34,7 @@
     "vue3-lottie": "^3.3.0"
   },
   "devDependencies": {
-    "@nuxtjs/supabase": "latest",
+    "@nuxtjs/supabase": "^1.3.5",
     "autoprefixer": "latest",
     "nuxt-paypal": "^0.0.1-beta",
     "postcss": "latest",

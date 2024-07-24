@@ -41,7 +41,8 @@
 
 <script setup>
 import { ref } from 'vue';
-
+const supabase = useSupabaseClient()
+const user = useSupabaseUser()
 const gameServer = import.meta.env.VITE_moryracing_src
 
 // props to open 
@@ -107,29 +108,49 @@ const exitGame = (() => {
 ///
 const handleSubmit1 = async () => {
     try {
-        loading.value = true
-        const response = await fetch('/api/generate-liveId', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ liveId: newLiveId.value }),
-        });
+        const { data, error } = await supabase.auth.getSession();
+        if (data) {
+            loading.value = true
+            const response = await fetch('/api/generate-liveId', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ liveId: newLiveId.value }),
+            });
 
-        const result = await response.json();
-        if (result.success) {
-            console.log('Live ID updated successfully.' + JSON.stringify(result));
-            resultt.value = result.data
-            loading.value = false
-        } else {
-            console.log(`Failed to update Live ID: ${result.error}`);
-            // resultt.value = result.code = 520 ? 'Please wait 30s before updating your id' : result.error;
-            loading.value = false
+            const result = await response.json();
+            if (result.success) {
+                // submit to supabase
+                const { data: submitted, error } = await supabase
+                    .from('usersettings')
+                    .insert({
+                        liveid: newLiveId.value,
+                        Appsettings: { "game": { "brakeMax": 10, "minSpeed": 10, "speedMax": 10, "giftIncrement": 1, "likeIncrement": 0.1, "accelerationMax": 5, "boosterAmmountMax": 10, "secondsToStartRace": 5, "resetTimerOnPlayerJoin": false }, "tuts": false, "liveId": newLiveId.value, "server": { "prod": "wss://app-tiktoklive-dev-use-001.azurewebsites.net/MyHub", "local": "ws://localhost:5000/MyHub", "active": "prod" }, "debugLogs": false, "localDebug": false },
+                        email: data.session.user.email,
+                        uid: data.session.user.id
+                    })
+
+                if (error) {
+                    console.log('Supabase Error: ' + error);
+                    loading.value = false
+                    resultt.value = 'Error Updating LiveId'
+                } else {
+                    console.log('Live ID updated successfully.' + JSON.stringify(result));
+                    resultt.value = result.data
+                    loading.value = false
+                }
+            } else {
+                console.log(`Failed to update Live ID: ${result.error}`);
+                // resultt.value = result.code = 520 ? 'Please wait 30s before updating your id' : result.error;
+                loading.value = false
+            }
         }
-    } catch (error) {
-        console.log(`Error: ${error.message}`);
+    } catch (error2) {
+        console.log(`Error: ${error2.message}`);
         loading.value = false
     }
+
 };
 ///
 // const handleSubmit2 = async () => {

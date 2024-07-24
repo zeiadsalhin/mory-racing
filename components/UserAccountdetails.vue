@@ -158,25 +158,23 @@ const startGame = ref(false);
 const userLiveId = ref('');
 const getLiveid = async () => {
     try {
+        const { data: userdata, error2 } = await supabase.auth.getSession();
         // loading.value = true
-        const response = await fetch('/api/get-liveId', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            // body: JSON.stringify({ newLiveId: newLiveId.value }),
-        });
+        const { data, error } = await supabase
+            .from('usersettings')
+            .select()
+            .eq('email', userdata.session.user.email)
 
-        const result = await response.json();
-        if (result.success) {
-            console.log('Live ID:.' + JSON.stringify(result));
-            userLiveId.value = result.data
+        if (!error) {
+            // console.log('Live ID:.' + JSON.stringify(result));
+            userLiveId.value = data[0].liveid
             // loading.value = false
         } else {
-            console.log(`Failed to update Live ID: ${result.error}`);
+            // console.log(`Failed to update Live ID: ${result.error}`);
             userLiveId.value = result.error;
             // loading.value = false
         }
+
     } catch (error) {
         console.log(`Error: ${error.message}`);
         // loading.value = false
