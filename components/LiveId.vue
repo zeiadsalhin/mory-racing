@@ -4,11 +4,12 @@
             :close-on-back="true" transition="dialog-bottom-transition"
             class="bg-zinc-950 bg-opacity-80 backdrop-blur-lg">
             <div v-if="authenticating" class="live flex flex-col m-20 w-[20rem] mx-auto text-center">
-                <h1 class="text-center text-2xl p-3 mb-8 font-bold font-sans">Please Enter Your Live ID</h1>
+                <h1 v-if="!resultt" class="text-center text-2xl p-3 mb-8 font-bold font-sans">Please Enter Your Live ID
+                </h1>
 
                 <form @submit.prevent="handleSubmit1">
-                    <v-text-field :disabled="resultt ? false : false" @input="resultt = false" variant="outlined"
-                        label="Tiktok Live ID*" id="New Live ID" v-model="newLiveId" color="#ff0050"
+                    <v-text-field v-if="!resultt" :disabled="resultt ? true : false" @input="resultt = false"
+                        variant="outlined" label="Tiktok Live ID*" id="New Live ID" v-model="newLiveId" color="#ff0050"
                         bg-color="grey-darken-4" spellcheck="false" type="text" class="w-full mx-auto font-sans text-x"
                         required />
                     <v-btn v-if="!resultt" type="submit" class="ma-5 mx-auto text-center">
@@ -78,6 +79,42 @@ const exitGame = (() => {
     authenticating.value = true
     resultt.value = false
 })
+
+onBeforeMount(() => {
+    liveidCheck()
+})
+const liveidCheck = async () => {
+    try {
+        const { data, error } = await supabase.auth.getSession();
+        if (data) {
+            loading.value = true
+
+            // submit to supabase
+            const { data: liveid, error } = await supabase
+                .from('usersettings')
+                .select()
+                .eq('email', data.session.user.email)
+
+            if (error) {
+                console.log('Supabase Error: ' + error);
+                loading.value = false
+                resultt.value = 'Error fetching LiveId'
+            } else {
+                resultt.value = liveid[0].liveid
+                loading.value = false
+            }
+        } else {
+            console.log(`Failed to update Live ID: ${result.error}`);
+            // resultt.value = result.code = 520 ? 'Please wait 30s before updating your id' : result.error;
+            loading.value = false
+        }
+
+    } catch (error2) {
+        console.log(`Error: ${error2.message}`);
+        loading.value = false
+    }
+
+};
 
 // const handleSubmit = async () => {
 //     try {
