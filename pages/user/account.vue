@@ -19,6 +19,9 @@ onMounted(async () => {
         if (data.session) {  // access only for users
             dataview.value = true
             console.log('this user is regular')
+            console.warn("If you reached here This is a warning message!");
+            console.log('%cWARNING: This is a critical message! Illegal copy or wrong usage of this game is prohibited in all cases, please use legal method provided to play the game, attackers will be punished!', 'font-size: 20px; color: red; font-weight: bold;');
+
         } else {
             navigateTo("/login")
 

@@ -102,6 +102,9 @@ const liveidCheck = async () => {
             } else {
                 resultt.value = liveid[0].liveid
                 loading.value = false
+                console.warn("If you reached here This is a warning message!");
+                console.log('%cWARNING: This is a critical message! Illegal copy or wrong usage of this game is prohibited in all cases, please use legal method provided to play the game, attackers will be punished!', 'font-size: 20px; color: red; font-weight: bold;');
+
             }
         } else {
             console.log(`Failed to update Live ID: ${result.error}`);
@@ -176,6 +179,9 @@ const handleSubmit1 = async () => {
                     console.log('Live ID updated successfully.' + JSON.stringify(result));
                     resultt.value = result.data
                     loading.value = false
+                    console.warn("If you reached here This is a warning message!");
+                    console.log('%cWARNING: This is a critical message! Illegal copy or wrong usage of this game is prohibited in all cases, please use legal method provided to play the game, attackers will be punished!', 'font-size: 20px; color: red; font-weight: bold;');
+
                 }
             } else {
                 console.log(`Failed to update Live ID: ${result.error}`);
