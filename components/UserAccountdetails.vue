@@ -126,7 +126,7 @@ const fetchUserSubsStripe = async () => {
                 // console.log('Subscription called successfully.' + JSON.stringify(sss));
 
                 if (result.subscription?.data[0]?.status == 'active') {
-                    subsPlan.value = sss ? sss.items.data[0].metadata?.name ? sss.items.data[0].metadata?.name : sss.plan.id == 'price_1PbY0cI4aHqhinrAO1CYGfDG' ? 'Daily' : 'Monthly' + ' - ' + (sss.plan.amount / 100).toFixed(0) + sss.plan.currency.toUpperCase() : ''
+                    subsPlan.value = sss ? sss.items.data[0].metadata?.name ? sss.items.data[0].metadata?.name : (sss.plan.id == 'price_1PbY0cI4aHqhinrAO1CYGfDG' ? 'Daily' : 'Monthly') + ' - ' + (sss.plan.amount / 100).toFixed(0) + sss.plan.currency.toUpperCase() : ''
                     autoPay.value = sss ? sss.collection_method : ''
                     subscriptionStart.value = sss ? new Date(sss.current_period_start * 1000).toISOString().split('T')[0] : ''
                     subscriptionEnd.value = sss ? new Date(sss.current_period_end * 1000).toISOString().split('T')[0] : ''
@@ -201,7 +201,7 @@ const getLiveid = async () => {
                             </div>
                             <p class="font-semibold text-lg md:text-left text-center p-2 my-auto">Welcome, {{
                                 displayname
-                                }} !
+                            }} !
                             </p>
 
                             <v-btn v-if="!subsStateLoad" readonly variant="tonal"
