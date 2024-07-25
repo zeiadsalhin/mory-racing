@@ -18,7 +18,7 @@ watch(user, () => {
         <v-parallax src="/public/b.webp " class="md:h-[500px] h-full">
             <div class="d-flex flex-column fill-height justify-center alaign-center text-white">
                 <div class="rounded-md backdrop-brightness-75 w-fit  md:m-10 md:p-10 p-5 ">
-                    <h1 class="text-3xl w-fit font-weight-bold mb-4">
+                    <h1 class="text-2xl md:text-3xl w-fit font-weight-bold mb-4">
                         Chattok Gaming is Live!
                     </h1>
                     <p class="text-subtitle md:w-[30rem] brightness-90 font-weight-light px-3  mb-4">Enjoy the online
