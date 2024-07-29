@@ -30,7 +30,7 @@
             <div v-else class="game flex flex-col justify-center">
 
                 <iframe v-if="resultt" :src="gameServer + '/?liveid=' + resultt"
-                    class="h-[48rem] mt-3 min-w-[20rem]a w-[22rem] md:w-[25.92rem] mx-auto" width="100%" height="100%"
+                    class="h-[48rem] mt-3 min-w-[20rem]a w-[100%] md:w-[25.92rem] mx-auto" width="100%" height="100%"
                     frameborder="0"></iframe>
                 <v-btn v-if="!authenticating" color="red" variant="tonal" text="Exit Game" @click="exitGame"
                     class="ma-1 w-[20rem] mx-auto"></v-btn>
