@@ -39,13 +39,13 @@
                             <v-icon class="mx-3 my-auto" size="30">mdi-copyright</v-icon>
                             <h1 class="my-auto"> Credits</h1>
                         </div>
-                        <ul class="mt-5 space-y-5 md:text-xl text-sm list-[square] p-3 ml-10">
+                        <ul class="mt-5 space-y-5 md:text-2xl text-sm list-[square] p-3 ml-10">
                             <li class="flex"><v-avatar size="30"><v-img alt="Mory" src="/icon.ico"></v-img></v-avatar>
                                 <p class="ml-3 my-auto">Mory</p>
                                 <div class="w-5 h-0.5 bg-zinc-800 my-auto ml-4 mr-1"></div>
-                                <p class="text-xs my-auto brightness-75">Chattok game developer</p>
+                                <p class="md:text-[1.2rem] my-auto brightness-75">Chattok game developer</p>
                             </li>
-                            <p class="text-xs font-thin italic ml-5 opacity-80">"Behind the scenes, our team has
+                            <p class="text-sm font-thin italic ml-5 opacity-80">"Behind the scenes, our team has
                                 meticulously
                                 crafted every
                                 aspect
@@ -59,9 +59,9 @@
                             <li class="flex"><v-avatar size="30"><v-img alt="Mory" src="/b.webp"></v-img></v-avatar>
                                 <p class="ml-3 my-auto">Alfa</p>
                                 <div class="w-5 h-0.5 bg-zinc-800 my-auto ml-4 mr-1"></div>
-                                <p class="text-xs my-auto brightness-75">Chattok web developer</p>
+                                <p class="md:text-[1.2rem] my-auto brightness-75">Chattok web developer</p>
                             </li>
-                            <p class="text-xs font-thin italic ml-5 opacity-80">"As web developers, we've optimized our
+                            <p class="text-sm font-thin italic ml-5 opacity-80">"As web developers, we've optimized our
                                 Unity
                                 car racing game for performance and accessibility on the web. Leveraging WebGL for
                                 rendering,

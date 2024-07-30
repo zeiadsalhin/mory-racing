@@ -201,7 +201,7 @@ const getLiveid = async () => {
                             </div>
                             <p class="font-semibold text-lg md:text-left text-center p-2 my-auto">Welcome, {{
                                 displayname
-                            }} !
+                                }} !
                             </p>
 
                             <v-btn v-if="!subsStateLoad" readonly variant="tonal"
@@ -232,18 +232,18 @@ const getLiveid = async () => {
 
                                 <div class="Accountdetails flex space-x-3 py-3 mb-3 text-xs">
                                     <v-icon class="my-auto" size="30">mdi-account-details</v-icon>
-                                    <h1 class="text-lg font-semibold my-auto">Account Details:</h1>
+                                    <h1 class="text-xl font-semibold my-auto">Account Details:</h1>
                                 </div>
                                 <!--phone input and suffix-->
 
                                 <div class="data ml-2">
                                     <div class="email flex w-full mb-2">
                                         <p for="id" class="text-md my-auto">Email:</p>
-                                        <p class="md:text-md text-xs ml-2 my-auto w-fit">{{ email }}</p>
+                                        <p class="md:text-md text-sm ml-2 my-auto w-fit">{{ email }}</p>
                                     </div>
                                     <div class="authenticationstate flex w-full py-2 md:aspace-x-5">
                                         <p class="text-md  my-auto">Account:</p>
-                                        <p for="auth" class="md:text-md text-xs ml-2 my-auto w-fit">{{ auth
+                                        <p for="auth" class="md:text-md text-sm ml-2 my-auto w-fit">{{ auth
                                             }}<v-icon class="ml-1" size="20">mdi-check-decagram</v-icon></p>
                                         <template v-if="auth == 'authenticated'">
 
@@ -318,7 +318,7 @@ const getLiveid = async () => {
 
                         <v-card id="LiveGames" v-if="!subsStateLoad" color="#ff0050" :elevation="4" variant="tonal"
                             :border="true"
-                            class="GAMES right ma-5 min-w-fit max-w-fit flex flex-col text-left mx-auto pa-6 text-h7">
+                            class="GAMES right ma-5 min-w-fit md:max-w-fit max-w-[16rem] flex flex-col text-left mx-auto pa-6 text-h7">
                             <div class="Games flex space-x-3 py-3 mb-3">
                                 <v-icon color="#00f2ea" class="my-auto" size="30">mdi-gamepad-square</v-icon>
                                 <h1 class="text-lg font-semibold my-auto text-[#00f2ea]">Select a game</h1>
