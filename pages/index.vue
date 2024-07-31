@@ -33,7 +33,7 @@ useSeoMeta({
         <Shapes />
         <Carousel />
         <Welcome />
-        <GameFeatures />
+        <!-- <GameFeatures /> -->
         <HowitWorks />
         <GameLaunchDialog />
         <AboutGame />
