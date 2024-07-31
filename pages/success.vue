@@ -5,10 +5,10 @@
                 <div class="flex flex-col items-center">
                     <Vue3Lottie animationLink="/completed.json" :loop="1" :height="200" :width="200" />
                     <!-- <v-icon icon="mdi-check-circle" color="green" class="m-5" style="font-size: 4rem;"></v-icon> -->
-                    <h1 class="p-2 text-xl font-semibold">Order Completed !</h1>
-                    <p class="p-2">Your payment was successful.</p>
-                    <p class="text-sm">Redirecting in {{ countdown }}</p>
-                    <p class="text-xs p-1">Please don't close or refresh!</p>
+                    <h1 class="p-2 text-xl font-semibold">{{ $t('ordercomplete') }}</h1>
+                    <p class="p-2">{{ $t('ordercompleteconfirm') }}</p>
+                    <p class="text-sm">{{ $t('ordercancelred') }} {{ countdown }}</p>
+                    <p class="text-xs p-1">{{ $t('ordercompletewarning') }}</p>
                 </div>
             </div>
 

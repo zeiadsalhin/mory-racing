@@ -143,6 +143,11 @@ export default defineI18nConfig(() => ({
         resetpassemail:"Enter your Email:",
         resetpasssent:"Sent ",
         resetpasssend:"Send login link",
+        ordercancel:"You canceled your order",
+        ordercancelred:"Redirecting in",
+        ordercomplete:"Order Completed !",
+        ordercompleteconfirm:"Your payment was successful.",
+        ordercompletewarning:"Please don't close or refresh!",
         },
   
         ar: {
@@ -285,6 +290,11 @@ export default defineI18nConfig(() => ({
         resetpassemail:"لطلب رابط إعادة تعيين كلمة المرور من فضلك",
         resetpasssent:"تم الارسال ",
         resetpasssend:"إرسال رابط تسجيل الدخول",
+        ordercancel:"لقد ألغيت طلبك",
+        ordercancelred:"إعادة التوجيه في",
+        ordercomplete:"تم اكتمال الطلب !",
+        ordercompleteconfirm:"نجحت عملية الدفع!",
+        ordercompletewarning:"من فضلك لا تغلق أو تحدث الصفحة!",
           },
       es: {
         navigation: {
