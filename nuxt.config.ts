@@ -24,6 +24,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxt/image',
     '@nuxt/content',
+    '@nuxtjs/i18n',
     // 'nuxt-paypal',
     // "@unlok-co/nuxt-stripe",
     '@pinia/nuxt',
@@ -65,5 +66,8 @@ export default defineNuxtConfig({
       : 'http://localhost:3000/',
       stripePk: import.meta.env.VITE_STRIPE_PUBLIC_KEY,
     },
+  },
+  i18n: {
+    vueI18n: './i18n.config.ts',
   }
 })

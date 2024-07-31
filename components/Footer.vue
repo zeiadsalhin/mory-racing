@@ -24,7 +24,7 @@ const date = new Date().getFullYear()
                 <p class="text-lg text-left font-weight-bold mt-5 mb-2">Chattok Gaming</p>
                 <nuxtLink :to="b.link" color="surface" class="space-y-2 brightness-75 hover:brightness-100 w-fit flex"
                     v-for="(b, i) in navigation" :key="`navigation${i}`" fab depressed>
-                    <p class="text-sm p-1 w-fit">{{ b.name }}</p>
+                    <p class="text-sm p-1 w-fit">{{ $t(`navigation.${b.name}`) }}</p>
                     <!-- <v-icon>{{ b.icon }}</v-icon> -->
                 </nuxtLink>
             </div>
@@ -43,7 +43,7 @@ const date = new Date().getFullYear()
                 </a>
             </div>-->
             <div class="3 p-5 flex flex-col text-left items-start">
-                <p class="text-md font-weight-bold mt-5 mb-2">Follow us</p>
+                <p class="text-md font-weight-bold mt-5 mb-2">{{ $t('follow') }}</p>
                 <div class="flex justify-center space-x-5">
                     <a href="https://discord.gg/GywCaY898e"
                         class="my-auto brightness-50 hover:brightness-100 transform transition ease-in-out duration-400 mt-3 w-fit flex justify-start">
@@ -98,8 +98,8 @@ export default {
                 { icon: "", name: "Home", link: "/" },
                 { icon: "", name: "About", link: "#about" },
                 { icon: "", name: "Offers", link: "#offers" },
-                { icon: "", name: "Terms of service", link: "/TermsOfService" },
-                { icon: "", name: "Contact Us", link: "/Contact-us" },
+                { icon: "", name: "TermsOfService", link: "/TermsOfService" },
+                { icon: "", name: "ContactUs", link: "/Contact-us" },
             ],
         };
     },

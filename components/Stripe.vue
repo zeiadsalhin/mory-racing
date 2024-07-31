@@ -6,9 +6,7 @@
                     class="mx-1">mdi-credit-card</v-icon>
                 <v-progress-circular v-else color="grey-darken-1" size="20" width="1" indeterminate
                     class="my-auto mx-2"></v-progress-circular>
-                Pay
-                with
-                Stripe</v-btn>
+                {{ $t('stripepay') }}</v-btn>
         </client-only>
     </section>
 </template>

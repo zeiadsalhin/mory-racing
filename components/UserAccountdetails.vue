@@ -199,25 +199,26 @@ const getLiveid = async () => {
                                     class="mx-auto rounded-full outline outline-2 outline-[#00f2ea]"></v-img>
                                 <v-icon v-else size="40">mdi-account</v-icon>
                             </div>
-                            <p class="font-semibold text-lg md:text-left text-center p-2 my-auto">Welcome, {{
-                                displayname
+                            <p class="font-semibold text-lg md:text-left text-center p-2 my-auto">{{ $t('welcomeuser')
+                                }}, {{
+                                    displayname
                                 }} !
                             </p>
 
                             <v-btn v-if="!subsStateLoad" readonly variant="tonal"
                                 :color="subsState ? 'green' : 'grey-darken-1'"
                                 class="flex justify-center text-subtitle text-center align-middle items-center mx-auto my-auto w-fit">
-                                {{ subsState ? 'Subscribed' : 'Free' }}</v-btn>
+                                {{ subsState ? $t('substate1') : $t('substate2') }}</v-btn>
 
                             <v-skeleton-loader v-else type="chip" class="mx-auto my-auto w-32"></v-skeleton-loader>
                         </div>
-                        <p v-if="userLiveId" class="font-sans text-lg inline-block p-2">Live Id:
+                        <p v-if="userLiveId" class="font-sans text-lg inline-block p-2">{{ $t('liveid') }}:
                         <p class="font-semibold inline-block text-sm">{{ userLiveId }}</p>
                         </p>
                         <div class="logout flex mt-10  w-fit text-center mx-auto"><v-btn @click="LogOut" min-height="40"
                                 min-width="120" class="m-5" color="#ff0050"><v-icon
-                                    class="mx-1">mdi-exit-to-app</v-icon>Logout</v-btn>
-                            <p class="my-auto text-xs md:text-md max-w-[12rem]">Last login: {{ signin }}</p>
+                                    class="mx-1">mdi-exit-to-app</v-icon>{{ $t('logout') }}</v-btn>
+                            <p class="my-auto text-xs md:text-md max-w-[12rem]">{{ $t('lastlogin') }}: {{ signin }}</p>
                         </div>
                     </div>
                     <div class="bg-zinc-800 w-9/12 mx-auto h-0.5 mt-10 mb-5"></div>
@@ -232,17 +233,17 @@ const getLiveid = async () => {
 
                                 <div class="Accountdetails flex space-x-3 py-3 mb-3 text-xs">
                                     <v-icon class="my-auto" size="30">mdi-account-details</v-icon>
-                                    <h1 class="text-xl font-semibold my-auto">Account Details:</h1>
+                                    <h1 class="text-xl font-semibold my-auto">{{ $t('accountdetails') }}:</h1>
                                 </div>
                                 <!--phone input and suffix-->
 
                                 <div class="data ml-2">
                                     <div class="email flex w-full mb-2">
-                                        <p for="id" class="text-md my-auto">Email:</p>
+                                        <p for="id" class="text-md my-auto">{{ $t('accountemail') }}:</p>
                                         <p class="md:text-md text-sm ml-2 my-auto w-fit">{{ email }}</p>
                                     </div>
                                     <div class="authenticationstate flex w-full py-2 md:aspace-x-5">
-                                        <p class="text-md  my-auto">Account:</p>
+                                        <p class="text-md  my-auto">{{ $t('accountstate') }}:</p>
                                         <p for="auth" class="md:text-md text-sm ml-2 my-auto w-fit">{{ auth
                                             }}<v-icon class="ml-1" size="20">mdi-check-decagram</v-icon></p>
                                         <template v-if="auth == 'authenticated'">
@@ -257,40 +258,40 @@ const getLiveid = async () => {
                                 class="details right min-w-fit text-body-1 font-weight-thin ma-md-5 md:min-h-[22rem] md:min-w-[22rem] flex-col text-left pa-md-5 pa-1 text-h7">
                                 <div class="Subscriptiondetails flex p-3 space-x-3 py-3 mb-3">
                                     <v-icon class="my-auto" size="30">mdi-cloud-sync</v-icon>
-                                    <h1 class="text-2xl font-semibolda my-auto font-sans font-bold">Subscription
-                                        Details:
+                                    <h1 class="text-2xl font-semibolda my-auto font-sans font-bold">{{ $t('subsdetails')
+                                        }}:
                                     </h1>
                                 </div>
                                 <div class="plan px-5">
-                                    <p class="text-lg inline-block text-white font-sans font-bold">Subscription
-                                        plan:
+                                    <p class="text-lg inline-block text-white font-sans font-bold">{{ $t('subsplan') }}:
                                     </p>
                                     <p class="text-left font-sans font-semibold p-2 w-fit max-w-[15rem]">
-                                        {{ subsState ? subsPlan : 'Free' }}</p>
+                                        {{ subsState ? subsPlan : $t('substate2') }}</p>
                                 </div>
                                 <div class="pay px-5" v-if="autoPay && cancelStatus != 'Valid till end of billing'">
-                                    <p class="text-md inline-block text-white font-sans font-bold">Auto payment: </p>
+                                    <p class="text-md inline-block text-white font-sans font-bold">{{ $t('ap') }}: </p>
                                     <p class="text-left text-lg font-sans font-semibold p-2 w-fit max-w-[18rem]">
-                                        {{ autoPay ? autoPay + ' - ' + 'ON' : '' }}</p>
+                                        {{ autoPay ? autoPay + ' - ' + $t('on') : '' }}</p>
                                 </div>
                                 <div class="statues px-5">
-                                    <p class="text-lg inline-block text-white font-sans font-bold">Subscription Status:
+                                    <p class="text-lg inline-block text-white font-sans font-bold">{{
+                                        $t('substatetitle') }}:
                                     </p> <v-btn readonly variant="text" :color="subsState ? 'green' : 'grey-darken-1'"
                                         class="flex justify-center text-center font-sans font-semibold align-middle items-center mx-auto my-auto w-fit">
-                                        {{ subsState ? cancelStatus : 'Free' }}</v-btn>
+                                        {{ subsState ? cancelStatus : $t('substate2') }}</v-btn>
                                 </div>
 
                                 <div v-if="subsState" class="start px-5">
-                                    <p class="text-xl py-2 font-sans font-bold">Start Date:</p> <v-btn readonly
+                                    <p class="text-xl py-2 font-sans font-bold">{{ $t('sd') }}:</p> <v-btn readonly
                                         variant="text" :color="subsState ? 'green' : 'grey-darken-1'"
                                         class="flex justify-center text-h6 text-center font-sans font-semibold mx-auto my-auto w-fit">
-                                        {{ subsState ? subscriptionStart : 'not available' }}</v-btn>
+                                        {{ subsState ? subscriptionStart : $t('notavailable') }}</v-btn>
                                 </div>
                                 <div v-if="subsState" class="end px-5">
-                                    <p class="text-xl py-2 font-sans font-bold">End Date:</p>
+                                    <p class="text-xl py-2 font-sans font-bold">{{ $t('ed') }}:</p>
                                     <v-btn readonly variant="text" :color="subsState ? 'red-darken-4' : 'grey-darken-1'"
                                         class="flex justify-center text-h6 text-center font-sans font-semibold mx-auto my-auto w-fit">
-                                        {{ subsState ? subscriptionEnd : 'not available' }}</v-btn>
+                                        {{ subsState ? subscriptionEnd : $t('notavailable') }}</v-btn>
                                 </div>
 
                                 <div v-if="subsState" class="manage w-fit bg-zinc-7a00 flex my-auto px-5">
@@ -300,13 +301,13 @@ const getLiveid = async () => {
                                     <!-- </v-btn> -->
                                     <v-btn @click="" disabled type="button" max-height="40" min-height="40"
                                         variant="tonal" color="green" :ripple="false" :elevation="0" class="m-5 w-fit">
-                                        Renew
+                                        {{ $t('renew') }}
                                     </v-btn>
                                 </div>
                                 <div v-else class="subscribe">
                                     <v-btn to="#plans" @click="" type="button" max-height="40" min-height="40"
                                         variant="outlined" color="green" :elevation="0" class="m-5 w-fit">
-                                        <v-icon class="mr-1">mdi-plus-thick</v-icon> Subscribe now
+                                        <v-icon class="mr-1">mdi-plus-thick</v-icon> {{ $t('subscribe') }}
                                     </v-btn>
                                 </div>
 
@@ -321,7 +322,7 @@ const getLiveid = async () => {
                             class="GAMES right ma-5 min-w-fit md:max-w-fit max-w-[16rem] flex flex-col text-left mx-auto pa-6 text-h7">
                             <div class="Games flex space-x-3 py-3 mb-3">
                                 <v-icon color="#00f2ea" class="my-auto" size="30">mdi-gamepad-square</v-icon>
-                                <h1 class="text-lg font-semibold my-auto text-[#00f2ea]">Select a game</h1>
+                                <h1 class="text-lg font-semibold my-auto text-[#00f2ea]">{{ $t('selectgame') }}</h1>
                             </div>
                             <div class="games md:flex flex-row space-y-5 md:space-y-0 min-h-fit mx-auto amax-w-fit">
                                 <div class="1 flex flex-col  px-2 mx-auto text-center ">
@@ -338,7 +339,7 @@ const getLiveid = async () => {
                                         :variant="subsState ? 'outlined' : 'outlined'"
                                         :color="subsState ? 'red-darken-4' : 'grey-darken-1'"
                                         class="text-center mx-auto mt-2 m-2 my-auto max-w-fit w-fit">
-                                        {{ subsState ? 'GO LIVE !' : 'Subscribe' }}</v-btn>
+                                        {{ subsState ? $t('golive') : $t('subscribe') }}</v-btn>
                                 </div>
                                 <LiveId :open="startGame" @resetDialog="startGame = false;" />
                                 <div class="2 flex flex-col  px-2 mx-auto text-center ">
@@ -354,7 +355,7 @@ const getLiveid = async () => {
                                     <v-btn disabled :variant="subsState ? 'tonal' : 'outlined'"
                                         :color="subsState ? 'red-lighten-4' : 'grey-darken-1'"
                                         class="text-center mx-auto mt-2 m-2 my-auto max-w-fit w-fit">
-                                        {{ subsState ? 'Soon' : 'Soon' }}</v-btn>
+                                        {{ subsState ? $t('soon') : $t('soon') }}</v-btn>
                                 </div>
                                 <div class="3 flex flex-col  px-2 mx-auto text-center ">
                                     <div class="statues">
@@ -368,14 +369,14 @@ const getLiveid = async () => {
                                     <v-btn disabled variant="outlined"
                                         :color="subsState ? 'red-lighten-4' : 'grey-darken-1'"
                                         class="text-center mx-auto mt-2 m-2 my-auto max-w-fit w-fit">
-                                        {{ subsState ? 'Soon' : 'Soon' }}</v-btn>
+                                        {{ subsState ? $t('soon') : $t('soon') }}</v-btn>
 
                                 </div>
                             </div>
                             <div v-if="!subsState" class="subscribe">
                                 <v-btn to="#plans" @click="" type="button" max-height="40" min-height="40"
                                     variant="tonal" color="green" :elevation="0" class="m-5 w-fit">
-                                    Subscribe To Play
+                                    {{ $t('substoplay') }}
                                 </v-btn>
                             </div>
 
@@ -389,27 +390,27 @@ const getLiveid = async () => {
                         variant="tonal">
                         <div class="title flex mb-3">
                             <v-icon class="mx-2" size="30">mdi-pulse</v-icon>
-                            <h1 class="text-lg font-semibold ">Status:</h1>
+                            <h1 class="text-lg font-semibold ">{{ $t('serverstate') }}:</h1>
                         </div>
                         <div class="content w-fit">
                             <div class="game flex px-5">
-                                <h1 class="text-md py-2 text-white">Game Server: </h1>
+                                <h1 class="text-md py-2 text-white">{{ $t('servergame') }}: </h1>
                                 <v-btn readonly variant="text" :color="apiState ? 'green-darken-1' : 'red-darken-1'"
                                     class="flex justify-center text-sm text-center mx-auto my-auto w-fit">
-                                    {{ apiState ? 'Operational' : 'down' }}</v-btn>
+                                    {{ apiState ? $t('serverop') : $t('serverdown') }}</v-btn>
                             </div>
                             <div class="api flex px-5">
                                 <h1 class="text-md py-2 text-white">API: </h1>
                                 <v-btn readonly variant="text" :color="apiState ? 'green-darken-1' : 'red-darken-1'"
                                     class="flex justify-center text-sm text-center mx-auto my-auto w-fit">
-                                    {{ apiState ? 'Operational' : 'down' }}</v-btn>
+                                    {{ apiState ? $t('serverop') : $t('serverdown') }}</v-btn>
                             </div>
                             <div class="run flex px-5">
                                 <h1 class="text-md py-2 text-white">Game Access: </h1>
                                 <v-btn readonly variant="text" :color="!apiState ? 'green-darken-1' : '#ff0050'"
                                     class="flex justify-center text-sm text-center mx-auto my-auto w-fit"
                                     :prepend-icon="!apiState ? '' : 'mdi-alert'">
-                                    {{ !apiState ? 'Operational' : 'down' }}</v-btn>
+                                    {{ !apiState ? $t('serverop') : $t('serverdown') }}</v-btn>
                             </div>
 
                         </div>

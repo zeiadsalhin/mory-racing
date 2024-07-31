@@ -81,7 +81,7 @@ const cancelSubscription = async () => {
                 <!-- <v-btn v-bind="activatorProps" text="test confirmation"></v-btn> -->
                 <v-btn @click="" v-bind="activatorProps" type="button" max-height="40" min-height="40" variant="text"
                     color="red" :ripple="false" :elevation="1" class="my-auto w-20">
-                    Cancel
+                    {{ $t('cancel') }}
                 </v-btn>
             </template>
 
@@ -90,13 +90,11 @@ const cancelSubscription = async () => {
                     <template v-slot:text>
                         <v-card-title class="text-center"><v-icon class="mx-auto" color="red"
                                 size="40">mdi-alert</v-icon></v-card-title>
-                        <h1 class="text-xl font-weight-bold mb-3 text-center  font-sans font-bold">Your Current
-                            Subscription will
-                            be canceled!</h1>
+                        <h1 class="text-xl font-weight-bold mb-3 text-center  font-sans font-bold">{{ $t('subscancel')
+                            }}</h1>
                         <div>
                             <p v-if="props.successMessage" class="success-message text-red-600  font-sans font-bold">{{
-                                props.successMessage
-                                }}</p>
+                                $t(`cancelwarning`) }}</p>
                         </div>
                         <v-spacer></v-spacer>
                         <!-- <h1 class="text-h7 p-1">Your Order_ID is:</h1> -->
@@ -106,11 +104,11 @@ const cancelSubscription = async () => {
                     <v-card-actions>
                         <v-spacer></v-spacer>
 
-                        <v-btn color="surface-variant" text="Cancel" variant="text"
-                            @click="isActive.value = false"></v-btn>
+                        <v-btn color="surface-variant" text="" variant="text" @click="isActive.value = false">{{
+                            $t('cancel') }}</v-btn>
 
-                        <v-btn color="red" :elevation="4" text="Confirm" variant="outlined"
-                            @click="isActive.value = false; cancelSubscription()"></v-btn>
+                        <v-btn color="red" :elevation="4" text="" variant="outlined"
+                            @click="isActive.value = false; cancelSubscription()">{{ $t('confirm') }}</v-btn>
                     </v-card-actions>
                 </v-card>
             </template>

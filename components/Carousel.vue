@@ -13,23 +13,19 @@ watch(user, () => {
 }, { immediate: true })
 </script>
 <template>
-    <h1 id="offers" class="text-2xl font-semibold p-5 mx-auto text-center italic">Discover Next Gen Live games</h1>
+    <h1 id="offers" class="text-2xl font-semibold p-5 mx-auto text-center italic">{{ $t('discovergame') }}</h1>
     <transition name="fade" mode="out-in">
         <v-parallax src="/public/b.webp " class="md:h-[500px] h-full">
             <div class="d-flex flex-column fill-height justify-center alaign-center text-white">
                 <div class="rounded-md backdrop-brightness-75 w-fit  md:m-10 md:p-10 p-5 ">
                     <h1 class="text-2xl md:text-3xl w-fit font-weight-bold mb-4">
-                        Chattok Gaming is Live!
+                        {{ $t('chattoklive') }}!
                     </h1>
-                    <p class="text-subtitle md:w-[30rem] brightness-90 font-weight-light px-3  mb-4">Enjoy the online
-                        ultimate
-                        racing
-                        experience
-                        now with enhanced version
+                    <p class="text-subtitle md:w-[30rem] brightness-90 font-weight-light px-3  mb-4">{{
+                        $t('chattoklivedesc') }}
                     </p>
                     <v-btn :to="isUser ? '/user/account#LiveGames' : '/login'" color="#ff0050" variant="flat"
-                        :ripple="false" class="text-h6 m-2">Play
-                        Now</v-btn>
+                        :ripple="false" class="text-h6 m-2">{{ $t('chattoklivebutton') }}</v-btn>
 
                 </div>
             </div>

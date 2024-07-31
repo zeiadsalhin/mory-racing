@@ -39,7 +39,7 @@ const SelectPlan = (planv, plan_id, planp, pland) => {
 <template>
     <div>
         <div v-if="showPlans" id="plans" class="plans">
-            <p class="font-semibold text-lg md:text-left text-center p-2 my-auto">Available Plans:
+            <p class="font-semibold text-lg md:text-left text-center p-2 my-auto">{{ $t('plans') }}:
             </p>
 
             <div class="h-full md:flex justify-center md:space-x-5 w-full m-10 mx-auto text-white"
@@ -49,34 +49,35 @@ const SelectPlan = (planv, plan_id, planp, pland) => {
                     <div v-if="popular.daily" class="absolute top-0 right-0 mr-6 -mt-4">
                         <div
                             class="inline-flex items-center text-xs font-semibold py-1.5 px-3 bg-[#ff0050] text-white rounded-full shadow-sm shadow-slate-950/5">
-                            Most Popular</div>
+                            {{ $t('popular') }}</div>
                     </div>
                     <div class="mb-5">
-                        <div class="text-slate-900 dark:text-slate-200 font-semibold text-lg mb-1">{{ planName.daily }}
+                        <div class="text-slate-900 dark:text-slate-200 font-semibold text-lg mb-1">{{
+                            $t(`planName.daily`) }}
                         </div>
                         <div class="inline-flex items-baseline mb-2">
                             <span class="text-slate-900 dark:text-slate-200 font-semibold text-2xl">$</span>
                             <span class="text-slate-900 dark:text-slate-200 font-semibold text-3xl">{{ price.daily
                                 }}</span>
-                            <span class="text-slate-500 font-medium">/day</span>
+                            <span class="text-slate-500 font-medium">/{{ $t('day') }}</span>
                         </div>
-                        <div class="text-sm text-slate-500 mb-5">{{ planDescription.daily }}</div>
+                        <div class="text-sm text-slate-500 mb-5">{{ $t(`planDescription.daily`) }}</div>
                         <a @click="SelectPlan(planName.daily, plan_id.lite, price.daily, planDescription.daily)"
                             class="w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-[#ff0050] px-3.5 py-2.5 text-sm font-medium text-white shadow-sm shadow-[#ff0050]/10 hover:bg-[zinc-600] focus:outline-none focus:ring-2 focus:ring-[#00f2ea] transition-colors duration-150"
                             href="#0">
-                            Purchase Plan
+                            {{ $t('buy') }}
                         </a>
                     </div>
-                    <div class="text-slate-900 dark:text-slate-200 font-medium mb-3">Includes:</div>
+                    <div class="text-slate-900 dark:text-slate-200 font-medium mb-3">{{ $t('include') }}:</div>
                     <ul class="text-slate-600 dark:text-slate-400 text-xs text-left space-y-3 grow">
-                        <template v-for="feature in features.daily">
+                        <template v-for="(feature, index) in features.daily">
                             <li class="flex items-center">
                                 <svg class="w-3 h-3 fill-emerald-500 mr-3 shrink-0" viewBox="0 0 12 12"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                                 </svg>
-                                <span>{{ feature }}</span>
+                                <span>{{ $t(`features.daily.${feature}`) }}</span>
                             </li>
                         </template>
                     </ul>
@@ -87,25 +88,25 @@ const SelectPlan = (planv, plan_id, planp, pland) => {
                     <div v-if="popular.monthly" class="absolute top-0 right-0 mr-6 -mt-4">
                         <div
                             class="inline-flex items-center text-xs font-semibold py-1.5 px-3 bg-[#ff0050] text-white rounded-full shadow-2xl shadow-slate-950/5">
-                            Most Popular</div>
+                            {{ $t('popular') }}</div>
                     </div>
                     <div class="mb-5">
-                        <div class="text-slate-900 dark:text-slate-200 font-semibold text-lg mb-1">{{ planName.monthly
-                            }}</div>
+                        <div class="text-slate-900 dark:text-slate-200 font-semibold text-lg mb-1">{{
+                            $t(`planName.monthly`) }}</div>
                         <div class="inline-flex items-baseline mb-2">
                             <span class="text-slate-900 dark:text-slate-200 font-semibold text-2xl">$</span>
                             <span class="text-slate-900 dark:text-slate-200 font-semibold text-3xl">{{ price.monthly
                                 }}</span>
-                            <span class="text-slate-500 font-medium">/mo</span>
+                            <span class="text-slate-500 font-medium">/{{ $t('month') }}</span>
                         </div>
-                        <div class="text-sm text-slate-500 mb-5">{{ planDescription.monthly }}</div>
+                        <div class="text-sm text-slate-500 mb-5">{{ $t(`planDescription.monthly`) }}</div>
                         <a @click="SelectPlan(planName.monthly, plan_id.ultimate, price.monthly, planDescription.monthly)"
                             class="w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-[#ff0050] px-3.5 py-2.5 text-sm font-medium text-white shadow-sm shadow-[#ff0050]/10 hover:bg-[zinc-600] focus:outline-none focus:ring-2 focus:ring-[#00f2ea] transition-colors duration-150"
                             href="#1">
-                            Purchase Plan
+                            {{ $t('buy') }}
                         </a>
                     </div>
-                    <div class="text-slate-900 dark:text-slate-200 font-medium mb-3">Includes:</div>
+                    <div class="text-slate-900 dark:text-slate-200 font-medium mb-3">{{ $t('include') }}:</div>
                     <ul class="text-slate-600 dark:text-slate-400 text-xs text-left space-y-3 grow">
                         <template v-for="feature in features.monthly">
                             <li class="flex items-center">
@@ -114,7 +115,7 @@ const SelectPlan = (planv, plan_id, planp, pland) => {
                                     <path
                                         d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                                 </svg>
-                                <span>{{ feature }}</span>
+                                <span>{{ $t(`features.monthly.${feature}`) }}</span>
                             </li>
                         </template>
                     </ul>
@@ -124,23 +125,21 @@ const SelectPlan = (planv, plan_id, planp, pland) => {
         <v-card v-else color="#00f2ea" variant="outlined"
             class="payments md:w-1/2 space-y-5 shadow-2xl shadow-[#ff0050]/10 min-h-[30rem] mx-auto">
             <div class="selected text-[#ff0050] md:p-5">
-                <p class="font-semibold p-4 my-auto text-xl"><v-icon>mdi-check-circle</v-icon>Selected:
+                <p class="font-semibold p-4 my-auto text-xl"><v-icon>mdi-check-circle</v-icon>{{ $t('selected') }}:
                 <p class="underline inline-block">{{ planSelected }}</p>, ${{ planPrice }}
-                {{ planSelected === 'Mory Racing Lite' ? '/day' : '/month' }}</p>
+                {{ planSelected === 'Mory Racing Lite' ? '/' + $t('day') : '/' + $t('month') }}</p>
             </div>
             <p class="font-semibold text-lg md:text-left md:p-4 my-auto text-white"><v-icon
-                    class="m-2">mdi-credit-card-outline</v-icon>Select
-                Payment
-                Method:
+                    class="m-2">mdi-credit-card-outline</v-icon>{{ $t('selectpm') }}:
             </p>
             <div class="paymentmethods p-1">
                 <!-- <p class="onetime p-2">One-Time purchase</p>
                 <Paypal :plan="planSelected" :price="planPrice" :description="planDesc" /> -->
-                <p class="onetime p-3 mt-5">Subscribe:</p>
+                <p class="onetime p-3 mt-5">{{ $t('subscribe') }}:</p>
                 <!-- <Paypal-subs :plan="planSelected" :price="planPrice" :description="planDesc" /> -->
                 <Stripe :plan="plan_price_id" />
             </div>
-            <v-btn @click="showPlans = true" class="ma-4 mt-10">Back</v-btn>
+            <v-btn @click="showPlans = true" class="ma-4 mt-10">{{ $t('cancel') }}</v-btn>
         </v-card>
     </div>
 </template>

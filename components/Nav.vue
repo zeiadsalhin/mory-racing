@@ -3,6 +3,8 @@ import { useMainStore } from '@/store';
 import { useTheme } from 'vuetify'
 const mainStore = useMainStore();
 const cartItems = ref([]);
+const { locale, setLocale } = useI18n()
+const currentLocale = computed(() => locale.value)
 const avatar = ref();
 const theme = useTheme();
 const Mode = ref(theme.global.name.value);
@@ -45,6 +47,16 @@ onMounted(() => {
     // });
 });
 
+// set language 
+const change = ((val) => {
+    setLocale(val);
+    localStorage.setItem('lang', val)
+})
+
+onBeforeMount(() => {
+    localStorage?.getItem('lang') ? setLocale(localStorage.getItem('lang')) : setLocale((navigator.language).slice(0, 2))
+    // console.log('User language:', navigator.language);
+})
 async function fetchCartItems() {
     try {
         const supabase = useSupabaseClient()
@@ -130,16 +142,36 @@ watch(user, () => {
                     <v-icon size="20">mdi-home-variant</v-icon>
                 </v-btn>
             </nuxt-link> -->
+            <v-menu transition="slide-y-transition">
+                <template v-slot:activator="{ props }">
+                    <v-btn v-bind="props" class="mr-2 text-subtitle-1" variant="text" icon>{{
+                        currentLocale.toUpperCase() }}</v-btn>
+                </template>
+                <v-list :bg-color="theme.global.current.value.dark ? '' : ''">
+                    <v-list-item> <button @click="change('en')"
+                            class="w-full justify-start bg-transparent">English</button>
+                    </v-list-item>
+                    <v-list-item> <button @click="change('es')"
+                            class="w-full justify-start bg-transparent">Espanol</button>
+                    </v-list-item>
+                    <v-list-item> <button @click="change('ar')"
+                            class="w-full justify-start bg-transparent">العربية</button>
+                    </v-list-item>
+                </v-list>
+            </v-menu>
             <nuxt-link :to="isUser ? '/user/account' : '/admin'">
                 <v-btn v-if="avatar" class="mr-md-2" icon>
                     <v-avatar size="30"><v-img :src="avatar ? avatar : null"></v-img></v-avatar>
-                    <v-tooltip v-if="avatar" activator="parent" location="start">My account</v-tooltip>
+                    <v-tooltip v-if="avatar" activator="parent" location="start">{{ $t('myaccount') }}</v-tooltip>
                 </v-btn>
                 <v-btn v-else v-if="isUser" class="mr-md-2" icon><v-icon size="30">mdi-account-outline</v-icon>
                 </v-btn>
-                <v-btn v-if="!isUser" class="mr-2" variant="tonal">Login</v-btn>
+                <v-btn v-if="!isUser" class="mr-2" variant="tonal">{{ $t('login') }}</v-btn>
 
             </nuxt-link>
+
+            <div>
+            </div>
             <!-- <nuxt-link to="/products"><v-btn class="mr-md-2" icon>
                     <v-icon size="20">mdi-store-outline</v-icon>
                 </v-btn></nuxt-link> -->
@@ -161,7 +193,7 @@ watch(user, () => {
             <v-btn v-if="isUser" :to="isUser ? '/user/account#LiveGames' : '/login'" @click="" variant="text"
                 :ripple="false" color="#ff0050" class="mr-2 text-h6 font-weight-medium">
                 <v-icon size="25" class="mr-">mdi-play</v-icon>
-                <p class="text-white">Play</p>
+                <p class="text-white">{{ $t('play') }}</p>
             </v-btn>
             <v-spacer />
         </v-app-bar>

@@ -10,7 +10,7 @@ const gameServer = import.meta.env.VITE_moryracing_src
             <template v-slot:activator="{ props: activatorProps }">
 
                 <div class="flex justify-center p-5"> <v-btn v-bind="activatorProps" color="#ff0050" variant="outlined"
-                        class="text-h6 m-2">Try the game</v-btn></div>
+                        class="text-h6 m-2">{{ $t('tryracinggame') }}</v-btn></div>
             </template>
 
             <template v-slot:default="{ isActive }">
@@ -20,7 +20,7 @@ const gameServer = import.meta.env.VITE_moryracing_src
 
 
 
-                <v-btn text="Close" @click="isActive.value = false"></v-btn>
+                <v-btn text="" @click="isActive.value = false">{{ $t('close') }}</v-btn>
 
 
             </template>
