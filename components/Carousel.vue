@@ -13,7 +13,7 @@ watch(user, () => {
 }, { immediate: true })
 </script>
 <template>
-    <h1 id="offers" class="text-2xl font-semibold p-5 mx-auto text-center italic">Discover Next Gen Racing games</h1>
+    <h1 id="offers" class="text-2xl font-semibold p-5 mx-auto text-center italic">Discover Next Gen Live games</h1>
     <transition name="fade" mode="out-in">
         <v-parallax src="/public/b.webp " class="md:h-[500px] h-full">
             <div class="d-flex flex-column fill-height justify-center alaign-center text-white">
