@@ -28,7 +28,7 @@ const date = new Date().getFullYear()
                     <!-- <v-icon>{{ b.icon }}</v-icon> -->
                 </nuxtLink>
             </div>
-            <div class="3 flex flex-col text-left p-5">
+            <!--<div class="3 flex flex-col text-left p-5">
                 <p class="text-md font-weight-bold mt-5 mb-2">Game by</p>
                 <a href="https://github.com/OmarFahmy03"
                     class="my-auto brightness-50 hover:brightness-100 transform transition ease-in-out duration-400 mt-3 flex justify-start">
@@ -41,7 +41,7 @@ const date = new Date().getFullYear()
                     <v-icon icon="mdi-github" size="30" class="my-auto"></v-icon>
                     <p class="text-md my-auto ml-2">Alfa</p>
                 </a>
-            </div>
+            </div>-->
             <div class="3 p-5 flex flex-col text-left items-start">
                 <p class="text-md font-weight-bold mt-5 mb-2">Follow us</p>
                 <div class="flex justify-center space-x-5">
