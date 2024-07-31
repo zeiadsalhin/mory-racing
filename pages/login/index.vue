@@ -141,12 +141,9 @@ watch(user, () => {
                             <!--Confirmation-->
                             <p v-if="emailconfirm"
                                 class="w-10/12 mt-5 mx-auto text-xs shadow-md rounded-sm bg-green-600 text-white my-2 p-3">
-                                <v-icon class="mx-1" size="25">mdi-email-check</v-icon>A
-                                confirmation
-                                sent to Your
-                                email:
+                                <v-icon class="mx-1" size="25">mdi-email-check</v-icon>{{ $t('emailconfirm') }}
                             <p class="underline inline-block">{{ emailconfirm
-                                }}</p>, Please confirm it before signing in.</p>
+                                }}</p>, {{ $t('emailconfirm2') }}</p>
 
                             <div class="md:flex flex w-9/12 justify-center text-center mx-auto p-3">
                                 <v-btn @click="signInGoogle" min-height="45" min-width="80" class="m-2"
@@ -170,15 +167,15 @@ watch(user, () => {
                                 class="p-2 w-11/12 md:w-2/3 h-fit text-center mx-auto justify-center flex-col"
                                 @submit.prevent="signIn">
                                 <!--input fields-->
-                                <v-text-field variant="outlined" label="Email*" id="email" v-model="email"
+                                <v-text-field variant="outlined" :label="$t('emaillabel')" id="email" v-model="email"
                                     :color="theme.global.current.value.dark ? '#ff0050' : '#ff0050'"
                                     :bg-color="theme.global.current.value.dark ? '' : 'grey-lighten-4'"
                                     spellcheck="false" type="email" @focus="isFocused2 = true"
                                     @blur="isFocused2 = false" required />
                                 <!---->
                                 <div class="flex  w-full  bg-whiate  rounded-md ">
-                                    <v-text-field variant="outlined" label="Password*" id="password" v-model="password"
-                                        :append-inner-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+                                    <v-text-field variant="outlined" :label="$t('passlabel')" id="password"
+                                        v-model="password" :append-inner-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                                         @click:append-inner="toggleVisibility"
                                         :color="theme.global.current.value.dark ? '#ff0050' : '#ff0050'"
                                         :bg-color="theme.global.current.value.dark ? '' : 'grey-lighten-4'"
@@ -190,12 +187,12 @@ watch(user, () => {
                                     <!-- <NuxtLink to="#oneClickLogin"> -->
                                     <button type="button" @click="oneClickLogintoggle"
                                         class="py- text-xs opacity-70 w-fit hover:cursor-pointer amx-auto bloack underline">
-                                        OneClick Login
+                                        {{ $t('oneclick') }}
                                     </button>
                                     <!-- </NuxtLink> -->
                                     <button type="button" @click="resetPasswordPagetoggle"
                                         class="py- text-xs opacity-70 w-fit hover:cursor-pointer amx-auto bloack underline">
-                                        Forget Password?
+                                        {{ $t('forpassword') }}
                                     </button>
                                 </div>
                                 <!--Display error message if any-->
@@ -207,14 +204,14 @@ watch(user, () => {
                                     :elevation="1" class="m-5 w-44 text-lg rounded-md hover:cursor-pointer">
                                     <v-progress-circular v-if="authenticating" width="2" size="20" color="#ff0050"
                                         class="m-1" indeterminate></v-progress-circular>
-                                    Log in
+                                    {{ $t('login') }}
                                 </v-btn>
                                 <div class="flex w-fit md:space-x-5 space-x-3 text-xs mx-auto mt-">
                                     <!--navigate to login page-->
-                                    <p class="mr- my-auto text-center md:text-sm text-xs">Don't have an account?</p>
+                                    <p class="mr- my-auto text-center md:text-sm text-xs">{{ $t('haveaccount') }}</p>
                                     <NuxtLink to="/signup" class="text-[#ff0050]"><button type="button"
                                             class="py-2 opacity-100 w-fiat mx-auto block hover:underline">
-                                            Sign Up
+                                            {{ $t('signup') }}
                                         </button></NuxtLink>
                                 </div>
                             </form>

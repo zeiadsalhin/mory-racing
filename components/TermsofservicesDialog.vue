@@ -2,7 +2,7 @@
     <div class="pa-2 text-center">
         <v-dialog max-width=" 800">
             <template v-slot:activator="{ props: activatorProps }">
-                <p v-bind="activatorProps" class="underline h-fit my-auto">Terms and Conditions*</p>
+                <p v-bind="activatorProps" class="underline h-fit my-auto">{{ $t('termsandconditions') }}</p>
             </template>
 
             <template v-slot:default="{ isActive }">

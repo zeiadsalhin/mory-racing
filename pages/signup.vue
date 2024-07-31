@@ -182,7 +182,7 @@ watch(user, () => {
 
                 <div
                     class="left md:w-2/5 mx-auto min-w-fit h-fit rounded-md bg-zinc-950 backdrop-blur-md bg-opacity-80 shadow-2xl  shadow-zinc-950 m-2">
-                    <h1 class="text-3xl md:text-4xl text-center font-extrabold p-5 mt-2">Sign Up</h1>
+                    <h1 class="text-3xl md:text-4xl text-center font-extrabold p-5 mt-2">{{ $t('signup') }}</h1>
                     <div class="w-1/4 h-1 mt-5 rounded-xl mx-auto bg-[#ff0050]"></div>
 
                     <form id="form"
@@ -193,7 +193,7 @@ watch(user, () => {
                             <div class="form flex justify-center">
                                 <!-- <label class=" text-lg md:text-xl text-right p-3">Name<span
                                 class="required text-red-600">*</span></label> -->
-                                <v-text-field variant="outlined" label="Name*" id="name" type="name"
+                                <v-text-field variant="outlined" :label="$t('namelabel')" id="name" type="name"
                                     v-model="displayname"
                                     :color="theme.global.current.value.dark ? '#ff0050' : 'surface'"
                                     :bg-color="theme.global.current.value.dark ? '' : 'grey-lighten-4'"
@@ -205,7 +205,7 @@ watch(user, () => {
                             <div class="form flex justify-center">
                                 <!-- <label class="  text-lg md:text-xl  p-3">Email<span
                                 class="required text-red-600">*</span></label> -->
-                                <v-text-field variant="outlined" label="Email*" id="email" v-model="email"
+                                <v-text-field variant="outlined" :label="$t('emaillabel')" id="email" v-model="email"
                                     :color="theme.global.current.value.dark ? '#ff0050' : 'surface'"
                                     :bg-color="theme.global.current.value.dark ? '' : 'grey-lighten-4'"
                                     spellcheck="false" type="email" @focus="isFocused2 = true"
@@ -213,15 +213,15 @@ watch(user, () => {
 
                             </div>
                             <!--Error Message email-->
-                            <p id="errore" class="hidden text-sm text-red-700">Please Check your Email</p>
+                            <p id="errore" class="hidden text-sm text-red-700">{{ $t('emailcheck') }}</p>
                         </div>
 
                         <div class="form mb- flex justify-center">
                             <!-- <label class=" text-lg md:text-xl text-center p-2">Password<span
                             class="required text-red-600">*</span></label> -->
                             <div class="flex  w-full  bg-whiate  rounded-md ">
-                                <v-text-field variant="outlined" label="Password*" id="password" v-model="password"
-                                    :append-inner-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+                                <v-text-field variant="outlined" :label="$t('passlabel')" id="password"
+                                    v-model="password" :append-inner-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                                     @click:append-inner="toggleVisibility"
                                     :color="theme.global.current.value.dark ? '#ff0050' : 'surface'"
                                     :bg-color="theme.global.current.value.dark ? '' : 'grey-lighten-4'"
@@ -239,27 +239,27 @@ watch(user, () => {
                                     :color="passwordStrengthColor" height="5"></v-progress-linear>
                             </div>
 
-                            <ul>Must Include</ul>
+                            <ul>{{ $t('mustinclude') }}</ul>
                             <div class="main flex p-1 text-xs">
                                 <div class="1">
                                     <li :class="capital ? 'text-green-500' : 'text-red-600'"><v-icon size="20">{{
                                         capital ?
-                                            'mdi-check' : 'mdi-close' }}</v-icon>Capital letter
+                                            'mdi-check' : 'mdi-close' }}</v-icon>{{ $t('cletter') }}
                                     </li>
                                     <li :class="special ? 'text-green-500' : 'text-red-600'"><v-icon size="20">{{
                                         special ?
-                                            'mdi-check' : 'mdi-close' }}</v-icon>Special Character
+                                            'mdi-check' : 'mdi-close' }}</v-icon>{{ $t('scharacter') }}
                                     </li>
                                 </div>
                                 <div class="2 md:px-5">
                                     <li :class="number ? 'text-green-500' : 'text-red-600'"><v-icon size="20">{{ number
                                         ?
                                         'mdi-check'
-                                        : 'mdi-close' }}</v-icon>At least one number
+                                        : 'mdi-close' }}</v-icon>{{ $t('onenumber') }}
                                     </li>
                                     <li :class="minlength ? 'text-green-500' : 'text-red-600'"><v-icon size="20">{{
                                         minlength
-                                            ? 'mdi-check' : 'mdi-close' }}</v-icon>Min length 6
+                                            ? 'mdi-check' : 'mdi-close' }}</v-icon>{{ $t('minlength') }}
                                     </li>
                                 </div>
                             </div>
@@ -268,7 +268,7 @@ watch(user, () => {
                         <v-checkbox v-model="checkbox" required>
                             <template v-slot:label>
                                 <div class="text-xs flex">
-                                    <p class="my-auto"> I agree to</p>
+                                    <p class="my-auto"> {{ $t('iagree') }}</p>
                                     <TermsofservicesDialog @click.stop />
 
                                 </div>
@@ -284,12 +284,12 @@ watch(user, () => {
                             class=" w-44 text-lg rounded-md hover:cursor-pointer">
                             <v-progress-circular v-if="authenticating" width="2" size="20" color="darken-blue-4"
                                 class="m-1" indeterminate></v-progress-circular>
-                            Join now
+                            {{ $t('join') }}
                         </v-btn>
                         <!--Separator-->
                         <div class="flex justify-center mx-auto w-11/12 md:w-1/3 mt-8">
                             <div class="w-1/2 h-1 my-auto rounded-xl mx-auto bg-zinc-900 opacity-80"></div>
-                            <p class="text-center my-auto text-xl font-semibold w-16">Or</p>
+                            <p class="text-center my-auto text-xl font-semibold w-16">{{ $t('or') }}</p>
                             <div class="w-1/2 h-1 my-auto rounded-xl mx-auto bg-zinc-900 opacity-80"></div>
                         </div>
                         <!--login with google-->
@@ -309,16 +309,16 @@ watch(user, () => {
                             <div class=" w-1 h-8 my-auto rounded-xl mx-auto bg-[#00f2ea]">
                             </div>
                             <!--navigate to login page-->
-                            <p class="mr-5 my-auto text-center text-xs">Already have an account?</p>
+                            <p class="mr-5 my-auto text-center text-xs">{{ $t('alreadyhaccount') }}</p>
                             <NuxtLink to="/login" onclick=""
                                 :class="theme.global.current.value.dark ? 'bg-[#000] text-white hover:bg-[#ff0050]' : 'bg-[#000] text-white hover:bg-[#ff0050]'"
                                 class="text-center mx-auto flex w-fit h-fit justify-center m-3 px-6 py-2 rounded-sm hover:cursor-pointer">
-                                login</NuxtLink>
+                                {{ $t('login') }}</NuxtLink>
                         </div>
                         <NuxtLink to="/" onclick=""
                             :class="theme.global.current.value.dark ? 'text-zinc-400' : 'text-zinc-700'"
                             class="text-center mx-auto flex w-fit h-fit justify-center m-3 px-6 py-2 rounded-md hover:underline hover:cursor-pointer">
-                            Help</NuxtLink>
+                            {{ $t('help') }}</NuxtLink>
 
                     </form>
                 </div>
