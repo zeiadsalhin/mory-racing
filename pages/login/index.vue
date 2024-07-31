@@ -134,7 +134,7 @@ watch(user, () => {
                                 <div class="2 my-auto">
                                     <h1
                                         class="text-sm md:text-sm my-auto text-center mx-auto font-medium  bg-[#ff0050] rounded-sm opacity-80 px-2 py-1">
-                                        Log in
+                                        {{ $t('login') }}
                                     </h1>
                                 </div>
                             </div>
