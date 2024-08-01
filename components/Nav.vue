@@ -129,8 +129,8 @@ watch(user, () => {
             <nuxt-link to="/">
                 <v-toolbar-title class="md:p-4">
                     <!-- <h1 class="font-bold text-xl">Alfa Store</h1> -->
-                    <NuxtImg quality="80" src="/mainicon.ico" class="m-5" width="50" height="50" alt="logo"
-                        loading="lazy" />
+                    <v-img src="/mainicon.ico" :class="theme.global.current.value.dark ? 'bg-inherit ' : 'bg-'"
+                        class="m-5" width="50" height="50" alt="logo"></v-img>
                 </v-toolbar-title>
             </nuxt-link>
             <v-btn :icon="$vuetify?.display?.mobile ? false : false" name="Chattok TikTok" aria-label="Chattok TikTok"

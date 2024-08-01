@@ -35,7 +35,8 @@
         <div class="2">
             <v-lazy>
                 <transition name="fade" mode="out-in">
-                    <v-parallax src="/mainicon.ico" cover class="skills md:p-40 p-5 md:h-[50rem] md:max-h-[50rem]"
+                    <v-parallax src="/icon_min.ico" srcset="/mainicon.ico" cover
+                        class="skills md:p-40 p-5 md:h-[50rem] md:max-h-[50rem]"
                         gradient="to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)">
                         <div class="md:text-2xl text-md flex font-bold mt-5">
                             <v-icon class="mx-3 my-auto" size="30">mdi-cash</v-icon>

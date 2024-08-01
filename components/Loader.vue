@@ -5,7 +5,7 @@
                 <div class="flex justify-center items-center h-full">
                     <div class="flex flex-col items-center">
                         <div>
-                            <img src="/mainicon.ico" alt="ChattokLogo" srcset="/mainicon.ico"
+                            <img src="/icon_min.ico" alt="ChattokLogo" srcset="/mainicon.ico"
                                 class="w-48 animate-pulsea text-zinc-300">
                         </div>
                         <!-- <div class="mt-4">
