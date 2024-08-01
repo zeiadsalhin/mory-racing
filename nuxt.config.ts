@@ -5,6 +5,9 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
+      htmlAttrs: {
+        lang: 'en-US'
+      },
       title: 'Chattok Gaming',
       link: [{ rel: 'icon', type: 'image/x-icon', href: "/mainicon.ico" }],
   meta: [
@@ -25,6 +28,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/content',
     '@nuxtjs/i18n',
+    '@nuxt/image',
     // 'nuxt-paypal',
     // "@unlok-co/nuxt-stripe",
     '@pinia/nuxt',

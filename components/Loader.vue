@@ -5,7 +5,7 @@
                 <div class="flex justify-center items-center h-full">
                     <div class="flex flex-col items-center">
                         <div>
-                            <img src="/icon_min.ico" alt="ChattokLogo" srcset="/icon_min.ico"
+                            <img src="/mainicon.ico" alt="ChattokLogo" srcset="/mainicon.ico"
                                 class="w-48 animate-pulsea text-zinc-300">
                         </div>
                         <!-- <div class="mt-4">
@@ -21,7 +21,7 @@
 </template>
 
 <script setup>
-// const loading = ref(true);
+const loading = ref(true);
 setTimeout(() => {
     // loading.value = false
 }, 1500);
