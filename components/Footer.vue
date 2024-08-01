@@ -17,7 +17,8 @@ const date = new Date().getFullYear()
         <div class="main md:flex flex-row justify-around p-5">
             <div class="1 p-1">
                 <v-lazy>
-                    <v-img src="/mainicon.ico" class="p-5 mx-auto" width="200" alt="logo"></v-img>
+                    <NuxtImg quality="10" src="/mainicon.ico" class="p-5 mx-auto" width="200" alt="logo"
+                        loading="lazy" />
                 </v-lazy>
             </div>
             <div class="2 p-5 flex flex-col">

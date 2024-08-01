@@ -97,5 +97,8 @@ export default defineNuxtConfig({
     strategy: 'no_prefix',
     // skipSettingLocaleOnNavigate: true,
     defaultLocale: 'en'
+  },
+  image: {
+    // provider: 'netlifyImageCdn',
   }
 })
