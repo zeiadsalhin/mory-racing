@@ -5,8 +5,8 @@
     <div id="about" class="about bg-zinc-95 w-full rounded-sm">
         <v-lazy>
             <transition name="fade" mode="out-in">
-                <v-parallax src="/racing_line.webp" alt="carrace" cover max-height="600" min-height="500"
-                    class="aboutme mx-auto lg:px-40 md:py-20 p-5 m-1 rounded-sm"
+                <v-parallax src="/racing_line.webp" placeholder="/mainicon.ico" alt="carrace" cover max-height="600"
+                    min-height="500" class="aboutme mx-auto lg:px-40 md:py-20 p-5 m-1 rounded-sm"
                     gradient="to right, rgba(255, 0, 80, 0.4), rgba(0, 0, 0, 0.0)),linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 242, 234, 0.4)),linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)">
                     <div class="md:text-3xl text-2xl font-medium md:flex w-fit  md:p-5 p-3">
                         <!-- <v-icon class="mx-3 my-auto" size="35">mdi-information-slab-box-outline</v-icon> -->
@@ -31,7 +31,7 @@
         <div class="2">
             <v-lazy>
                 <transition name="fade" mode="out-in">
-                    <v-parallax src="/icon_min.ico" srcset="/mainicon.ico" alt="chattokLogo" cover
+                    <v-parallax src="/icon_min.ico" placeholder="/mainicon.ico" alt="chattokLogo" cover
                         class="skills md:p-40 p-5 md:h-[50rem] md:max-h-[50rem]"
                         gradient="to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)">
                         <div class="md:text-3xl text-2xl font-bold flex">
