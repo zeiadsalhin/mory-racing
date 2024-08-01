@@ -26,7 +26,7 @@ setTimeout(() => {
     // loading.value = false
 }, 1500);
 onNuxtReady(() => {
-    // loading.value = false
+    loading.value = false
 })
 </script>
 <style>
