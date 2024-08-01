@@ -133,7 +133,7 @@ watch(user, () => {
                         class="m-5" width="50" height="50" alt="logo"></v-img>
                 </v-toolbar-title>
             </nuxt-link>
-            <v-btn :icon="$vuetify?.display?.mobile ? false : false"
+            <v-btn :icon="$vuetify?.display?.mobile ? false : false" name="Chattok TikTok"
                 @click="navigateTo('https://www.tiktok.com/@chattoklive', { external: true })"
                 class="mr-2 text-subtitle-2 opacity-85" variant="text">
                 {{ $vuetify?.display?.mobile ? '' : 'Follow' }}
@@ -143,7 +143,7 @@ watch(user, () => {
                         d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z" />
                 </svg>
             </v-btn>
-            <v-btn :icon="$vuetify?.display?.mobile ? false : false"
+            <v-btn :icon="$vuetify?.display?.mobile ? false : false" name="Chattok Discord"
                 @click="navigateTo('https://discord.gg/GywCaY898e', { external: true })"
                 class="mr-2 text-subtitle-2 opacity-85" variant="text">
                 {{ $vuetify?.display?.mobile ? '' : 'Join our' }}

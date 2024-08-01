@@ -5,7 +5,7 @@
     <div id="about" class="about bg-zinc-95 w-full rounded-sm">
         <v-lazy>
             <transition name="fade" mode="out-in">
-                <v-parallax src="/racing_line.webp" cover max-height="600" min-height="500"
+                <v-parallax src="/racing_line.webp" alt="carrace" cover max-height="600" min-height="500"
                     class="aboutme mx-auto lg:px-40 md:py-20 p-5 m-1 rounded-sm"
                     gradient="to right, rgba(255, 0, 80, 0.4), rgba(0, 0, 0, 0.0)),linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 242, 234, 0.4)),linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)">
                     <div class="md:text-3xl text-2xl font-medium md:flex w-fit  md:p-5 p-3">
@@ -17,7 +17,7 @@
                             <p class="inline-block text-[#00f2ea] my-auto md:text-4xl text-2xl">Gaming</p>
 
 
-                            <v-img src="/public/mainicon.ico" width="40" height="40"
+                            <v-img src="/public/mainicon.ico" alt="chattokicon" width="40" height="40"
                                 class="inline-block my-auto w-fit ml-5"></v-img>
                         </div>
                     </div>
@@ -31,7 +31,8 @@
         <div class="2">
             <v-lazy>
                 <transition name="fade" mode="out-in">
-                    <v-parallax src="/icon_min.ico" cover class="skills md:p-40 p-5 md:h-[50rem] md:max-h-[50rem]"
+                    <v-parallax src="/icon_min.ico" alt="chattokLogo" cover
+                        class="skills md:p-40 p-5 md:h-[50rem] md:max-h-[50rem]"
                         gradient="to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)">
                         <div class="md:text-3xl text-2xl font-bold flex">
                             <v-icon class="mx-3 my-auto" size="30">mdi-gamepad</v-icon>
