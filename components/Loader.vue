@@ -6,7 +6,7 @@
                     <div class="flex flex-col items-center">
                         <div>
                             <NuxtImg quality="10" src="/icon_min.ico" alt="ChattokLogo" placeholder="/mainicon.ico"
-                                class="w-48 animate-pulsea text-zinc-300" />
+                                class="w-48 animate-pulsea text-zinc-300" width="100%" height="100%" />
                         </div>
                         <!-- <div class="mt-4">
                             <h1 class="text-3xl font-semibold p-2 text-center animate-pulse text-zinc-300">Mory Racing
