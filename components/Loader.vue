@@ -5,8 +5,8 @@
                 <div class="flex justify-center items-center h-full">
                     <div class="flex flex-col items-center">
                         <div>
-                            <v-img src="/icon_min.ico" alt="ChattokLogo" placeholder="/mainicon.ico"
-                                class="w-48 animate-pulsea text-zinc-300"></v-img>
+                            <NuxtImg quality="10" src="/icon_min.ico" alt="ChattokLogo" placeholder="/mainicon.ico"
+                                class="w-48 animate-pulsea text-zinc-300" />
                         </div>
                         <!-- <div class="mt-4">
                             <h1 class="text-3xl font-semibold p-2 text-center animate-pulse text-zinc-300">Mory Racing
@@ -26,7 +26,7 @@ setTimeout(() => {
     // loading.value = false
 }, 1500);
 onNuxtReady(() => {
-    loading.value = false
+    // loading.value = false
 })
 </script>
 <style>
