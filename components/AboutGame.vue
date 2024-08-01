@@ -31,7 +31,7 @@
                         </div>
                         <ul class="mt-5 space-y-5a md:text-2xl text-sm list-[square] p-3 ml-10">
                             <li class="flex mb-2"><v-avatar size="30"><v-img alt="Mory"
-                                        src="/icon.ico"></v-img></v-avatar>
+                                        src="/mainicon.ico"></v-img></v-avatar>
                                 <p class="ml-3 my-auto">Mory</p>
                                 <div class="w-5 h-0.5 bg-zinc-800 my-auto ml-4 mr-1"></div>
                                 <p class="md:text-[1.2rem] my-auto brightness-75">{{ $t('chattokdev') }}</p>
@@ -46,7 +46,7 @@
                             <p class="text-sm font-thin italic ml-5 mb-10 opacity-80">"{{ $t('chattokwebdevdesc') }}."
                             </p>
                             <li class="flex mb-2"><v-avatar size="30"><v-img alt="Mory"
-                                        src="/icon.ico"></v-img></v-avatar>
+                                        src="/mainicon.ico"></v-img></v-avatar>
                                 <p class="ml-3 my-auto">Clinton Deig</p>
                                 <div class="w-5 h-0.5 bg-zinc-800 my-auto ml-4 mr-1"></div>
                                 <p class="md:text-[1.2rem] my-auto brightness-75">{{ $t('chattokowner') }}</p>
@@ -54,7 +54,7 @@
                             <p class="text-sm font-thin italic ml-5 mb-10 opacity-80">"{{ $t('chattokownerdesc') }}."
                             </p>
                             <li class="flex mb-2"><v-avatar size="30"><v-img alt="Mory"
-                                        src="/icon.ico"></v-img></v-avatar>
+                                        src="/mainicon.ico"></v-img></v-avatar>
                                 <p class="ml-3 my-auto">Jose</p>
                                 <div class="w-5 h-0.5 bg-zinc-800 my-auto ml-4 mr-1"></div>
                                 <p class="md:text-[1.2rem] my-auto brightness-75">{{ $t('chattokbackend') }}</p>
