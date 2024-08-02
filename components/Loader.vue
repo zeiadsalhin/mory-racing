@@ -5,7 +5,7 @@
                 <div class="flex justify-center items-center h-full">
                     <div class="flex flex-col items-center">
                         <div>
-                            <NuxtImg quality="80" src="/mainicon.ico" alt="ChattokLogo" placeholder="/mainicon.ico"
+                            <NuxtImg quality="80" src="/mainicon.ico" alt="ChattokLogo" placeholder="/icon_min2.ico"
                                 class="w-48 animate-pulsea text-zinc-300" width="100%" height="100%" />
                         </div>
                         <!-- <div class="mt-4">

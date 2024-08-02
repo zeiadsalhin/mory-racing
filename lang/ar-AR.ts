@@ -8,6 +8,7 @@ export default defineI18nLocale(async locale => {
           discovergame: "اكتشف العاب Tiktok الجيل التالي",
           aboutt: "من انا",
           follow: "تابعنا",
+          join:"انضم الينا",
           close:"غلق",
           chattoklive: "Chattok Gaming بث مباشر",
           chattoklivedesc: "استمتع بتجربة الألعاب اللانهائية عبر الإنترنت الآن مع الإصدار المحسن",
@@ -80,6 +81,7 @@ export default defineI18nLocale(async locale => {
           serverdown: "تحت الصيانة",
           plans: "الباقات المتاحة",
           popular: "الاكثر اختيارا",
+          include:":تتضمن",
           planName:{
             daily:"Chattok gaming Lite",
             monthly: "Chattok gaming Ultimate"

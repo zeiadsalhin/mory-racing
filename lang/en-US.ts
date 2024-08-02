@@ -8,6 +8,7 @@ export default defineI18nLocale(async locale => {
     discovergame: "Discover Next Gen TikTok Live Games",
     aboutt: "About me",
     follow: "Follow us",
+    join:"Join",
     close:"Close",
     chattoklive: "Chattok Gaming is Live",
     chattoklivedesc: "Enjoy the online ultimate gaming experience now with enhanced version",
@@ -80,9 +81,10 @@ export default defineI18nLocale(async locale => {
     serverdown: "down",
     plans: "Available Plans",
     popular: "Most Popular",
+    include:"include:",
     planName:{
-      daily:"Mory Racing Lite",
-      monthly: "Mory Racing Ultimate"
+      daily:"Chattok gaming Lite",
+      monthly: "Chattok gaming Ultimate"
     },
     planDescription:
     { daily: "Mory Racing Plan with limited access, 24h of unlimited racing", monthly: "Mory Racing Plan with full access, gameplay, and live racing" },

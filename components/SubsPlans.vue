@@ -2,8 +2,8 @@
 const yearly: boolean = true;
 const popular = { daily: false, monthly: true }; // or set it to true or false as needed
 const plan_id = { lite: 'price_1PbY0cI4aHqhinrAO1CYGfDG', ultimate: 'price_1PbYb9I4aHqhinrAxf2SxuPA' }
-const planName = { daily: "Mory Racing Lite", monthly: "Mory Racing Ultimate" };
-const planDescription = { daily: "Mory Racing Plan with limited access, 24h of unlimited racing", monthly: "Mory Racing Plan with full access, gameplay, and live racing" };
+const planName = { daily: "Chattok gaming Lite", monthly: "Chattok gaming Ultimate" };
+const planDescription = { daily: "Chattok gaming Plan with limited access, 24h of unlimited racing", monthly: "Chattok gaming Plan with full access, gameplay, and live racing" };
 const features = {
     daily: [
         'Game Access/Racings for 24 hours',
@@ -68,7 +68,7 @@ const SelectPlan = (planv, plan_id, planp, pland) => {
                             {{ $t('buy') }}
                         </a>
                     </div>
-                    <div class="text-slate-900 dark:text-slate-200 font-medium mb-3">{{ $t('include') }}:</div>
+                    <div class="text-slate-900 dark:text-slate-200 font-medium mb-3">{{ $t('include') }}</div>
                     <ul class="text-slate-600 dark:text-slate-400 text-xs text-left space-y-3 grow">
                         <template v-for="(feature, index) in features.daily">
                             <li class="flex items-center">
@@ -106,7 +106,7 @@ const SelectPlan = (planv, plan_id, planp, pland) => {
                             {{ $t('buy') }}
                         </a>
                     </div>
-                    <div class="text-slate-900 dark:text-slate-200 font-medium mb-3">{{ $t('include') }}:</div>
+                    <div class="text-slate-900 dark:text-slate-200 font-medium mb-3">{{ $t('include') }}</div>
                     <ul class="text-slate-600 dark:text-slate-400 text-xs text-left space-y-3 grow">
                         <template v-for="feature in features.monthly">
                             <li class="flex items-center">
@@ -127,7 +127,7 @@ const SelectPlan = (planv, plan_id, planp, pland) => {
             <div class="selected text-[#ff0050] md:p-5">
                 <p class="font-semibold p-4 my-auto text-xl"><v-icon>mdi-check-circle</v-icon>{{ $t('selected') }}:
                 <p class="underline inline-block">{{ planSelected }}</p>, ${{ planPrice }}
-                {{ planSelected === 'Mory Racing Lite' ? '/' + $t('day') : '/' + $t('month') }}</p>
+                {{ planSelected === 'Chattok gaming Lite' ? '/' + $t('day') : '/' + $t('month') }}</p>
             </div>
             <p class="font-semibold text-lg md:text-left md:p-4 my-auto text-white"><v-icon
                     class="m-2">mdi-credit-card-outline</v-icon>{{ $t('selectpm') }}:
