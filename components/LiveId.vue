@@ -15,16 +15,16 @@
                     <v-btn v-if="!resultt" type="submit" class="ma-5 mx-auto text-center">
                         <v-progress-circular v-if="loading" width="2" size="20" color="#ff0050" class="m-1"
                             indeterminate></v-progress-circular>Submit</v-btn>
-                    <p v-if="resultt" class="font-sans text-xl font-semibold p-3">Your Live ID is:
+                    <p v-if="resultt" class="font-sans text-xl font-semibold p-3">{{ $t('yourliveid') }}
                     <p class="text-red-800 font-sans text-2xl p-2 font-bold">{{ resultt }}</p>
                     </p>
 
                     <v-btn @click="authenticating = false" type="button"
                         v-if="resultt && resultt != null && resultt != 'Please wait 30s before updating your id'"
                         variant="outlined" :elevation="10" class="mt-[2rem] w-[14rem] mx-auto text-center">
-                        Launch Game!</v-btn>
+                        {{ $t('launchgame') }}</v-btn>
                 </form>
-                <v-btn @click="emitEvent" color="red" class="mt-[6rem] w-fit mx-auto">Exit game</v-btn>
+                <v-btn @click="emitEvent" color="red" class="mt-[6rem] w-fit mx-auto">{{ $t('exitgame') }}</v-btn>
             </div>
 
             <div v-else class="game flex flex-col justify-center">
@@ -32,7 +32,7 @@
                 <iframe v-if="resultt" :src="gameServer + '/?liveid=' + resultt"
                     class="h-[48rem] mt-3 min-w-[20rem]a w-[100%] md:w-[25.92rem] mx-auto" width="100%" height="100%"
                     frameborder="0"></iframe>
-                <v-btn v-if="!authenticating" color="red" variant="tonal" text="Exit Game" @click="exitGame"
+                <v-btn v-if="!authenticating" color="red" variant="tonal" :text="$t('exitgame')" @click="exitGame"
                     class="ma-1 w-[20rem] mx-auto"></v-btn>
             </div>
 

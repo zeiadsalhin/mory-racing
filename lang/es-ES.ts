@@ -126,7 +126,7 @@ export default defineI18nLocale(async locale => {
    onenumber: "Al menos un número",
    minlength: "Longitud mínima 6",
    iagree: "Acepto",
-   join: "Únete ahora",
+   joinnow: "Únete ahora",
    or: "O",
    alreadyhaccount: "¿Ya tienes una cuenta?",
    help: "Ayuda",
@@ -147,5 +147,8 @@ export default defineI18nLocale(async locale => {
    ordercomplete: "¡Orden completada!",
    ordercompleteconfirm: "Tu pago fue exitoso.",
    ordercompletewarning: "¡Por favor, no cierres ni actualices!",
+   yourliveid:"Tu identificación en vivo es:",
+   launchgame:"¡Iniciar juego!",
+   exitgame:"Salir del juego",
   }
 })
