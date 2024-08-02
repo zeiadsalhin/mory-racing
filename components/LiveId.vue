@@ -18,7 +18,7 @@
                     <p v-if="resultt" class="font-sans text-xl font-semibold p-3">{{ $t('yourliveid') }}
                     <p class="text-red-800 font-sans text-2xl p-2 font-bold">{{ resultt }}</p>
                     </p>
-
+                    <p class="text-sm opacity-80">{{ $t('gpuwarning') }}</p>
                     <v-btn @click="authenticating = false" type="button"
                         v-if="resultt && resultt != null && resultt != 'Please wait 30s before updating your id'"
                         variant="outlined" :elevation="10" class="mt-[2rem] w-[14rem] mx-auto text-center">
@@ -29,9 +29,8 @@
 
             <div v-else class="game flex flex-col justify-center">
 
-                <iframe v-if="resultt" :src="gameServer + '/?liveid=' + resultt"
-                    class="h-[48rem] mt-3 min-w-[20rem]a w-[100%] md:w-[25.92rem] mx-auto" width="100%" height="100%"
-                    frameborder="0"></iframe>
+                <iframe v-if="resultt" :src="gameServer + '/?liveid=' + resultt" class=" mx-auto" width="448"
+                    height="750" frameborder="0" scrolling="no"></iframe>
                 <v-btn v-if="!authenticating" color="red" variant="tonal" :text="$t('exitgame')" @click="exitGame"
                     class="ma-1 w-[20rem] mx-auto"></v-btn>
             </div>

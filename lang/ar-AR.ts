@@ -149,5 +149,6 @@ export default defineI18nLocale(async locale => {
         yourliveid:":معرف البث الخاص بك",
         launchgame:"! ابدأ اللعب",
         exitgame:"الخروج",
+        gpuwarning:"*تأكد من اختيار معالج الرسوميات لافضل اداء",
   }
 })

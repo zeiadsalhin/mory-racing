@@ -150,5 +150,6 @@ export default defineI18nLocale(async locale => {
    yourliveid:"Tu identificación en vivo es:",
    launchgame:"¡Iniciar juego!",
    exitgame:"Salir del juego",
+   gpuwarning:"Por favor, asegúrese de seleccionar la GPU para un mejor rendimiento*",
   }
 })
