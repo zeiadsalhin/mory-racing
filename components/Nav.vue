@@ -133,7 +133,7 @@ watch(user, () => {
                         class="m-5" width="50" height="50" alt="logo"></v-img>
                 </v-toolbar-title>
             </nuxt-link>
-            <div v-if="$vuetify?.display?.mobile" class="flex w-[2.8rem]">
+            <div v-if="$vuetify.display.mobile" class="flex w-[2.8rem]">
                 <v-btn icon name="Chattok TikTok" aria-label="Chattok TikTok"
                     @click="navigateTo('https://www.tiktok.com/@chattoklive', { external: true })"
                     class="mr-2 text-subtitle-2 opacity-85" variant="text">
@@ -153,7 +153,7 @@ watch(user, () => {
                     </svg>
                 </v-btn>
             </div>
-            <div v-else>
+            <div v-if="!$vuetify.display.mobile">
                 <v-btn name="Chattok TikTok" aria-label="Chattok TikTok"
                     @click="navigateTo('https://www.tiktok.com/@chattoklive', { external: true })"
                     class="mr-2 text-subtitle-2 opacity-85" variant="text">
@@ -238,7 +238,7 @@ watch(user, () => {
             <v-btn v-if="isUser" :to="isUser ? '/user/account#LiveGames' : '/login'" @click="" variant="text"
                 :ripple="false" color="#ff0050" class="mr-2 text-h6 font-weight-medium">
                 <v-icon size="25" class="mr-">mdi-play</v-icon>
-                <p class="text-white">{{ $vuetify?.display?.mobile ? '' : $t('play') }}</p>
+                <p class="text-white">{{ $vuetify.display.mobile ? '' : $t('play') }}</p>
             </v-btn>
             <v-spacer />
         </v-app-bar>
