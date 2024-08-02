@@ -204,7 +204,7 @@ const getLiveid = async () => {
                                 </div>
                                 <p class="font-semibold text-lg md:text-left text-center p-2 my-auto">{{
                                     $t('welcomeuser')
-                                    }}, {{
+                                }}, {{
                                         displayname
                                     }} !
                                 </p>
@@ -266,13 +266,13 @@ const getLiveid = async () => {
                                             <v-icon class="my-auto" size="30">mdi-cloud-sync</v-icon>
                                             <h1 class="text-2xl  mr-3 font-semibolda my-auto font-sans font-bold">{{
                                                 $t('subsdetails')
-                                                }}:
+                                            }}:
                                             </h1>
                                         </div>
                                         <div class="plan px-5 ">
                                             <p class="text-lg inline-block text-white font-sans font-bold">{{
                                                 $t('subsplan')
-                                                }}:
+                                            }}:
                                             </p>
                                             <p class="text-center font-sans font-semibold p-2 aw-fit amax-w-[15rem]">
                                                 {{ subsState ? subsPlan : $t('substate2') }}</p>
@@ -429,7 +429,7 @@ const getLiveid = async () => {
                                     <v-btn readonly variant="text" :color="!apiState ? 'green-darken-1' : '#ff0050'"
                                         class="flex justify-center text-sm text-center mx-auto my-auto w-fit"
                                         :prepend-icon="!apiState ? '' : 'mdi-alert'">
-                                        {{ !apiState ? $t('serverop') : $t('serverdown') }}</v-btn>
+                                        {{ apiState ? $t('serverop') : $t('serverdown') }}</v-btn>
                                 </div>
 
                             </div>
