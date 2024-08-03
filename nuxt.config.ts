@@ -29,6 +29,8 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxtjs/i18n',
     '@nuxt/image',
+    'nuxt-gtag',
+    '@nuxtjs/sitemap',
     // 'nuxt-paypal',
     // "@unlok-co/nuxt-stripe",
     '@pinia/nuxt',
@@ -100,5 +102,12 @@ export default defineNuxtConfig({
   },
   image: {
     // provider: 'netlifyImageCdn',
-  }
+  },
+  gtag: {
+    id: 'G-4KL58X89LD'
+  },
+  site: {
+    url: 'https://chattokgaming.com',
+    name: 'Chattok Gaming'
+  },
 })
