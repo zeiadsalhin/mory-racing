@@ -428,7 +428,7 @@ const getLiveid = async () => {
                                     <h1 class="text-md py-2 text-white">Game Access: </h1>
                                     <v-btn readonly variant="text" :color="!apiState ? 'green-darken-1' : '#ff0050'"
                                         class="flex justify-center text-sm text-center mx-auto my-auto w-fit"
-                                        :prepend-icon="!apiState ? '' : 'mdi-alert'">
+                                        :prepend-icon="apiState ? '' : 'mdi-alert'">
                                         {{ apiState ? $t('serverop') : $t('serverdown') }}</v-btn>
                                 </div>
 
