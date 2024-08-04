@@ -7,17 +7,16 @@ const currentLocale = computed(() => locale.value)
         <v-lazy>
             <transition name="fade" mode="out-in">
                 <v-locale-provider :rtl="currentLocale == 'ar' ? true : false">
-                    <v-img src="/racing_front.webp" cover height="auto"
-                        class="aboutme mx-auto md:p-40 p-5 m-1 rounded-sm"
+                    <v-img src="" cover height="auto" class="aboutme mx-auto md:p-40 p-5 m-1 rounded-sm"
                         gradient="to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.0)),linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4)),linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)">
-                        <div class="md:text-3xl text-2xl font-bold flex">
+                        <div class="md:text-3xl text-2xl font-bold flex md:ml-[0.4rem]">
                             <v-icon class="mx-3 my-auto" size="35">mdi-information-slab-box-outline</v-icon>
                             <h1 class="my-auto"> {{ $t('aboutchattok') }}</h1>
                         </div>
-                        <p class="md:ml-14 ml-4 py-3 md:w-1/2 brightness-75 md:text-lg text-md mt-5 leading-snug ">{{
+                        <p class="md:ml-16 ml-4 py-3 md:w-1/2 brightness-75 md:text-lg text-md mt-5 leading-snug ">{{
                             $t('aboutchattokdesc1') }}
                         </p>
-                        <p class="md:ml-14 ml-4 py-3 md:w-1/2 brightness-75  md:text-lg text-md mt-1 leading-snug ">{{
+                        <p class="md:ml-16 ml-4 py-3 md:w-1/2 brightness-75  md:text-lg text-md mt-1 leading-snug ">{{
                             $t('aboutchattokdesc2') }}
                         </p>
                     </v-img>
@@ -34,7 +33,7 @@ const currentLocale = computed(() => locale.value)
                                 <v-icon class="mx-3 my-auto" size="30">mdi-copyright</v-icon>
                                 <h1 class="my-auto"> {{ $t('credits') }}</h1>
                             </div>
-                            <ul class="mt-5 space-y-5a md:text-2xl text-sm list-[square] p-3 ml-10">
+                            <ul class="mt-5 space-y-5a md:text-2xl text-sm list-[square] p-3 ml-2">
                                 <li class="flex mb-2"><v-avatar size="30"><v-img alt="Mory"
                                             src="/mainicon.ico"></v-img></v-avatar>
                                     <p class="ml-3 mr-3 my-auto">Mory</p>

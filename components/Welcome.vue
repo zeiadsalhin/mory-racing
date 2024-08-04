@@ -13,7 +13,7 @@ const currentLocale = computed(() => locale.value)
 
                         <div class="md:text-3xl text-2xl font-medium md:flex w-fit  md:p-5 p-3">
                             <!-- <v-icon class="mx-3 my-auto" size="35">mdi-information-slab-box-outline</v-icon> -->
-                            <h1 class="my-auto text-center w-full min-w-fit mr-5"> {{ $t('welcomechattok') }}</h1>
+                            <h1 class="my-auto text-center flex w-full min-w-fit mr-"> {{ $t('welcomechattok') }}</h1>
                             <div class="brand flex w-fit">
                                 <p class="text-[#ff0050] my-auto inline-block px-2 md:text-4xl text-2xl">
                                     Chattok</p>
@@ -39,11 +39,12 @@ const currentLocale = computed(() => locale.value)
                         <v-parallax src="/mainicon.ico" placeholder="/mainicon.ico" alt="chattokLogo" cover
                             class="skills md:p-40 p-5 md:h-[50rem] md:max-h-[50rem]"
                             gradient="to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)">
-                            <div class="md:text-3xl text-2xl font-bold flex">
+                            <div class="md:text-3xl text-2xl font-bold flex md:ml-[0.4rem]">
                                 <v-icon class="mx-3 my-auto" size="30">mdi-gamepad</v-icon>
                                 <h1 class="my-auto"> {{ $t('choosechattok') }}</h1>
                             </div>
-                            <p class="md:ml-14 ml-5 py-3 lg:w-2/3 brightness-75 md:text-lg text-md mt-5 leading-snug ">
+                            <p
+                                class="md:ml-[4rem] ml-5 py-3 lg:w-2/3 brightness-75 md:text-lg text-md mt-5 leading-snug ">
                                 {{
                                     $t('choosechattokdesc') }}
                             </p>

@@ -194,7 +194,8 @@ const getLiveid = async () => {
                             size="30">mdi-chevron-left</v-icon></v-btn>
                 </div>
                 <div class="main lg:flex flex-row justify-center text-sm ">
-                    <div class="1 md:px-8a w-fit md:w-8/12 flex flex-col mx-auto">
+                    <div
+                        class="1 md:px-8a w-fit md:w-8/12 flex flex-col justify-center items-center md:items-baseline  mx-auto">
                         <div class="flex flex-col justify-center w-fit">
                             <div class="welcome md:flex md:justify-start md:space-x-3 md:p-2 w-fit text-center mx-auto">
                                 <div class="w-1.5 h-10 bg-zinc-950 my-auto rounded-sm"></div>
@@ -232,7 +233,7 @@ const getLiveid = async () => {
                         <div
                             class="1 min-w-fit md:px-10a w-fit md:w-fit align-middle items-center lg:flex flex-row justify-center space-y-5 space-x-0 md:space-x-5 md:space-y-0  md:p-5">
                             <div
-                                class="details md:flex flex-row text-left min-w-[20rem] space-y-5 md:space-y-0 md:space-x-5 space-x-0 w-fit mx-auto">
+                                class="details md:flex flex-row text-left min-w-[20rem] min-h-full pa-md-5 pa-1 space-y-5 md:space-y-0 md:space-x-5 space-x-0 w-fit mx-auto">
                                 <div
                                     class="Accountdetails bg-[#000] left  md:min-h-[22rem] w-full flex-col text-left md:p-5 p-5">
 
@@ -261,7 +262,7 @@ const getLiveid = async () => {
                             <div class="2  md:min-h-[22rem] w-fit mx-auto font-sans">
                                 <v-locale-provider :rtl="currentLocale == 'ar' ? true : false">
                                     <v-card v-if="!subsStateLoad" color="#ff0050" :elevation="6" variant="outlined"
-                                        class="details right min-w-fit text-body-1 font-weight-thin ma-md-5 md:min-h-[22rem] md:min-w-[22rem] flex-col text-lefta pa-md-5 pa-1 text-h7">
+                                        class="details right min-w-fit text-body-1 font-weight-thin ma-md-5 md:min-h-[34.5rem] md:min-w-[22rem] flex-col text-lefta pa-md-5 pa-1 text-h7">
                                         <div class="Subscriptiondetails flex p-3 space-x-3 py-3 mb-3">
                                             <v-icon class="my-auto" size="30">mdi-cloud-sync</v-icon>
                                             <h1 class="text-2xl  mr-3 font-semibolda my-auto font-sans font-bold">{{
@@ -337,7 +338,7 @@ const getLiveid = async () => {
 
                             <v-card id="LiveGames" v-if="!subsStateLoad" color="#ff0050" :elevation="4" variant="tonal"
                                 :border="true"
-                                class="GAMES right ma-5 min-w-fit md:max-w-fit max-w-[16rem] flex flex-col text-left mx-auto pa-6 text-h7">
+                                class="GAMES right min-w-fit text-body-1 font-weight-thin ma-md-5 mt-5 md:min-h-[34.5rem] md:min-w-[22rem] flex-col text-lefta pa-5 text-h7">
                                 <div class="Games flex space-x-3 py-3 mb-3">
                                     <v-icon color="#00f2ea" class="my-auto" size="30">mdi-gamepad-square</v-icon>
                                     <h1 class="text-lg  mr-3 font-semibold my-auto text-[#00f2ea]">{{ $t('selectgame')

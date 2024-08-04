@@ -35,7 +35,7 @@ useSeoMeta({
         <Welcome />
         <!-- <GameFeatures /> -->
         <HowitWorks />
-        <GameLaunchDialog />
+        <!-- <GameLaunchDialog /> -->
         <AboutGame />
         <Footer />
 
