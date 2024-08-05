@@ -48,8 +48,9 @@ watch(user, () => {
                                     video</a>
                             </p>
                         </video>
-                        <v-btn class="w-fit mx-auto pa-2"><a href="https://chattokgaming.com/chattokproof"
-                                target="_blank" rel="noopener noreferrer">{{ $t('showproof') }}</a></v-btn>
+                        <v-btn class="w-fit mx-auto pa-2" color="#00f2ea"><a
+                                href="https://chattokgaming.com/chattokproof" target="_blank"
+                                rel="noopener noreferrer">{{ $t('showproof') }}</a></v-btn>
                     </div>
                 </div>
             </v-parallax>

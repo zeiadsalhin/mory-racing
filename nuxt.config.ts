@@ -113,6 +113,7 @@ export default defineNuxtConfig({
     name: 'Chattok Gaming'
   },
   lazyLoad: {
+    iframes: false,
     directiveOnly: true,
   }
 })
