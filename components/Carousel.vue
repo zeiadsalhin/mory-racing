@@ -17,7 +17,7 @@ watch(user, () => {
     <h1 id="offers" class="text-2xl font-semibold p-5 mx-auto text-center italic">{{ $t('discovergame') }}</h1>
     <transition name="fade" mode="out-in">
         <v-locale-provider :rtl="currentLocale == 'ar' ? true : false">
-            <v-parallax src="/public/b.webp " class="md:h-[75vh] h-[75vh]" alt="Car1">
+            <v-parallax src="/public/b.webp " class="md:h-[75vh] h-[80vh]" alt="Car1">
                 <div class="d-flex md:flex-row flex-col-reverse md:ml-[8.6rem] fill-height justify-start">
                     <div class="d-flex flex-column amd:ml-[8.6rem] fill-height justify-center alaign-center text-white">
 
@@ -34,9 +34,9 @@ watch(user, () => {
                         </div>
                     </div>
                     <!--video-->
-                    <div class="flex flex-col space-y-4 justify-center md:mt-0 mt-20 p-5 fill-height">
-                        <video id="my-video" class="video-js md:w-[16rem] w-[9.5rem] rounded-xl" controls
-                            autoplay="true" width="100%" playsinline onloadstart="this.volume=0.5" loop="true"
+                    <div class="flex flex-col space-y-4 justify-center items-center md:p-10 fill-height">
+                        <video id="my-video" class="video-js md:w-[16rem] w-[10rem] rounded-xl" controlsa
+                            autoplay="true" width="100%" playsinline onloadstart="this.volume=0.5" muted loop="true"
                             height="100%" data-poster="/mainicon.ico" data-setup="{}" v-lazy-load>
                             <source src="/intro.mp4" type="video/mp4" />
                             <p class="vjs-no-js">
@@ -46,8 +46,8 @@ watch(user, () => {
                                     video</a>
                             </p>
                         </video>
-                        <v-btn><a href="https://chattokgaming.com/chattokproofstats" target="_blank"
-                                rel="noopener noreferrer">Show proof</a></v-btn>
+                        <v-btn class="w-fit mx-auto pa-2"><a href="https://chattokgaming.com/chattokproof"
+                                target="_blank" rel="noopener noreferrer">Show proof</a></v-btn>
                     </div>
                 </div>
             </v-parallax>

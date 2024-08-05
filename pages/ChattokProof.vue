@@ -2,6 +2,6 @@
 </script>
 <template>
     <div>
-
+        Proof page
     </div>
 </template>
