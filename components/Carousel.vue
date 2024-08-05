@@ -34,10 +34,10 @@ watch(user, () => {
                         </div>
                     </div>
                     <!--video-->
-                    <div class="flex justify-center md:m-0 mt-20 p-5 fill-height">
+                    <div class="flex justify-center md:mt-20 mt-20 p-5 fill-height">
                         <video id="my-video" class="md:w-[20rem] w-[9.5rem] rounded-xl" controlss autoplay="true"
                             preload="auto" width="100%" playsinline="true" onloadedmetadata="this.volume=0.5"
-                            loop="true" height="100%" data-poster="/mainicon.ico">
+                            loop="true" height="100%" poster="/mainicon.ico">
                             <source src="/intro.mp4" type="video/mp4" />
                             <p class="vjs-no-js">
                                 To view this video please enable JavaScript, and consider upgrading to a
@@ -46,6 +46,8 @@ watch(user, () => {
                                     video</a>
                             </p>
                         </video>
+                        <v-btn><a href="https://chattokgaming.com/chattokproofstats" target="_blank"
+                                rel="noopener noreferrer">Show proof</a></v-btn>
                     </div>
                 </div>
             </v-parallax>

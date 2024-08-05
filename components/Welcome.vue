@@ -3,7 +3,7 @@ const { locale, setLocale } = useI18n()
 const currentLocale = computed(() => locale.value)
 </script>
 <template>
-    <div id="about" class="about bg-zinc-95 w-full rounded-sm min-h-[85rem]">
+    <div id="about" class="about bg-zinc-95 w-full rounded-sm min-h-[50rem]">
         <v-lazy>
             <transition name="fade" mode="out-in">
                 <v-locale-provider :rtl="currentLocale == 'ar' ? true : false">
