@@ -118,7 +118,13 @@ export default defineNuxtConfig({
     directiveOnly: true,
   },
   cookieConsent: {
-    provider: 'cookiescript',
-        id: '66a42beecce52be588a69de06794ba56',
+    // provider: 'cookiescript',
+    //     id: '66a42beecce52be588a69de06794ba56',
+    provider: 'cookiebot',
+        cbid: '96864872-1c7b-4e41-901b-ede43d04f1b6', // Replace with you own cbid
+
+        // // Optional
+        // consentMode: false, // Disable consent mode (default: true)
+        // consentModeDefaults: false, //
 }
 })
