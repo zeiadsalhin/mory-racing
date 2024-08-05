@@ -150,5 +150,7 @@ export default defineI18nLocale(async locale => {
         launchgame:"! ابدأ اللعب",
         exitgame:"الخروج",
         gpuwarning:"*تأكد من اختيار معالج الرسوميات لافضل اداء",
+        showproof:"اظهار الاحصائيات",
+        proofpage:"الاحصائيات"
   }
 })

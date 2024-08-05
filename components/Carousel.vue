@@ -35,7 +35,7 @@ watch(user, () => {
                     </div>
                     <!--video-->
                     <div class="flex flex-col space-y-4 justify-center items-center md:p-10 fill-height">
-                        <video id="my-video" class="video-js md:w-[16rem] w-[10rem] rounded-xl" controlsa
+                        <video id="my-video" class="video-js md:w-[16rem] w-[10rem] p-2 rounded-xl" controlsa
                             autoplay="true" width="100%" playsinline onloadstart="this.volume=0.5" muted loop="true"
                             height="100%" data-poster="/mainicon.ico" data-setup="{}" v-lazy-load>
                             <source src="/intro.mp4" type="video/mp4" />
@@ -47,7 +47,7 @@ watch(user, () => {
                             </p>
                         </video>
                         <v-btn class="w-fit mx-auto pa-2"><a href="https://chattokgaming.com/chattokproof"
-                                target="_blank" rel="noopener noreferrer">Show proof</a></v-btn>
+                                target="_blank" rel="noopener noreferrer">{{ $t('showproof') }}</a></v-btn>
                     </div>
                 </div>
             </v-parallax>

@@ -150,5 +150,7 @@ export default defineI18nLocale(async locale => {
     launchgame:"Launch Game!",
     exitgame:"Exit game",
     gpuwarning:"Please turn on GPU acceleration for better performance*",
+    showproof:"Show Proof",
+    proofpage:"Proof Page",
   }
 })
