@@ -31,6 +31,8 @@ export default defineNuxtConfig({
     '@nuxt/image',
     'nuxt-gtag',
     '@nuxtjs/sitemap',
+    'nuxt-lazy-load',
+    'nuxt-aos',
     // 'nuxt-paypal',
     // "@unlok-co/nuxt-stripe",
     '@pinia/nuxt',
@@ -110,4 +112,7 @@ export default defineNuxtConfig({
     url: 'https://chattokgaming.com',
     name: 'Chattok Gaming'
   },
+  lazyLoad: {
+    directiveOnly: true,
+  }
 })

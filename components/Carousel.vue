@@ -18,17 +18,34 @@ watch(user, () => {
     <transition name="fade" mode="out-in">
         <v-locale-provider :rtl="currentLocale == 'ar' ? true : false">
             <v-parallax src="/public/b.webp " class="md:h-[75vh] h-[75vh]" alt="Car1">
-                <div class="d-flex flex-column md:ml-[8.6rem] fill-height justify-center alaign-center text-white">
-                    <div class="rounded-md backdrop-brightness-75 w-fit  md:m-10 md:p-10 p-5 ">
-                        <h1 class="text-2xl md:text-3xl w-fit font-weight-bold mb-4">
-                            {{ $t('chattoklive') }}!
-                        </h1>
-                        <p class="text-subtitle md:w-[30rem] brightness-90 font-weight-light px-3  mb-4">{{
-                            $t('chattoklivedesc') }}
-                        </p>
-                        <v-btn :to="isUser ? '/user/account#LiveGames' : '/login'" color="#ff0050" variant="flat"
-                            :ripple="false" class="text-h6 m-2">{{ $t('chattoklivebutton') }}</v-btn>
+                <div class="d-flex md:flex-row flex-col-reverse md:ml-[8.6rem] fill-height justify-start">
+                    <div class="d-flex flex-column amd:ml-[8.6rem] fill-height justify-center alaign-center text-white">
 
+                        <div class="rounded-md backdrop-brightness-75 w-fit  md:m-10 md:p-10 p-5 ">
+                            <h1 class="text-2xl md:text-3xl w-fit font-weight-bold mb-4">
+                                {{ $t('chattoklive') }}!
+                            </h1>
+                            <p class="text-subtitle md:w-[30rem] brightness-90 font-weight-light px-3  mb-4">{{
+                                $t('chattoklivedesc') }}
+                            </p>
+                            <v-btn :to="isUser ? '/user/account#LiveGames' : '/login'" color="#ff0050" variant="flat"
+                                :ripple="false" class="text-h6 m-2">{{ $t('chattoklivebutton') }}</v-btn>
+
+                        </div>
+                    </div>
+                    <!--video-->
+                    <div class="flex justify-center md:m-0 mt-20 p-5 fill-height">
+                        <video id="my-video" class="video-js md:w-[20rem] w-[9.5rem] rounded-xl" controlss
+                            autoplay="true" width="100%" playsinline onloadstart="this.volume=0.5" loop="true"
+                            height="100%" data-poster="/mainicon.ico" data-setup="{}" v-lazy-load>
+                            <source src="/intro.mp4" type="video/mp4" />
+                            <p class="vjs-no-js">
+                                To view this video please enable JavaScript, and consider upgrading to a
+                                web browser that
+                                <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5
+                                    video</a>
+                            </p>
+                        </video>
                     </div>
                 </div>
             </v-parallax>

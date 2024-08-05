@@ -27,8 +27,11 @@
     "axios": "latest",
     "content": "latest",
     "nuxt": "^3.12.2",
+    "nuxt-aos": "^1.2.5",
     "nuxt-gtag": "^2.1.0",
+    "nuxt-lazy-load": "^3.0.4",
     "nuxt-mail": "^5.0.1",
+    "nuxt-video-player": "^1.0.17",
     "nuxt-webfontloader": "^1.1.0",
     "pinia": "latest",
     "stripe": "^16.2.0",
@@ -42,6 +45,7 @@
     "nuxt-paypal": "^0.0.1-beta",
     "postcss": "latest",
     "tailwindcss": "latest",
+    "video.js": "^8.17.2",
     "vite-plugin-vuetify": "latest",
     "vuetify": "latest"
   }
