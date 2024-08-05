@@ -35,9 +35,9 @@ watch(user, () => {
                     </div>
                     <!--video-->
                     <div class="flex justify-center md:m-0 mt-20 p-5 fill-height">
-                        <video id="my-video" class="video-js md:w-[20rem] w-[9.5rem] rounded-xl" controlss
-                            autoplay="true" width="100%" playsinline onloadstart="this.volume=0.5" loop="true"
-                            height="100%" data-poster="/mainicon.ico" data-setup="{}" v-lazy-load>
+                        <video id="my-video" class="md:w-[20rem] w-[9.5rem] rounded-xl" controlss autoplay="true"
+                            preload="auto" width="100%" playsinline="true" onloadedmetadata="this.volume=0.5"
+                            loop="true" height="100%" data-poster="/mainicon.ico">
                             <source src="/intro.mp4" type="video/mp4" />
                             <p class="vjs-no-js">
                                 To view this video please enable JavaScript, and consider upgrading to a

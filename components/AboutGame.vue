@@ -7,7 +7,7 @@ const currentLocale = computed(() => locale.value)
         <v-lazy>
             <transition name="fade" mode="out-in">
                 <v-locale-provider :rtl="currentLocale == 'ar' ? true : false">
-                    <v-img src="" cover height="auto" class="aboutme mx-auto md:p-40 p-5 m-1 rounded-sm"
+                    <v-img src="/public/intro.gif" cover class="aboutme mx-auto h-[60rem] md:p-40 p-5 m-1 rounded-sm"
                         gradient="to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.0)),linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4)),linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)">
                         <div class="md:text-3xl text-2xl font-bold flex md:ml-[0.4rem]">
                             <v-icon class="mx-3 my-auto" size="35">mdi-information-slab-box-outline</v-icon>
