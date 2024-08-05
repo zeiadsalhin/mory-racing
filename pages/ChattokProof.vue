@@ -36,7 +36,7 @@ const chattokvids = [
                 </div>
             </div>
             <!--vid genrator-->
-            <div class="flex flex-wrap mx-auto justify-center w-full gap-4 m-5">
+            <!--<div class="flex flex-wrap mx-auto justify-center w-full gap-4 m-5">
                 <div v-for="(v, index) in chattokvids" :key="index">
                     <video id="my-video" class="video-js md:w-[16rem] w-[9rem] p-2 rounded-xl" controlsa autoplay="true"
                         width="100%" playsinline muted loop="true" height="100%" data-poster="/mainicon.ico"
@@ -50,7 +50,7 @@ const chattokvids = [
                         </p>
                     </video>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
 </template>
