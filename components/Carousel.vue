@@ -17,7 +17,7 @@ watch(user, () => {
     <h1 id="offers" class="text-2xl font-semibold p-5 mx-auto text-center italic">{{ $t('discovergame') }}</h1>
     <transition name="fade" mode="out-in">
         <v-locale-provider :rtl="currentLocale == 'ar' ? true : false">
-            <v-parallax src="/public/b.webp " class="md:h-[75vh] h-[80vh]" alt="Car1">
+            <v-parallax src="/public/b.webp " class="md:h-[75vh] h-[85vh]" alt="Car1">
                 <div class="d-flex md:flex-row flex-col-reverse md:ml-[8.6rem] fill-height justify-start">
                     <div class="d-flex flex-column amd:ml-[8.6rem] fill-height justify-center alaign-center text-white">
 
