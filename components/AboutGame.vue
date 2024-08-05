@@ -3,13 +3,14 @@ const { locale, setLocale } = useI18n()
 const currentLocale = computed(() => locale.value)
 </script>
 <template>
-    <div id="about" class="about bg-zinc-950 w-full rounded-sm">
+    <div id="about" class="about bg-zinc-950 w-full rounded-sm" data-aos="fade-up" data-aos-duration="500">
         <v-lazy>
             <transition name="fade" mode="out-in">
                 <v-locale-provider :rtl="currentLocale == 'ar' ? true : false">
                     <v-img src="/public/intro.gif" cover class="aboutme mx-auto h-[60rem] md:p-40 p-5 m-1 rounded-sm"
                         gradient="to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.0)),linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4)),linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)">
-                        <div class="md:text-3xl text-2xl font-bold flex md:ml-[0.4rem]">
+                        <div class="md:text-3xl text-2xl font-bold flex md:ml-[0.4rem]" data-aos="fade-up"
+                            data-aos-duration="500">
                             <v-icon class="mx-3 my-auto" size="35">mdi-information-slab-box-outline</v-icon>
                             <h1 class="my-auto"> {{ $t('aboutchattok') }}</h1>
                         </div>
@@ -29,11 +30,13 @@ const currentLocale = computed(() => locale.value)
                     <v-locale-provider :rtl="currentLocale == 'ar' ? true : false">
                         <v-img src="/credits.webp" cover height="auto" class="skills md:p-40 p-5"
                             gradient="to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.0)),linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)">
-                            <div class="md:text-2xl  text-xl font-medium flex">
+                            <div class="md:text-2xl  text-xl font-medium flex" data-aos="fade-up"
+                                data-aos-duration="500">
                                 <v-icon class="mx-3 my-auto" size="30">mdi-copyright</v-icon>
                                 <h1 class="my-auto"> {{ $t('credits') }}</h1>
                             </div>
-                            <ul class="mt-5 space-y-5a md:text-2xl text-sm list-[square] p-3 ml-2">
+                            <ul class="mt-5 space-y-5a md:text-2xl text-sm list-[square] p-3 ml-2" data-aos="fade-up"
+                                data-aos-duration="500">
                                 <li class="flex mb-2"><v-avatar size="30"><v-img alt="Mory"
                                             src="/mainicon.ico"></v-img></v-avatar>
                                     <p class="ml-3 mr-3 my-auto">Mory</p>

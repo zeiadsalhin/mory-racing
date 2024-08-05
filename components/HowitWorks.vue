@@ -3,14 +3,15 @@ const { locale, setLocale } = useI18n()
 const currentLocale = computed(() => locale.value)
 </script>
 <template>
-    <div id="about" class="about">
+    <div id="about" class="about" data-aos="fade-up" data-aos-duration="500">
         <v-lazy>
             <transition name="fade" mode="out-in">
                 <v-locale-provider :rtl="currentLocale == 'ar' ? true : false">
                     <v-parallax src="" cover max-height="auto" min-height="500" height="auto"
                         class="aboutme mx-auto lg:px-40 md:py-20 p-5 m-1 rounded-sm  mt-10"
                         gradient="to right, rgba(255, 0, 80, 0.4), rgba(0, 0, 0, 0.0)),linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 242, 234, 0.4)),linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)">
-                        <div class="md:text-3xl text-2xl font-medium flex w-fit md:-ml-[0.8rem] md:p-5 p-3">
+                        <div class="md:text-3xl text-2xl font-medium flex w-fit md:-ml-[0.8rem] md:p-5 p-3"
+                            data-aos="fade-up" data-aos-duration="500">
                             <v-icon class="mx-3 my-auto" size="35">mdi-sitemap</v-icon>
                             <h1 class="my-auto text-center w-full min-w-fit mr-5 font-semibold brightness-200 "> {{
                                 $t('workchattok') }}</h1>
@@ -42,7 +43,8 @@ const currentLocale = computed(() => locale.value)
                         <v-parallax src="/mainicon.ico" placeholder="/mainicon.ico" cover
                             class="skills md:p-40 p-5 md:h-[50rem] md:max-h-[50rem]"
                             gradient="to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)">
-                            <div class="md:text-3xl text-2xl flex font-bold md:ml-[0.4rem] mt-5">
+                            <div class="md:text-3xl text-2xl flex font-bold md:ml-[0.4rem] mt-5" data-aos="fade-up"
+                                data-aos-duration="500">
                                 <v-icon class="mx-3 my-auto" size="30">mdi-cash</v-icon>
                                 <h1 class="my-auto">{{ $t('makemoneychattok') }}</h1>
                             </div>

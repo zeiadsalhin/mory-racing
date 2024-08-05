@@ -14,11 +14,13 @@ watch(user, () => {
 }, { immediate: true })
 </script>
 <template>
-    <h1 id="offers" class="text-2xl font-semibold p-5 mx-auto text-center italic">{{ $t('discovergame') }}</h1>
+    <h1 id="offers" class="text-2xl font-semibold p-5 mx-auto text-center italic" data-aos="fade-up"
+        data-aos-duration="500">{{ $t('discovergame') }}</h1>
     <transition name="fade" mode="out-in">
         <v-locale-provider :rtl="currentLocale == 'ar' ? true : false">
             <v-parallax src="/public/b.webp " class="md:h-[75vh] h-[85vh]" alt="Car1">
-                <div class="d-flex md:flex-row flex-col-reverse md:ml-[8.6rem] fill-height justify-start">
+                <div class="d-flex md:flex-row flex-col-reverse md:ml-[8.6rem] fill-height justify-start"
+                    data-aos="fade-up" data-aos-duration="1500">
                     <div class="d-flex flex-column amd:ml-[8.6rem] fill-height justify-center alaign-center text-white">
 
                         <div class="rounded-md backdrop-brightness-75 w-fit  md:m-10 md:p-10 p-5 ">

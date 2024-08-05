@@ -11,7 +11,8 @@ const currentLocale = computed(() => locale.value)
                         min-height="500" class="aboutme mx-auto lg:px-40 md:py-20 p-5 m-1 rounded-sm"
                         gradient="to right, rgba(255, 0, 80, 0.4), rgba(0, 0, 0, 0.0)),linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 242, 234, 0.4)),linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)">
 
-                        <div class="md:text-3xl text-2xl font-medium md:flex w-fit  md:p-5 p-3">
+                        <div class="md:text-3xl text-2xl font-medium md:flex w-fit  md:p-5 p-3" data-aos="fade-up"
+                            data-aos-duration="500">
                             <!-- <v-icon class="mx-3 my-auto" size="35">mdi-information-slab-box-outline</v-icon> -->
                             <h1 class="my-auto text-center flex w-full min-w-fit mr-"> {{ $t('welcomechattok') }}</h1>
                             <div class="brand flex w-fit">
@@ -39,7 +40,8 @@ const currentLocale = computed(() => locale.value)
                         <v-parallax src="/mainicon.ico" placeholder="/mainicon.ico" alt="chattokLogo" cover
                             class="skills md:p-40 p-5 md:h-[50rem] md:max-h-[50rem]"
                             gradient="to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)">
-                            <div class="md:text-3xl text-2xl font-bold flex md:ml-[0.4rem]">
+                            <div class="md:text-3xl text-2xl font-bold flex md:ml-[0.4rem]" data-aos="fade-up"
+                                data-aos-duration="500">
                                 <v-icon class="mx-3 my-auto" size="30">mdi-gamepad</v-icon>
                                 <h1 class="my-auto"> {{ $t('choosechattok') }}</h1>
                             </div>
