@@ -36,7 +36,8 @@ watch(user, () => {
                         </div>
                     </div>
                     <!--video-->
-                    <div class="flex flex-col space-y-4 justify-center items-center md:p-10 fill-height">
+                    <div class="flex flex-col space-y-4 justify-center items-center md:p-10 fill-height"
+                        data-aos="fade-up" data-aos-duration="2000">
                         <video id="my-video" class="video-js md:w-[16rem] w-[10rem] p-2 rounded-xl" controlsa
                             autoplay="true" width="100%" playsinline onloadstart="this.volume=0.5" muted loop="true"
                             height="100%" data-poster="/mainicon.ico" data-setup="{}" v-lazy-load>
