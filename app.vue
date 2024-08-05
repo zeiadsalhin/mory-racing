@@ -7,6 +7,7 @@
         <v-main>
           <NuxtPage />
         </v-main>
+        <NuxtCookieConsentPolicy />
       </v-app>
     </NuxtLayout>
   </div>

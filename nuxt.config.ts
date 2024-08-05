@@ -33,6 +33,7 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
     'nuxt-lazy-load',
     'nuxt-aos',
+    '@weareheavy/nuxt-cookie-consent',
     // 'nuxt-paypal',
     // "@unlok-co/nuxt-stripe",
     '@pinia/nuxt',
@@ -115,5 +116,9 @@ export default defineNuxtConfig({
   lazyLoad: {
     iframes: false,
     directiveOnly: true,
-  }
+  },
+  cookieConsent: {
+    provider: 'cookiescript',
+        id: '66a42beecce52be588a69de06794ba56',
+}
 })

@@ -149,7 +149,7 @@ export default defineI18nLocale(async locale => {
     yourliveid:"Your Live ID is:",
     launchgame:"Launch Game!",
     exitgame:"Exit game",
-    gpuwarning:"Please turn on GPU acceleration for better performance*",
+    gpuwarning:"Please turn on GPU acceleration for better performance, recommended: 4 core CPU and GTX750 and above*",
     showproof:"Make Money",
     proofpage:"Game Earnings",
     unlockproofpage:"Unlock Your TikTok Earning Potential with ChatTok Gaming",

@@ -196,7 +196,7 @@ const getLiveid = async () => {
                 <div class="main lg:flex flex-row justify-center text-sm ">
                     <div
                         class="1 md:px-8a w-fit md:w-8/12 flex flex-col justify-center items-center md:items-baseline  mx-auto">
-                        <div class="flex flex-col justify-center w-fit">
+                        <div class="flex flex-col justify-center w-full">
                             <div class="welcome md:flex md:justify-start md:space-x-3 md:p-2 w-fit text-center mx-auto">
                                 <div class="w-1.5 h-10 bg-zinc-950 my-auto rounded-sm"></div>
                                 <div class="icon p-"><v-img v-if="avatar" :src="avatar" width="60"

@@ -24,6 +24,7 @@
     "@stripe/stripe-js": "^4.1.0",
     "@unlok-co/nuxt-stripe": "^3.0.0",
     "@vue-stripe/vue-stripe": "^4.5.0",
+    "@weareheavy/nuxt-cookie-consent": "^1.0.4",
     "axios": "latest",
     "content": "latest",
     "nuxt": "^3.12.2",

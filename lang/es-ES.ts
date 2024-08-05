@@ -150,7 +150,7 @@ export default defineI18nLocale(async locale => {
    yourliveid:"Tu identificación en vivo es:",
    launchgame:"¡Iniciar juego!",
    exitgame:"Salir del juego",
-   gpuwarning:"Por favor, asegúrese de seleccionar la GPU para un mejor rendimiento*",
+   gpuwarning:"Por favor, asegúrese de seleccionar la GPU para un mejor rendimientoو recomendado: CPU de 4 núcleos y GTX 750 o superior*",
    showproof:"Ganar dinero",
    proofpage:"Ingresos del juego",
    unlockproofpage: "Desbloquea tu Potencial de Ganancias en TikTok con ChatTok Gaming",

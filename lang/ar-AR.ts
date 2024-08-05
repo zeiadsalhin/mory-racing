@@ -149,7 +149,7 @@ export default defineI18nLocale(async locale => {
         yourliveid:":معرف البث الخاص بك",
         launchgame:"! ابدأ اللعب",
         exitgame:"الخروج",
-        gpuwarning:"*تأكد من اختيار معالج الرسوميات لافضل اداء",
+        gpuwarning:"*تأكد من اختيار معالج الرسوميات لافضل اداء، يوصى بمعالج 4 انوية ومعالج رسوميات GTX750 فأعلى",
         showproof:"اربح الان",
         proofpage:"ارباح الالعاب",
         unlockproofpage: "افتح إمكانيات ربحك على تيك توك مع ChatTok Gaming",
