@@ -33,7 +33,7 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
     'nuxt-lazy-load',
     'nuxt-aos',
-    '@weareheavy/nuxt-cookie-consent',
+    '@dargmuesli/nuxt-cookie-control',
     // 'nuxt-paypal',
     // "@unlok-co/nuxt-stripe",
     '@pinia/nuxt',
@@ -117,14 +117,89 @@ export default defineNuxtConfig({
     iframes: false,
     directiveOnly: true,
   },
-  cookieConsent: {
+  // cookieConsent: {
     // provider: 'cookiescript',
     //     id: '66a42beecce52be588a69de06794ba56',
-    provider: 'cookiebot',
-        cbid: '96864872-1c7b-4e41-901b-ede43d04f1b6', // Replace with you own cbid
+    // provider: 'cookiebot',
+    //     cbid: '96864872-1c7b-4e41-901b-ede43d04f1b6', // Replace with you own cbid
 
         // // Optional
         // consentMode: false, // Disable consent mode (default: true)
         // consentModeDefaults: false, //
+// },
+cookieControl: {
+  barPosition: 'bottom-full',
+closeModalOnClickOutside: false,
+colors: {
+  barBackground: '#111',
+  barButtonBackground: '#999',
+  barButtonColor: '#000',
+  barButtonHoverBackground: '#333',
+  barButtonHoverColor: '#fff',
+  barTextColor: '#fff',
+  checkboxActiveBackground: '#999',
+  checkboxActiveCircleBackground: '#fff',
+  checkboxDisabledBackground: '#ddd',
+  checkboxDisabledCircleBackground: '#fff',
+  checkboxInactiveBackground: '#000',
+  checkboxInactiveCircleBackground: '#fff',
+  controlButtonBackground: '#fff',
+  controlButtonHoverBackground: '#000',
+  controlButtonIconColor: '#000',
+  controlButtonIconHoverColor: '#fff',
+  focusRingColor: '#808080',
+  modalBackground: '#777',
+  modalButtonBackground: '#000',
+  modalButtonColor: '#fff',
+  modalButtonHoverBackground: '#333',
+  modalButtonHoverColor: '#fff',
+  modalOverlay: '#000',
+  modalOverlayOpacity: 0.8,
+  modalTextColor: '#fff',
+  modalUnsavedColor: '#fff',
+},
+cookies: {
+  necessary: [],
+  optional: [],
+  description: {
+    en: 'This cookie stores preferences.'
+  },
+  id: 'chattok_c_id', // use a short cookie id to save bandwidth and prefixes to separate
+  isPreselected: false, // `true` is not GDPR compliant! This flag does not enable any cookies, it only preselects the cookie's modal toggle. The default is `false`.
+  name: {
+    en: 'chattok_usercookies' // you always have to specify a cookie name (in English)
+  },
+  links: {
+    'https://chattokgaming.com/termsofservice': 'Terms of Service',
+  },
+  src: 'https://example.com/preferences/js?id=<API-KEY>',
+  targetCookieIds: ['xmpl_a', 'xmpl_b'],
+},
+
+
+cookieExpiryOffsetMs: 1000 * 60 * 60 * 24 * 365, // one year
+cookieNameIsConsentGiven: 'chattok_c',
+cookieNameCookiesEnabledIds: 'chattok_e',
+
+cookieOptions: {
+  path: '/',
+  sameSite: 'strict',
+},
+
+isAcceptNecessaryButtonEnabled: false,
+isControlButtonEnabled: false,
+isCookieIdVisible: false,
+isCssEnabled: true,
+isCssPonyfillEnabled: false,
+isDashInDescriptionEnabled: false,
+isIframeBlocked: false,
+isModalForced: false,
+locales: ['en', 'ar', 'es'],
+localeTexts: {
+  en: {
+    save: 'Remember',
+  }
+},
+domain: 'chattokgaming.com',
 }
 })
