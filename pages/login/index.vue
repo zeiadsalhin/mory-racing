@@ -46,7 +46,10 @@ const signInGoogle = async () => {
     const supabase = useSupabaseClient()
     try {
         const { data, error } = await supabase.auth.signInWithOAuth({
-            provider: 'google'
+            provider: 'google',
+            options: {
+                shouldCreateUser: false
+            },
         })
 
         if (error) {
@@ -64,7 +67,10 @@ const signInTwitch = async () => {
     const supabase = useSupabaseClient()
     try {
         const { data, error } = await supabase.auth.signInWithOAuth({
-            provider: 'twitch'
+            provider: 'twitch',
+            options: {
+                shouldCreateUser: false
+            },
         })
 
         if (error) {
