@@ -11,11 +11,14 @@ const currentLocale = computed(() => locale.value)
                         min-height="500" class="aboutme mx-auto lg:px-40 md:py-20 p-5 m-1 rounded-sm"
                         gradient="to right, rgba(255, 0, 80, 0.4), rgba(0, 0, 0, 0.0)),linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 242, 234, 0.4)),linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)">
 
-                        <div class="md:text-3xl text-2xl font-medium md:flex w-fit  md:p-5 p-3" data-aos="fade-up"
-                            data-aos-duration="500">
+                        <div class="md:text-3xl text-2xl font-medium md:flex w-fit justify-center mx-auto items-center text-center  md:p-5 p-3"
+                            data-aos="fade-up" data-aos-duration="500">
                             <!-- <v-icon class="mx-3 my-auto" size="35">mdi-information-slab-box-outline</v-icon> -->
-                            <h1 class="my-auto text-center flex w-full min-w-fit mr-"> {{ $t('welcomechattok') }}</h1>
-                            <div class="brand flex w-fit">
+                            <h1
+                                class="my-auto text-center items-center flex justify-center w-fit mx-auto min-w-fit mr-">
+                                {{
+                                    $t('welcomechattok') }}</h1>
+                            <div class="brand flex w-fit m-auto justify-center  ">
                                 <p class="text-[#ff0050] my-auto inline-block px-2 md:text-4xl text-2xl">
                                     Chattok</p>
                                 <p class="inline-block text-[#00f2ea] my-auto md:text-4xl text-2xl">Gaming</p>
@@ -25,8 +28,10 @@ const currentLocale = computed(() => locale.value)
                                     class="inline-block my-auto w-fit ml-5 mr-5"></v-img>
                             </div>
                         </div>
-                        <p class="md:ml-14 ml-5 py-3 lg:w-2/3 brightness-75 md:text-lg text-md mt-5 leading-snug ">{{
-                            $t('welcomechattokdesc') }}
+                        <p
+                            class="md:ml-14a ml-5a py-3 lg:w-2/3 mx-auto text-center brightness-75 md:text-lg text-md mt-5 leading-snug ">
+                            {{
+                                $t('welcomechattokdesc') }}
                         </p>
 
                     </v-parallax>
@@ -34,19 +39,18 @@ const currentLocale = computed(() => locale.value)
             </transition>
         </v-lazy>
         <div class="team">
-
             <transition name="fade" mode="out-in">
                 <v-lazy>
                     <v-parallax src="/ffflux.svg" class="xl:h-[62rem]" width="100%" cover>
                         <div class="xl:p-40 p-5 max-w-fit min-w-fit mx-auto items-center d-flex fill-height">
                             <div class="main">
-                                <h2 class="text-3xl font-semibold py-5 my-auto  md:min-w-[70rem]" data-aos="fade-up"
-                                    data-aos-duration="500">
+                                <h2 class="text-3xl font-semibold py-5 my-auto text-center md:min-w-[70rem]"
+                                    data-aos="fade-up" data-aos-duration="500">
                                     <v-icon class="md:mx-3 my-auto mb-2" size="35">mdi-account-group</v-icon>
                                     Meet Our
                                     team
                                 </h2>
-                                <div class="images md:flex flex-wrap gap-4 w-full md:min-w-[70rem] mx-auto backdrop-brightness-110 backdrop-blur-axl shadow-sm rounded-md justify-around md:space-x-3 md:space-y-0 space-y-10 md:ml-3 p-10"
+                                <div class="images bg-zinc-900 bg-opacity-50 md:flex flex-wrap gap-4 w-full md:min-w-[70rem] mx-auto backdrop-brightness-110 backdrop-blur-axl shadow-sm rounded-md justify-around md:space-x-3 md:space-y-0 space-y-10 md:ml-3 p-10"
                                     data-aos="fade-up" data-aos-duration="1000">
                                     <div class="1 flex flex-col items-center">
                                         <v-lazy>
@@ -94,13 +98,13 @@ const currentLocale = computed(() => locale.value)
                         <v-parallax src="/mainicon.ico" placeholder="/mainicon.ico" alt="chattokLogo" cover
                             class="skills md:p-40 p-5 md:h-[50rem] md:max-h-[50rem]"
                             gradient="to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)">
-                            <div class="md:text-3xl text-2xl font-bold flex md:ml-[0.4rem]" data-aos="fade-up"
-                                data-aos-duration="500">
-                                <v-icon class="mx-3 my-auto" size="30">mdi-gamepad</v-icon>
-                                <h1 class="my-auto"> {{ $t('choosechattok') }}</h1>
+                            <div class="md:text-3xl text-2xl font-bold flex items-center justify-center w-fit space-x-2 mt-5 mx-auto md:ml-[0.4rem]"
+                                data-aos="fade-up" data-aos-duration="500">
+                                <v-icon class="mx-autoa my-auto" size="30">mdi-gamepad</v-icon>
+                                <h1 class="my-auto text-center"> {{ $t('choosechattok') }}</h1>
                             </div>
                             <p
-                                class="md:ml-[4rem] ml-5 py-3 lg:w-2/3 brightness-75 md:text-lg text-md mt-5 leading-snug ">
+                                class="md:ml-[4rem]a ml-5a py-3 lg:w-2/3 text-center mx-auto brightness-75 md:text-lg text-md mt-5 leading-snug ">
                                 {{
                                     $t('choosechattokdesc') }}
                             </p>

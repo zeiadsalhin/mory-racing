@@ -19,12 +19,14 @@ watch(user, () => {
     <transition name="fade" mode="out-in">
         <v-locale-provider :rtl="currentLocale == 'ar' ? true : false">
             <v-parallax src="/public/b.webp " class="md:h-[75vh] h-[85vh]" alt="Car1">
-                <div class="d-flex md:flex-row flex-col-reverse md:ml-[8.6rem] fill-height justify-start"
+                <div class="d-flex md:flex-row flex-col-reverse md:ml-[8.6rem]a fill-height justify-center"
                     data-aos="fade-up" data-aos-duration="1500">
-                    <div class="d-flex flex-column amd:ml-[8.6rem] fill-height justify-center alaign-center text-white">
+                    <div
+                        class="d-flex flex-column amd:ml-[8.6rem] fill-height justify-center items-center alaign-center text-white">
 
-                        <div class="rounded-md backdrop-brightness-75 w-fit  md:m-10 md:p-10 p-5 ">
-                            <h1 class="text-2xl md:text-3xl w-fit font-weight-bold mb-4">
+                        <div
+                            class="rounded-md backdrop-brightness-75 items-center text-center w-fit  md:m-10 md:p-10 p-5 ">
+                            <h1 class="text-2xl md:text-3xl w-full font-weight-bold mb-4">
                                 {{ $t('chattoklive') }}!
                             </h1>
                             <p class="text-subtitle md:w-[30rem] brightness-90 font-weight-light px-3  mb-4">{{

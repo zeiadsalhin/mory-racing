@@ -24,8 +24,8 @@ const currentLocale = computed(() => locale.value)
                             width="200" height="100%" alt="logo" loading="lazy" />
                     </v-lazy>
                 </div>
-                <div class="2 p-5 flex flex-col">
-                    <p class="text-lg text-lefta font-weight-bold mt-5 mb-2">Chattok Gaming</p>
+                <div class="2 p-5 flex flex-col items-center md:items-baseline">
+                    <p class="text-lg flex justify-start font-weight-bold mt-5 mb-2">Chattok Gaming</p>
                     <nuxtLink :to="b.link" color="surface"
                         class="space-y-2 brightness-75 hover:brightness-100 w-fit flex" v-for="(b, i) in navigation"
                         :key="`navigation${i}`" fab depressed>
@@ -47,7 +47,7 @@ const currentLocale = computed(() => locale.value)
                     <p class="text-md my-auto ml-2">Alfa</p>
                 </a>
             </div>-->
-                <div class="3 p-5 flex flex-col text-left items-start">
+                <div class="3 p-5 flex flex-col text-left items-center">
                     <p class="text-md font-weight-bold mt-5 mb-2">{{ $t('follow') }}</p>
                     <div class="flex justify-center space-x-5a">
                         <a href="https://discord.gg/GywCaY898e" target="_blank"
@@ -81,7 +81,7 @@ const currentLocale = computed(() => locale.value)
             <br />
             <!-- <br /> -->
             <!-- <div class="h-0.5 w-1/3 mx-auto bg-zinc-800 rounded-full mt-5 mb-5"></div> -->
-            <div class=" flex w-fit mt-10">
+            <div class=" flex w-fit mx-auto mt-10">
                 <p class="opacity-80">©{{ date }} - Chattok Gaming</p>
                 <!-- <v-img src="/public/racing_flag.webp" class="mx-2" width="40"></v-img> -->
             </div>
@@ -105,7 +105,7 @@ export default {
                 { icon: "", name: "About", link: "#about" },
                 { icon: "", name: "Offers", link: "#offers" },
                 { icon: "", name: "TermsOfService", link: "/TermsOfService" },
-                { icon: "", name: "ContactUs", link: "/Contact-us" },
+                { icon: "", name: "ContactUs", link: "/Contact-US" },
             ],
         };
     },

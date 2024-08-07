@@ -315,7 +315,7 @@ watch(user, () => {
                                 class="text-center mx-auto flex w-fit h-fit justify-center m-3 px-6 py-2 rounded-sm hover:cursor-pointer">
                                 {{ $t('login') }}</NuxtLink>
                         </div>
-                        <NuxtLink to="/" onclick=""
+                        <NuxtLink to="/Contact-US" onclick=""
                             :class="theme.global.current.value.dark ? 'text-zinc-400' : 'text-zinc-700'"
                             class="text-center mx-auto flex w-fit h-fit justify-center m-3 px-6 py-2 rounded-md hover:underline hover:cursor-pointer">
                             {{ $t('help') }}</NuxtLink>

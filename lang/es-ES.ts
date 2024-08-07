@@ -4,7 +4,7 @@ export default defineI18nLocale(async locale => {
    home: "Inicio",
    about: "Acerca de",
    play: "Jugar",
-   login: "Iniciar sesión",
+   login: "Registrarse",
    discovergame: "Descubre los juegos en vivo de próxima generación",
    aboutt: "Sobre mí",
    follow: "Síguenos",

@@ -46,7 +46,7 @@ export default defineI18nLocale(async locale => {
       About: 'About',
       Offers: 'Offers',
       TermsOfService: 'Terms of Service',
-      ContactUs: 'Contact Us'
+      ContactUs: 'Contact US'
     },
     welcomeuser: "Welcome",
     substate1: "Subscribed",
@@ -128,7 +128,7 @@ export default defineI18nLocale(async locale => {
     joinnow:"Join now",
     or:"Or",
     alreadyhaccount:"Already have an account?",
-    help:"المساعدة",
+    help:"Help",
     termsandconditions:"Terms and Conditions*",
     oneclickreq:"To request a passwordless login link please",
     oneclickreqemail:"Enter your Email",

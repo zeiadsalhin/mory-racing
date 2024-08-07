@@ -9,22 +9,26 @@ const currentLocale = computed(() => locale.value)
                 <v-locale-provider :rtl="currentLocale == 'ar' ? true : false">
                     <v-img src="/public/intro.gif" cover class="aboutme mx-auto h-[60rem] md:p-40 p-5 m-1 rounded-sm"
                         gradient="to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.0)),linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4)),linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)">
-                        <div class="md:text-3xl text-2xl font-bold flex md:ml-[0.4rem]" data-aos="fade-up"
-                            data-aos-duration="500">
-                            <v-icon class="mx-3 my-auto" size="35">mdi-information-slab-box-outline</v-icon>
-                            <h1 class="my-auto"> {{ $t('aboutchattok') }}</h1>
+                        <div class="md:text-3xl text-2xl font-bold flex md:ml-[0.4rem] justify-center text-center mx-auto items-center  mt-5"
+                            data-aos="fade-up" data-aos-duration="500">
+                            <v-icon class="mx-3a my-auto" size="35">mdi-information-slab-box-outline</v-icon>
+                            <h1 class="my-auto text-center px-3"> {{ $t('aboutchattok') }}</h1>
                         </div>
-                        <p class="md:ml-16 ml-4 py-3 md:w-1/2 brightness-75 md:text-lg text-md mt-5 leading-snug ">{{
-                            $t('aboutchattokdesc1') }}
+                        <p
+                            class="md:ml-16a ml-4a py-3 md:w-2/3 text-centerA mx-auto brightness-75 md:text-lg text-md mt-5 leading-snug ">
+                            {{
+                                $t('aboutchattokdesc1') }}
                         </p>
-                        <p class="md:ml-16 ml-4 py-3 md:w-1/2 brightness-75  md:text-lg text-md mt-1 leading-snug ">{{
-                            $t('aboutchattokdesc2') }}
+                        <p
+                            class="md:ml-16a ml-4a py-3 md:w-2/3 text-centerA mx-auto brightness-75  md:text-lg text-md mt-1 leading-snug ">
+                            {{
+                                $t('aboutchattokdesc2') }}
                         </p>
                     </v-img>
                 </v-locale-provider>
             </transition>
         </v-lazy>
-        <div class="2">
+        <!-- <div class="2">
             <v-lazy>
                 <transition name="fade" mode="out-in">
                     <v-locale-provider :rtl="currentLocale == 'ar' ? true : false">
@@ -72,12 +76,12 @@ const currentLocale = computed(() => locale.value)
                                 <p class="text-sm font-thin italic ml-5 mb-10 opacity-80">"{{ $t('chattokbackenddesc')
                                     }}"
                                 </p>
-                                <!-- <li>Project Management</li> -->
-                            </ul>
+                                <li>Project Management</li> -->
+        <!--  </ul>
                         </v-img>
                     </v-locale-provider>
                 </transition>
             </v-lazy>
-        </div>
+        </div> -->
     </div>
 </template>
