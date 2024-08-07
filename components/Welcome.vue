@@ -33,6 +33,60 @@ const currentLocale = computed(() => locale.value)
                 </v-locale-provider>
             </transition>
         </v-lazy>
+        <div class="team">
+
+            <transition name="fade" mode="out-in">
+                <v-lazy>
+                    <v-parallax src="/ffflux.svg" class="xl:h-[62rem]" width="100%" cover>
+                        <div class="xl:p-40 p-5 max-w-fit min-w-fit mx-auto items-center d-flex fill-height">
+                            <div class="main">
+                                <h2 class="text-3xl font-semibold py-5 my-auto" data-aos="fade-up"
+                                    data-aos-duration="500">
+                                    <v-icon class="md:mx-3 my-auto mb-2" size="35">mdi-account-group</v-icon>
+                                    Meet Our
+                                    team
+                                </h2>
+                                <div
+                                    class="images md:flex flex-wrap gap-4 w-full mx-auto backdrop-brightness-110 backdrop-blur-axl shadow-sm rounded-md justify-around md:space-x-3 md:space-y-0 space-y-10 md:ml-3 p-10">
+                                    <div class="1 flex flex-col items-center">
+                                        <v-lazy>
+                                            <v-img src="/Clinton.webp"
+                                                class="md:w-[16rem] max-w-[16rem] min-w-[16rem] h-[16rem] min-h-[16rem] max-h-[16rem] rounded-md transition-all ease-in-out hover:-translate-y-2"
+                                                cover></v-img></v-lazy>
+                                        <h2 class="text-xl p-1 font-semibold">Clinton Deig</h2>
+                                        <p class="px-1 opacity-80">Chattok Gaming Founder</p>
+                                    </div>
+                                    <div class="2 flex flex-col items-center">
+                                        <v-lazy>
+                                            <v-img src="/Jose.webp"
+                                                class="md:w-[16rem] max-w-[16rem] min-w-[16rem] h-[16rem] min-h-[16rem] max-h-[16rem] rounded-md transition-all ease-in-out hover:-translate-y-2"
+                                                cover></v-img></v-lazy>
+                                        <h2 class="text-xl p-1 font-semibold">Jose Vivas</h2>
+                                        <p class="px-1 opacity-80">Chattok Gaming Backdoor</p>
+                                    </div>
+                                    <div class="3 flex flex-col items-center">
+                                        <v-lazy>
+                                            <v-img src="/Mory.webp"
+                                                class="md:w-[16rem] max-w-[16rem] min-w-[16rem] h-[16rem] min-h-[16rem] max-h-[16rem] rounded-md transition-all ease-in-out hover:-translate-y-2"
+                                                cover></v-img></v-lazy>
+                                        <h2 class="text-xl p-1 font-semibold">Mory</h2>
+                                        <p class="px-1 opacity-80">Chattok Gaming Developer</p>
+                                    </div>
+                                    <div class="4 flex flex-col items-center">
+                                        <v-lazy>
+                                            <v-img src="/Alfa.webp"
+                                                class="md:w-[16rem] max-w-[16rem] min-w-[16rem] h-[16rem] min-h-[16rem] max-h-[16rem] rounded-md transition-all ease-in-out hover:-translate-y-2"
+                                                cover></v-img></v-lazy>
+                                        <h2 class="text-xl p-1 font-semibold">Alfa</h2>
+                                        <p class="px-1 opacity-80">Chattok Gaming Web Developer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </v-parallax>
+                </v-lazy>
+            </transition>
+        </div>
         <div class="2">
             <v-lazy>
                 <transition name="fade" mode="out-in">
