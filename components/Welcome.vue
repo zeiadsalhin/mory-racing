@@ -40,14 +40,14 @@ const currentLocale = computed(() => locale.value)
                     <v-parallax src="/ffflux.svg" class="xl:h-[62rem]" width="100%" cover>
                         <div class="xl:p-40 p-5 max-w-fit min-w-fit mx-auto items-center d-flex fill-height">
                             <div class="main">
-                                <h2 class="text-3xl font-semibold py-5 my-auto" data-aos="fade-up"
+                                <h2 class="text-3xl font-semibold py-5 my-auto  md:min-w-[70rem]" data-aos="fade-up"
                                     data-aos-duration="500">
                                     <v-icon class="md:mx-3 my-auto mb-2" size="35">mdi-account-group</v-icon>
                                     Meet Our
                                     team
                                 </h2>
-                                <div
-                                    class="images md:flex flex-wrap gap-4 w-full mx-auto backdrop-brightness-110 backdrop-blur-axl shadow-sm rounded-md justify-around md:space-x-3 md:space-y-0 space-y-10 md:ml-3 p-10">
+                                <div class="images md:flex flex-wrap gap-4 w-full md:min-w-[70rem] mx-auto backdrop-brightness-110 backdrop-blur-axl shadow-sm rounded-md justify-around md:space-x-3 md:space-y-0 space-y-10 md:ml-3 p-10"
+                                    data-aos="fade-up" data-aos-duration="1000">
                                     <div class="1 flex flex-col items-center">
                                         <v-lazy>
                                             <v-img src="/Clinton.webp"
