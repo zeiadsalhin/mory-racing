@@ -204,9 +204,16 @@ localeTexts: {
 domain: 'chattokgaming.com',
 },
 security: {
+  nonce: true,
   headers: {
+    contentSecurityPolicy: {
+      'style-src': process.env.NODE_ENV === 'development' ? 
+      ["'self'", "'unsafe-inline'"] :
+      ["'self'", "'unsafe-inline'", "nonce-{{nonce}}"]
+    },
     crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',
     xXSSProtection: '1',
   },
+  sri: true
 },
 })
