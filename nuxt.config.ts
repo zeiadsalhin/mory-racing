@@ -207,13 +207,28 @@ security: {
   nonce: true,
   headers: {
     contentSecurityPolicy: {
-      'style-src': process.env.NODE_ENV === 'development' ? 
-      ["'self'", "'unsafe-inline'"] :
-      ["'self'", "'unsafe-inline'", "nonce-{{nonce}}"]
+      'script-src': [
+        "'self'",  // Allow scripts from the same origin
+        "https:", // Allow scripts from any HTTPS source
+        "'unsafe-inline'", // Allow inline scripts (unsafe)
+        "'strict-dynamic'", // Allow scripts loaded using 'strict-dynamic' (modern browsers)
+        "'nonce-{{nonce}}'" // Allow scripts with nonce attribute (SSR mode)
+      ],
+      'style-src': [
+        "'self'", // Allow stylesheets from the same origin
+        "https:", // Allow stylesheets from any HTTPS source
+        "'unsafe-inline'", // Allow inline styles (unsafe)
+        "https://apis.google.com",
+      ],
+      'base-uri': ["'none'"], // Allow no <base> URIs
+      'img-src': ["'self'", "data:","https://mory-racing.netlify.app/","https://static-cdn.jtvnw.net","https://apis.google.com"], // Allow images from the same origin and data URIs
+      'font-src': ["'self'", "https:", "data:", "https://fonts.gstatic.com"], // Allow fonts from the same origin, HTTPS sources, and data URIs
+      'object-src': ["'none'"], // Allow no plugins
+      'script-src-attr': ["'unsafe-inline'"], // Disallow all script execution via attributes
+      'upgrade-insecure-requests': true // Upgrade all insecure requests to HTTPS
     },
     crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',
     xXSSProtection: '1',
   },
-  sri: true
 },
 })
