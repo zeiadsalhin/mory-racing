@@ -134,7 +134,7 @@ watch(user, () => {
                 </v-toolbar-title>
             </nuxt-link>
             <div v-if="$vuetify.display.mobile" class="flex w-[2.8rem]">
-                <v-btn icon name="Chattok TikTok" class="mr-2 text-subtitle-2 opacity-85" variant="text">
+                <v-btn icon name="Chattok TikTok" width="100%" class="mr-2 text-subtitle-2 opacity-85" variant="text">
                     <a href="https://www.tiktok.com/@chattoklive" target="_blank" aria-label="Chattok TikTok"
                         rel="noopener noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
@@ -144,7 +144,7 @@ watch(user, () => {
                         </svg>
                     </a>
                 </v-btn>
-                <v-btn icon name="Chattok Discord" class="mr-2 text-subtitle-2 opacity-85" variant="text">
+                <v-btn icon name="Chattok Discord" width="100%" class="mr-2 text-subtitle-2 opacity-85" variant="text">
                     <a href="https://discord.gg/GywCaY898e" target="_blank" aria-label="Chattok Discord"
                         rel="noopener noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
@@ -159,7 +159,7 @@ watch(user, () => {
                 <v-btn name="Chattok TikTok" class="mr-2 text-subtitle-2 opacity-85" variant="text">
                     <a class="flex" href="https://www.tiktok.com/@chattoklive" target="_blank"
                         aria-label="Chattok TikTok" rel="noopener noreferrer">
-                        <p class="my-auto">{{ $t('follow') }}</p>
+                        <p class="my-auto" width="100%">{{ $t('follow') }}</p>
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
                             class="bi bi-tiktok m-1" viewBox="0 0 16 16">
                             <path
@@ -170,7 +170,7 @@ watch(user, () => {
                 <v-btn name="Chattok Discord" class="mr-2 text-subtitle-2 opacity-85" variant="text">
                     <a class="flex" href="https://discord.gg/GywCaY898e" target="_blank" aria-label="Chattok Discord"
                         rel="noopener noreferrer">
-                        <p class="my-auto">{{ $t('join') }}</p>
+                        <p class="my-auto" width="100%">{{ $t('join') }}</p>
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
                             class="bi bi-discord m-1" viewBox="0 0 16 16">
                             <path
@@ -208,7 +208,7 @@ watch(user, () => {
                     </v-list-item>
                 </v-list>
             </v-menu>
-            <nuxt-link :to="isUser ? '/user/account' : '/admin'">
+            <nuxt-link :to="isUser ? '/user/account' : '/admin'" width="100%">
                 <v-btn v-if="avatar" class="mr-md-2" icon>
                     <v-avatar size="30"><v-img :src="avatar ? avatar : null"></v-img></v-avatar>
                     <v-tooltip v-if="avatar" activator="parent" location="start">{{ $t('myaccount') }}</v-tooltip>

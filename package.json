@@ -33,6 +33,7 @@
     "nuxt-gtag": "^2.1.0",
     "nuxt-lazy-load": "^3.0.4",
     "nuxt-mail": "^5.0.1",
+    "nuxt-security": "^2.0.0-rc.9",
     "nuxt-video-player": "^1.0.17",
     "nuxt-webfontloader": "^1.1.0",
     "pinia": "latest",

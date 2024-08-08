@@ -34,6 +34,7 @@ export default defineNuxtConfig({
     'nuxt-lazy-load',
     'nuxt-aos',
     '@dargmuesli/nuxt-cookie-control',
+    'nuxt-security',
     // 'nuxt-paypal',
     // "@unlok-co/nuxt-stripe",
     '@pinia/nuxt',
@@ -201,5 +202,11 @@ localeTexts: {
   }
 },
 domain: 'chattokgaming.com',
-}
+},
+security: {
+  headers: {
+    crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',
+    xXSSProtection: '1',
+  },
+},
 })
