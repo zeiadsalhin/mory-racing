@@ -219,6 +219,7 @@ security: {
         "'self'", // Allow stylesheets from the same origin
         "https:", // Allow stylesheets from any HTTPS source
         "'unsafe-inline'", // Allow inline styles (unsafe)
+        "https://mory-racing.netlify.app/",
         "https://apis.google.com",
       ],
       'base-uri': ["'none'"], // Allow no <base> URIs
@@ -228,7 +229,8 @@ security: {
       'script-src-attr': ["'unsafe-inline'"], // Disallow all script execution via attributes
       'upgrade-insecure-requests': true // Upgrade all insecure requests to HTTPS
     },
-    crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',
+    crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'unsafe-none',
+    crossOriginOpenerPolicy:process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'unsafe-none',
     xXSSProtection: '1',
   },
 },

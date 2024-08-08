@@ -210,7 +210,7 @@ watch(user, () => {
             </v-menu>
             <nuxt-link :to="isUser ? '/user/account' : '/admin'" width="100%">
                 <v-btn v-if="avatar" class="mr-md-2" icon>
-                    <v-avatar size="30"><v-img :src="avatar ? avatar : null"></v-img></v-avatar>
+                    <v-avatar size="30"><v-img :src="avatar ? avatar : null" crossorigin></v-img></v-avatar>
                     <v-tooltip v-if="avatar" activator="parent" location="start">{{ $t('myaccount') }}</v-tooltip>
                 </v-btn>
                 <v-btn v-else v-if="isUser" class="mr-md-2" icon><v-icon size="30">mdi-account-outline</v-icon>
