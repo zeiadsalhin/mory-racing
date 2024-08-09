@@ -213,7 +213,7 @@ security: {
         "https:", // Allow scripts from any HTTPS source
         "https://chattokgaming.com/",
         "'unsafe-inline'", // Allow inline scripts (unsafe)
-        // "'strict-dynamic'", // Allow scripts loaded using 'strict-dynamic' (modern browsers)
+        "'strict-dynamic'", // Allow scripts loaded using 'strict-dynamic' (modern browsers)
         "'nonce-{{nonce}}'" // Allow scripts with nonce attribute (SSR mode)
       ],
       'style-src': [
@@ -224,16 +224,16 @@ security: {
         "https://apis.google.com",
         "https://chattokgaming.com/",
       ],
-      // 'base-uri': ["'none'"], // Allow no <base> URIs
+      'base-uri': ["'none'"], // Allow no <base> URIs
       'img-src': ["'self'", "data:","https://mory-racing.netlify.app/","https://static-cdn.jtvnw.net","https://apis.google.com"], // Allow images from the same origin and data URIs
       'font-src': ["'self'", "https:", "data:", "https://fonts.gstatic.com"], // Allow fonts from the same origin, HTTPS sources, and data URIs
-      // 'object-src': ["'none'"], // Allow no plugins
-      // 'script-src-attr': ["'unsafe-inline'"], // Disallow all script execution via attributes
+      'object-src': ["'none'"], // Allow no plugins
+      'script-src-attr': ["'unsafe-inline'"], // Disallow all script execution via attributes
       'upgrade-insecure-requests': true // Upgrade all insecure requests to HTTPS
     },
     crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'unsafe-none',
     crossOriginOpenerPolicy:process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'unsafe-none',
-    // xXSSProtection: '1; mode=block',
+    xXSSProtection: '1; mode=block',
   },
 },
 })
