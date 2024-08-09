@@ -7,7 +7,7 @@ export default defineI18nLocale(async locale => {
     login: "Login",
     discovergame: "Discover Next Gen TikTok Live Games",
     aboutt: "About me",
-    follow: "Follow us",
+    follow: "Follow Us",
     join:"Join",
     close:"Close",
     chattoklive: "Chattok Gaming is Live",
