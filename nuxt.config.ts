@@ -205,7 +205,7 @@ localeTexts: {
 domain: 'chattokgaming.com',
 },
 security: {
-  // nonce: true,
+  nonce: true,
   headers: {
     contentSecurityPolicy: {
       'script-src': [
@@ -213,7 +213,7 @@ security: {
         "https:", // Allow scripts from any HTTPS source
         "'unsafe-inline'", // Allow inline scripts (unsafe)
         "'strict-dynamic'", // Allow scripts loaded using 'strict-dynamic' (modern browsers)
-        // "'nonce-{{nonce}}'" // Allow scripts with nonce attribute (SSR mode)
+        "'nonce-{{nonce}}'" // Allow scripts with nonce attribute (SSR mode)
       ],
       'style-src': [
         "'self'", // Allow stylesheets from the same origin
@@ -231,7 +231,7 @@ security: {
     },
     crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'unsafe-none',
     crossOriginOpenerPolicy:process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'unsafe-none',
-    xXSSProtection: '1',
+    xXSSProtection: '1; mode=block',
   },
 },
 })
