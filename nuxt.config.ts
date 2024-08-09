@@ -213,7 +213,7 @@ security: {
         "https:", // Allow scripts from any HTTPS source
         "https://chattokgaming.com/",
         "'unsafe-inline'", // Allow inline scripts (unsafe)
-        "'strict-dynamic'", // Allow scripts loaded using 'strict-dynamic' (modern browsers)
+        // "'strict-dynamic'", // Allow scripts loaded using 'strict-dynamic' (modern browsers)
         "'nonce-{{nonce}}'" // Allow scripts with nonce attribute (SSR mode)
       ],
       'style-src': [
