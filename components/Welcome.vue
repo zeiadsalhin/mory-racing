@@ -57,7 +57,7 @@ const currentLocale = computed(() => locale.value)
                                             <v-img src="/Clinton.webp"
                                                 class="md:w-[16rem] max-w-[16rem] min-w-[16rem] h-[16rem] min-h-[16rem] max-h-[16rem] rounded-md transition-all ease-in-out hover:-translate-y-2"
                                                 cover></v-img></v-lazy>
-                                        <h2 class="text-xl p-1 font-semibold">Clinton Deig</h2>
+                                        <h2 class="text-xl p-1 font-semibold">Clinton</h2>
                                         <p class="px-1 opacity-80">Chattok Gaming Founder</p>
                                     </div>
                                     <div class="2 flex flex-col items-center">
@@ -65,7 +65,7 @@ const currentLocale = computed(() => locale.value)
                                             <v-img src="/Jose.webp"
                                                 class="md:w-[16rem] max-w-[16rem] min-w-[16rem] h-[16rem] min-h-[16rem] max-h-[16rem] rounded-md transition-all ease-in-out hover:-translate-y-2"
                                                 cover></v-img></v-lazy>
-                                        <h2 class="text-xl p-1 font-semibold">Jose Vivas</h2>
+                                        <h2 class="text-xl p-1 font-semibold">Jose</h2>
                                         <p class="px-1 opacity-80">Chattok Gaming Backdoor</p>
                                     </div>
                                     <div class="3 flex flex-col items-center">
