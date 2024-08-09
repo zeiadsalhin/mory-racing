@@ -35,7 +35,7 @@ export default defineNuxtConfig({
     'nuxt-lazy-load',
     'nuxt-aos',
     '@dargmuesli/nuxt-cookie-control',
-    'nuxt-security',
+    // 'nuxt-security',
     // 'nuxt-paypal',
     // "@unlok-co/nuxt-stripe",
     '@pinia/nuxt',
