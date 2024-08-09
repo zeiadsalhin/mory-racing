@@ -230,7 +230,7 @@ security: {
       'upgrade-insecure-requests': true // Upgrade all insecure requests to HTTPS
     },
     crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'unsafe-none',
-    crossOriginOpenerPolicy:process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'unsafe-none',
+    // crossOriginOpenerPolicy:process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'unsafe-none',
     xXSSProtection: '1',
   },
 },
