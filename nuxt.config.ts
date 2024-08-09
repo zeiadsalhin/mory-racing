@@ -208,13 +208,13 @@ security: {
   nonce: true,
   headers: {
     contentSecurityPolicy: {
-      'script-src': [
-        "'self'",  // Allow scripts from the same origin
-        "https:", // Allow scripts from any HTTPS source
-        "'unsafe-inline'", // Allow inline scripts (unsafe)
-        "'strict-dynamic'", // Allow scripts loaded using 'strict-dynamic' (modern browsers)
-        "'nonce-{{nonce}}'" // Allow scripts with nonce attribute (SSR mode)
-      ],
+      // 'script-src': [
+      //   "'self'",  // Allow scripts from the same origin
+      //   "https:", // Allow scripts from any HTTPS source
+      //   "'unsafe-inline'", // Allow inline scripts (unsafe)
+      //   "'strict-dynamic'", // Allow scripts loaded using 'strict-dynamic' (modern browsers)
+      //   "'nonce-{{nonce}}'" // Allow scripts with nonce attribute (SSR mode)
+      // ],
       'style-src': [
         "'self'", // Allow stylesheets from the same origin
         "https:", // Allow stylesheets from any HTTPS source
