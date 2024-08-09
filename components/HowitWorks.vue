@@ -53,7 +53,7 @@ const currentLocale = computed(() => locale.value)
                                 {{ $t('makemoneychattokdesc') }}:
                             </p>
                             <div
-                                class="md:ml-[3.5rem] aml-5 py-3 space-y-5 lg:w-2/3 mx-auto brightness-90 md:text-lg text-md mt-5 leading-snug ">
+                                class="md:ml-[3.5rem] aml-5 py-3 space-y-5 lg:w-2/3 mx-auto brightness-90 md:text-lg text-md mt-2 leading-snug ">
                                 <ol class="space-y-5 text-md list-decimal p-3 md:ml-10 ml-3">
                                     <li>
                                         <p class="font-semibold inline-block m-1">{{ $t('makemoneychattok1') }}:</p>

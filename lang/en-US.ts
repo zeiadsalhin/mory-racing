@@ -11,7 +11,7 @@ export default defineI18nLocale(async locale => {
     join:"Join",
     close:"Close",
     chattoklive: "Chattok Gaming is Live",
-    chattoklivedesc: "Enjoy the online ultimate gaming experience now with enhanced version",
+    chattoklivedesc: "Enjoy the online ultimate gaming experience now with Chattok Gaming!",
     chattoklivebutton: "Play Now",
     welcomechattok: "Welcome to",
     welcomechattokdesc: "Are you ready to elevate your TikTok presence and engage your audience like never before? At ChatTok Gaming, we offer you the chance to use games on your TikTok live shows to captivate your followers and increase your visibility.",
